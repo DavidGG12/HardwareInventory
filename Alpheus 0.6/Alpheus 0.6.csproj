@@ -67,10 +67,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="computadoras.aspx" />
+    <Content Include="css\estiloadm.css" />
     <Content Include="Login.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="computadoras.aspx.cs">
+      <DependentUpon>computadoras.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="computadoras.aspx.designer.cs">
+      <DependentUpon>computadoras.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
