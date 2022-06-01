@@ -31,7 +31,6 @@ namespace Alpheus_0._6
             cmd.Connection.Open();
             cmd.Parameters.Add("@usuario", SqlDbType.VarChar, 20).Value = Usuario.Text;
             cmd.Parameters.Add("@contraseña", SqlDbType.VarChar, 20).Value = contraseña.Text;
-            cmd.Parameters.Add("@Patron", SqlDbType.VarChar, 50).Value = patron;
 
             if (String.IsNullOrEmpty(Usuario.Text) || String.IsNullOrEmpty(contraseña.Text))
             {
@@ -42,11 +41,11 @@ namespace Alpheus_0._6
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    Error.Text = "Correo/contraseña inválidos";
+                    Error.Text = "Iniciado";
                 }
                 else
                 {
-                    Error.Text = "Iniciado";
+                    Error.Text = "Correo/contraseña inválidos";
                 }
             }
 
