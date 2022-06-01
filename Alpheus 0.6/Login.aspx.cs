@@ -47,11 +47,6 @@ namespace Alpheus_0._6
                 {
                     Error.Text = "Correo/contraseña inválidos";  
 
-                    Error.Text = "Iniciado";
-                }
-                else
-                {
-                    Error.Text = "Correo/contraseña inválidos";
                 }
             }
 

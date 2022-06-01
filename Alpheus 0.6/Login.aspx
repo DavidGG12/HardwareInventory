@@ -20,9 +20,6 @@
                 </br>
 
                 <asp:TextBox ID="contraseña" runat="server" Text="" CssId="contraseña" TextMode ="Password" />
-
-                <asp:TextBox ID="contraseña" runat="server" Text="" CssId="contraseña" TextMode ="Password" />
-
                 </br>
                 </br>
                 <asp:Button ID="boton_ingresar" runat="server" Text="Iniciar Sesión"  CssId="boton_ingresar" OnClick="boton_ingresar_Click"/>
