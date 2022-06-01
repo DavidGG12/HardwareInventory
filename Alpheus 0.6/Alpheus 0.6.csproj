@@ -82,6 +82,7 @@
     <Compile Include="BusquedaMantenimiento.aspx.designer.cs">
       <DependentUpon>BusquedaMantenimiento.aspx</DependentUpon>
     </Compile>
+    <Compile Include="BusquedaMantenimientoClase.cs" />
     <Compile Include="computadoras.aspx.cs">
       <DependentUpon>computadoras.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
