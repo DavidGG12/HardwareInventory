@@ -6,12 +6,13 @@ using System.Web;
 namespace Alpheus_0._6
 {
     public class BusquedaMantenimientoClase
-    {
+    { 
+        [Serializable()]
         public class GridV
         {
-            public string id;
-            public string Dat1;
-            public string Dat2;
+            public string id { get; set; }
+            public string Dat1 { get; set; }
+            //public string Dat2;
         }
     }
 }

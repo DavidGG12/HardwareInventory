@@ -16,6 +16,7 @@
             <asp:Label ID="LabelPrueba" runat="server"></asp:Label>
         </div>
         <div>
+            <!--
             <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false">
                 <Columns>
                     <asp:TemplateField HeaderText="Area"></asp:TemplateField>
@@ -41,6 +42,14 @@
                     <asp:TemplateField HeaderText="Fecha Ultimo Mantenimiento"></asp:TemplateField>
                     <asp:TemplateField HeaderText="Fecha Programada"></asp:TemplateField>
                     <asp:ButtonField HeaderText="Quitar" Text="Quitar" />
+                </Columns>
+            </asp:GridView>
+            -->
+            <asp:GridView ID="AreaGrid" runat="server" AutoGenerateColumns="false">
+                <Columns>
+                    <asp:TemplateField HeaderText="ID"></asp:TemplateField>
+                    <asp:TemplateField HeaderText="Area"></asp:TemplateField>
+                    <asp:ButtonField Text="Botón" />
                 </Columns>
             </asp:GridView>
         </div>
