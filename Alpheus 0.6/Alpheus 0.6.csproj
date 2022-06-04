@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BusquedaMantenimiento.aspx" />
     <Content Include="computadoras.aspx" />
     <Content Include="css\estiloadm.css" />
     <Content Include="Login.aspx" />
@@ -74,6 +75,13 @@
     <Content Include="WebForm2.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusquedaMantenimiento.aspx.cs">
+      <DependentUpon>BusquedaMantenimiento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BusquedaMantenimiento.aspx.designer.cs">
+      <DependentUpon>BusquedaMantenimiento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="computadoras.aspx.cs">
       <DependentUpon>computadoras.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
