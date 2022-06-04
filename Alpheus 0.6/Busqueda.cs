@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Alpheus_0._6
 {
-    public class BusquedaMantenimientoClase
+    public class Busqueda
     { 
         [Serializable()]
         public class GridV

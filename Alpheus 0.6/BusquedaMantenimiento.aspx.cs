@@ -12,7 +12,7 @@ namespace Alpheus_0._6
 {
     public partial class BusquedaMantenimiento : System.Web.UI.Page
     {
-        List<BusquedaMantenimientoClase.GridV> Agregar = new List<BusquedaMantenimientoClase.GridV>();
+        List<Busqueda.GridV> Agregar = new List<Busqueda.GridV>();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -28,7 +28,7 @@ namespace Alpheus_0._6
             {
                 AreaGrid.SelectedIndex = k;
                 AreaGrid.SelectedRow.Cells[0].Text = Agregar[k].id;
-                AreaGrid.SelectedRow.Cells[1].Text = Agregar[k].Dat1;
+                AreaGrid.SelectedRow.Cells[1 ].Text = Agregar[k].Dat1;
             }
         }
 
@@ -55,9 +55,9 @@ namespace Alpheus_0._6
                     LabelPrueba.Text = Datos.Rows[0].ItemArray[0].ToString();
                     if (ViewState["Area"] != null)
                     {
-                        Agregar = ViewState["Area"] as List<BusquedaMantenimientoClase.GridV>;
+                        Agregar = ViewState["Area"] as List<Busqueda.GridV>;
                     }
-                    Agregar.Add(new BusquedaMantenimientoClase.GridV { id = Buscartxt.Text, Dat1 = LabelPrueba.Text });
+                    Agregar.Add(new Busqueda.GridV { id = Buscartxt.Text, Dat1 = LabelPrueba.Text });
                     InsertBusq();
                 }
                 else

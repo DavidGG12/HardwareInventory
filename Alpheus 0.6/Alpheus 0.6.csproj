@@ -70,6 +70,9 @@
     <Content Include="BusquedaMantenimiento.aspx" />
     <Content Include="computadoras.aspx" />
     <Content Include="css\estiloadm.css" />
+    <Content Include="css\Login.css" />
+    <Content Include="img\icon.ico" />
+    <Content Include="img\icon.png" />
     <Content Include="Login.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm2.aspx" />
@@ -82,7 +85,7 @@
     <Compile Include="BusquedaMantenimiento.aspx.designer.cs">
       <DependentUpon>BusquedaMantenimiento.aspx</DependentUpon>
     </Compile>
-    <Compile Include="BusquedaMantenimientoClase.cs" />
+    <Compile Include="Busqueda.cs" />
     <Compile Include="computadoras.aspx.cs">
       <DependentUpon>computadoras.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
