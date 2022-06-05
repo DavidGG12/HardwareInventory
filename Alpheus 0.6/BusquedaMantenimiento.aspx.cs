@@ -20,23 +20,38 @@ namespace Alpheus_0._6
 
         //Insertarlos en la tabla
         protected void InsertBusq()
-        {
-            ViewState["Area"] = Agregar;
-            AreaGrid.DataSource = Agregar;
-            AreaGrid.DataBind();
-            for(int k = 0; k < Agregar.Count; k++)
+        { 
+            ViewState["CPU"] = Agregar;
+            CPUGrid.DataSource = Agregar;
+            CPUGrid.DataBind();
+            for (int k = 0; k < Agregar.Count; k++)
             {
-                AreaGrid.SelectedIndex = k;
-                AreaGrid.SelectedRow.Cells[0].Text = Agregar[k].id;
-                AreaGrid.SelectedRow.Cells[1 ].Text = Agregar[k].Dat1;
+                CPUGrid.SelectedIndex = k;
+                CPUGrid.SelectedRow.Cells[0].Text = Agregar[k].NoSerie;
+                CPUGrid.SelectedRow.Cells[1].Text = Agregar[k].Tipo;
+                CPUGrid.SelectedRow.Cells[2].Text = Agregar[k].Usuario;
+                CPUGrid.SelectedRow.Cells[3].Text = Agregar[k].Nombre;
+                CPUGrid.SelectedRow.Cells[4].Text = Agregar[k].Marca;
+                CPUGrid.SelectedRow.Cells[5].Text = Agregar[k].Modelo;
+                CPUGrid.SelectedRow.Cells[6].Text = Agregar[k].RAM;
+                CPUGrid.SelectedRow.Cells[7].Text = Agregar[k].DiscoDuro;
+                CPUGrid.SelectedRow.Cells[8].Text = Agregar[k].SO;
+                CPUGrid.SelectedRow.Cells[9].Text = Agregar[k].Office;
+                CPUGrid.SelectedRow.Cells[10].Text = Agregar[k].Procesador;
+                CPUGrid.SelectedRow.Cells[11].Text = Agregar[k].NoInventario;
             }
+        }
+
+        public void Recoger(String Buscar)
+        {
+
         }
 
         protected void Buscar_Click(object sender, EventArgs e)
         {
             string conectar = ConfigurationManager.ConnectionStrings["MatiasConnection"].ConnectionString;
             SqlConnection con = new SqlConnection(conectar);
-            string query;
+            string query, query_insertar;
 
             if (String.IsNullOrEmpty(Buscartxt.Text))
             {
@@ -44,7 +59,9 @@ namespace Alpheus_0._6
             }
             else
             {
-                query = "SELECT Area FROM Areas WHERE ID = '" + Buscartxt.Text + "'";
+                Buscartxt.Text = Buscartxt.Text.ToUpper();
+
+                query = "SELECT NoSerie, Tipo, Usuario, Nombre, Marca, Modelo, [RAM GB], [DiscoDuro GB], SO, Office, Procesador, NoInventario FROM CPU WHERE NoSerie = '" + Buscartxt.Text + "'";
                 con.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter(query, con);
                 DataTable Datos = new DataTable();
@@ -52,17 +69,74 @@ namespace Alpheus_0._6
 
                 if (Datos.Rows.Count > 0)
                 {
-                    LabelPrueba.Text = Datos.Rows[0].ItemArray[0].ToString();
-                    if (ViewState["Area"] != null)
+                    for(int i = 0; i < Datos.Rows.Count; i++)
                     {
-                        Agregar = ViewState["Area"] as List<Busqueda.GridV>;
+                        if(Datos.Rows[i].ItemArray[0].ToString() == Buscartxt.Text)
+                        {
+                            LabelPrueba.Text = "Equipo ya agregado";
+                            break;
+                        }
                     }
-                    Agregar.Add(new Busqueda.GridV { id = Buscartxt.Text, Dat1 = LabelPrueba.Text });
+                    //LabelPrueba.Text = Datos.Rows[0].ItemArray[0].ToString();
+                    if (ViewState["CPU"] != null)
+                    {
+                        Agregar = ViewState["CPU"] as List<Busqueda.GridV>;
+                    }
+                    Agregar.Add(new Busqueda.GridV { NoSerie = Buscartxt.Text, 
+                        Tipo = Datos.Rows[0].ItemArray[1].ToString(), 
+                        Usuario = Datos.Rows[0].ItemArray[2].ToString(),
+                        Nombre = Datos.Rows[0].ItemArray[3].ToString(),
+                        Marca = Datos.Rows[0].ItemArray[4].ToString(),
+                        Modelo = Datos.Rows[0].ItemArray[5].ToString(),
+                        RAM = Datos.Rows[0].ItemArray[6].ToString(),
+                        DiscoDuro = Datos.Rows[0].ItemArray[7].ToString(),
+                        SO = Datos.Rows[0].ItemArray[8].ToString(),
+                        Office = Datos.Rows[0].ItemArray[9].ToString(),
+                        Procesador = Datos.Rows[0].ItemArray[10].ToString(),
+                        NoInventario = Datos.Rows[0].ItemArray[11].ToString()
+                    });
+                    
+                    //COLOCAR OTRO QUERY PARA MANDAR A TRAER EL AREA Y LAS FECHAS DEL MANTENIMIENTO
+                    
                     InsertBusq();
                 }
                 else
                 {
-                    LabelPrueba.Text = "No se han encontrado registros";
+                    query = "SELECT NoSerie, Tipo, Usuario, Nombre, Marca, Modelo, [RAM GB], [DiscoDuro GB], SO, Office, Procesador, NoInventario FROM CPU WHERE NoInventario = '" + Buscartxt.Text + "'";
+              
+                    SqlDataAdapter adapterInventario = new SqlDataAdapter(query, con);
+                    DataTable DatosInventario = new DataTable();
+                    adapterInventario.Fill(DatosInventario);
+
+                    if (DatosInventario.Rows.Count > 0)
+                    {
+                        
+                        if (ViewState["CPU"] != null)
+                        {
+                            Agregar = ViewState["CPU"] as List<Busqueda.GridV>;
+                        }
+                        Agregar.Add(new Busqueda.GridV
+                        {
+                            NoSerie = DatosInventario.Rows[0].ItemArray[0].ToString(),
+                            Tipo = DatosInventario.Rows[0].ItemArray[1].ToString(),
+                            Usuario = DatosInventario.Rows[0].ItemArray[2].ToString(),
+                            Nombre = DatosInventario.Rows[0].ItemArray[3].ToString(),
+                            Marca = DatosInventario.Rows[0].ItemArray[4].ToString(),
+                            Modelo = DatosInventario.Rows[0].ItemArray[5].ToString(),
+                            RAM = DatosInventario.Rows[0].ItemArray[6].ToString(),
+                            DiscoDuro = DatosInventario.Rows[0].ItemArray[7].ToString(),
+                            SO = DatosInventario.Rows[0].ItemArray[8].ToString(),
+                            Office = DatosInventario.Rows[0].ItemArray[9].ToString(),
+                            Procesador = DatosInventario.Rows[0].ItemArray[10].ToString(),
+                            NoInventario = Buscartxt.Text
+                        });
+
+                        InsertBusq();
+                    }
+                    else
+                    {
+                        LabelPrueba.Text = "No se han encontrado registros";
+                    }
                 }
                 con.Close();
             }

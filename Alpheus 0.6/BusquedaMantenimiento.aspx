@@ -10,48 +10,32 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:TextBox ID="Buscartxt" runat="server"></asp:TextBox>
-            <asp:Button ID="Buscar" runat="server" Text="Buscar" OnClick="Buscar_Click" />
-            <br />
-            <asp:Label ID="LabelPrueba" runat="server"></asp:Label>
-        </div>
-        <div>
-            <!--
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false">
-                <Columns>
-                    <asp:TemplateField HeaderText="Area"></asp:TemplateField>
-                    <asp:TemplateField HeaderText="No de Serie"></asp:TemplateField>
-                    <asp:TemplateField HeaderText="Tipo"></asp:TemplateField>
-                    <asp:TemplateField HeaderText="Marca"></asp:TemplateField>
-                    <asp:TemplateField HeaderText="Modelo"></asp:TemplateField>
-                    <asp:TemplateField HeaderText="RAM"></asp:TemplateField>
-                    <asp:TemplateField HeaderText="DiscoDuro"></asp:TemplateField>
-                    <asp:TemplateField HeaderText="S.O."></asp:TemplateField>
-                    <asp:TemplateField HeaderText="Office"></asp:TemplateField>
-                    <asp:TemplateField HeaderText="Procesador"></asp:TemplateField>
-                    <asp:TemplateField HeaderText="Mouse"></asp:TemplateField>
-                    <asp:TemplateField HeaderText="Teclado"></asp:TemplateField>
-                    <asp:TemplateField HeaderText="Monitor"></asp:TemplateField>
-                    <asp:TemplateField HeaderText="Inventario"></asp:TemplateField>
-                    <asp:TemplateField HeaderText="Estatus">
-                        <ItemTemplate>
-                            <asp:DropDownList ID="DropDownList1" runat="server">
-                            </asp:DropDownList>
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Fecha Ultimo Mantenimiento"></asp:TemplateField>
-                    <asp:TemplateField HeaderText="Fecha Programada"></asp:TemplateField>
-                    <asp:ButtonField HeaderText="Quitar" Text="Quitar" />
-                </Columns>
-            </asp:GridView>
-            -->
-            <asp:GridView ID="AreaGrid" runat="server" AutoGenerateColumns="false">
-                <Columns>
-                    <asp:TemplateField HeaderText="ID"></asp:TemplateField>
-                    <asp:TemplateField HeaderText="Area"></asp:TemplateField>
-                    <asp:ButtonField Text="Botón" />
-                </Columns>
-            </asp:GridView>
+            <div>
+                <asp:TextBox ID="Buscartxt" runat="server"></asp:TextBox>
+                <asp:Button ID="Buscar" runat="server" Text="Buscar" OnClick="Buscar_Click" />
+                <br />
+                <asp:Label ID="LabelPrueba" runat="server"></asp:Label>
+                <asp:Label ID="LabelPrueba2" runat="server"></asp:Label>
+            </div>
+            <div>
+                <asp:GridView ID="CPUGrid" runat="server" AutoGenerateColumns="False">
+                    <Columns>
+                        <asp:TemplateField HeaderText="No Serie"></asp:TemplateField>
+                        <asp:TemplateField HeaderText="Tipo"></asp:TemplateField>
+                        <asp:TemplateField HeaderText="Usuario"></asp:TemplateField>
+                        <asp:TemplateField HeaderText="Nombre"></asp:TemplateField>
+                        <asp:TemplateField HeaderText="Marca"></asp:TemplateField>
+                        <asp:TemplateField HeaderText="Modelo"></asp:TemplateField>
+                        <asp:TemplateField HeaderText="RAM (GB)"></asp:TemplateField>
+                        <asp:TemplateField HeaderText="Disco Duro (GB)"></asp:TemplateField>
+                        <asp:TemplateField HeaderText="SO"></asp:TemplateField>
+                        <asp:TemplateField HeaderText="Office"></asp:TemplateField>
+                        <asp:TemplateField HeaderText="Procesador"></asp:TemplateField>
+                        <asp:TemplateField HeaderText="No Inventario"></asp:TemplateField>
+                        <asp:ButtonField Text="Quitar" />
+                    </Columns>
+                </asp:GridView>
+            </div>
         </div>
     </form>
 </body>
