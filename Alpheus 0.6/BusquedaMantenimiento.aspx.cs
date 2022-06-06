@@ -13,6 +13,7 @@ namespace Alpheus_0._6
     public partial class BusquedaMantenimiento : System.Web.UI.Page
     {
         List<Busqueda.GridV> Agregar = new List<Busqueda.GridV>();
+        public Boolean bandera = true;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -42,20 +43,17 @@ namespace Alpheus_0._6
             }
         }
 
-        public void Recoger(String Buscar)
-        {
-
-        }
-
         protected void Buscar_Click(object sender, EventArgs e)
         {
             string conectar = ConfigurationManager.ConnectionStrings["MatiasConnection"].ConnectionString;
             SqlConnection con = new SqlConnection(conectar);
-            string query, query_insertar;
+            string query;
 
             if (String.IsNullOrEmpty(Buscartxt.Text))
             {
-                LabelPrueba.Text = "No se han encontrado registros";
+                msg.Text = "No se han encontrado registros";
+                AjaModal.Show();
+                
             }
             else
             {
@@ -69,19 +67,13 @@ namespace Alpheus_0._6
 
                 if (Datos.Rows.Count > 0)
                 {
-                    for(int i = 0; i < Datos.Rows.Count; i++)
-                    {
-                        if(Datos.Rows[i].ItemArray[0].ToString() == Buscartxt.Text)
-                        {
-                            LabelPrueba.Text = "Equipo ya agregado";
-                            break;
-                        }
-                    }
-                    //LabelPrueba.Text = Datos.Rows[0].ItemArray[0].ToString();
+                    //COMPROBAR SI YA HEMOS HECHO UNA CONSULTA
                     if (ViewState["CPU"] != null)
                     {
                         Agregar = ViewState["CPU"] as List<Busqueda.GridV>;
                     }
+
+                    //REGISTRA TODA LA CONSULTA EN EL GRID
                     Agregar.Add(new Busqueda.GridV { NoSerie = Buscartxt.Text, 
                         Tipo = Datos.Rows[0].ItemArray[1].ToString(), 
                         Usuario = Datos.Rows[0].ItemArray[2].ToString(),
@@ -100,21 +92,23 @@ namespace Alpheus_0._6
                     
                     InsertBusq();
                 }
+                //BÚSQUEDA POR 'NO DE SERIE'
                 else
                 {
                     query = "SELECT NoSerie, Tipo, Usuario, Nombre, Marca, Modelo, [RAM GB], [DiscoDuro GB], SO, Office, Procesador, NoInventario FROM CPU WHERE NoInventario = '" + Buscartxt.Text + "'";
-              
                     SqlDataAdapter adapterInventario = new SqlDataAdapter(query, con);
                     DataTable DatosInventario = new DataTable();
                     adapterInventario.Fill(DatosInventario);
 
                     if (DatosInventario.Rows.Count > 0)
                     {
-                        
+                        //COMPROBAR SI YA HEMOS HECHO UNA CONSULTA
                         if (ViewState["CPU"] != null)
                         {
                             Agregar = ViewState["CPU"] as List<Busqueda.GridV>;
                         }
+
+                        //REGISTRA TODA LA CONSULTA EN EL GRID
                         Agregar.Add(new Busqueda.GridV
                         {
                             NoSerie = DatosInventario.Rows[0].ItemArray[0].ToString(),
@@ -130,7 +124,6 @@ namespace Alpheus_0._6
                             Procesador = DatosInventario.Rows[0].ItemArray[10].ToString(),
                             NoInventario = Buscartxt.Text
                         });
-
                         InsertBusq();
                     }
                     else
