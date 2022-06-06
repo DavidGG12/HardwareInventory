@@ -31,7 +31,7 @@
             <div>
                 <asp:GridView ID="CPUGrid" runat="server" AutoGenerateColumns="False">
                     <Columns>
-                        <asp:TemplateField HeaderText="No Serie"><asp:TemplateField>
+                        <asp:TemplateField HeaderText="No Serie"></asp:TemplateField>
                         <asp:TemplateField HeaderText="Tipo"></asp:TemplateField>
                         <asp:TemplateField HeaderText="Usuario"></asp:TemplateField>
                         <asp:TemplateField HeaderText="Nombre"></asp:TemplateField>
