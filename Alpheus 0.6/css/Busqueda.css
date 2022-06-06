@@ -15,3 +15,13 @@ ajaxToolkit{
     height: 100px;
     width: 200px;
 }
+
+
+element.style {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 10001;
+    width: 340px;
+    height: 200px;
+}
