@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Alpheus_0._6
 {
-    public partial class Admin : System.Web.UI.Page
+    public partial class Administrador : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
