@@ -13,7 +13,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <!--<asp:ScriptManager ID="scm" runat="server"></asp:ScriptManager>-->
+            <asp:ScriptManager ID="scm" runat="server"></asp:ScriptManager>
             <asp:Panel ID="VtnModal" runat="server" style="display: none; width: 340px; height: 240px;" class="ModalContenedor">
                 <div style="width: 340px; height: 240px;">
                     <asp:Label ID="msg" runat="server" />
