@@ -41,11 +41,12 @@ namespace Alpheus_0._6
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    Error.Text = "Iniciado";
+                    Error.Text = "Correo/contraseña inválidos";
+                    
                 }
                 else
                 {
-                    Error.Text = "Correo/contraseña inválidos";  
+                    Error.Text = "Iniciado";
 
                 }
             }

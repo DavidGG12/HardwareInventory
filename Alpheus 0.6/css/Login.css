@@ -1,0 +1,74 @@
+﻿body {
+    background-color: #69E069;
+    max-block-size: 300px;
+}
+
+div label {
+    margin-left: 10%;
+}
+
+.box {
+    background-color: #E4FDE4;
+    margin-left: 30%;
+    margin-top: 15%;
+    /*
+    margin: 150px;
+    margin-left: 400px;
+    padding: 12px 20px;
+        */
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.8);
+    width: 40%;
+    height: 250px;
+}
+
+.Usuario {
+    border-radius: 4px;
+    border-color: #E4FDE4;
+    border-width: 1px;
+    margin-left: 10%;
+    width: 75%;
+    height: 50px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+
+.contraseña {
+    border-color: #E4FDE4;
+    border-width: 1px;
+    width: 75%;
+    height: 50px;
+    margin-left: 10%;
+    border-radius: 4px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.boton_ingresar {
+    background-color: #ffffff;
+    border-radius: 4px;
+    margin-left: 15%;
+    width: 25%;
+    height: 40px;
+    border-width: 0px;
+}
+
+    .boton_ingresar:hover {
+        background-color: #9DA19D;
+        cursor: pointer;
+    }
+
+.boton_registrar {
+    background-color: #ffffff;
+    border-radius: 4px;
+    margin-left: 15%;
+    width: 25%;
+    height: 40px;
+    border-width: 0px;
+}
+
+    .boton_registrar:hover {
+        background-color: #9DA19D;
+        cursor: pointer;
+    }

@@ -43,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=20.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.20.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -69,7 +72,11 @@
   <ItemGroup>
     <Content Include="BusquedaMantenimiento.aspx" />
     <Content Include="computadoras.aspx" />
+    <Content Include="css\Busqueda.css" />
     <Content Include="css\estiloadm.css" />
+    <Content Include="css\Login.css" />
+    <Content Include="img\icon.ico" />
+    <Content Include="img\icon.png" />
     <Content Include="Login.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm2.aspx" />
@@ -82,6 +89,7 @@
     <Compile Include="BusquedaMantenimiento.aspx.designer.cs">
       <DependentUpon>BusquedaMantenimiento.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Busqueda.cs" />
     <Compile Include="computadoras.aspx.cs">
       <DependentUpon>computadoras.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
