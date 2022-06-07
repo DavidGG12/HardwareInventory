@@ -12,6 +12,14 @@
 <body>
     <form id="form1" runat="server">
         <div class="box">
+            <asp:ScriptManager ID="scm" runat="server"></asp:ScriptManager>
+            <asp:Panel ID="VtnModal" runat="server" style="display: none; width: 340px; height: 240px;" class="ModalContenedor">
+                <div style="width: 340px; height: 240px;">
+                    <asp:Label ID="msg" runat="server" />
+                    <br />
+                    <asp:Button ID="CerrarModal" runat="server" Text="Cerrar" />
+                </div>
+            </asp:Panel>
             <asp:Label ID="Error" runat="server" />
                 <br />
                 <label>Usuario: </label>
@@ -30,6 +38,8 @@
                 <asp:Button ID="boton_registrar" runat="server" Text="Registrarse"  CssClass="boton_registrar"/>
             <br />
         </div>
+        <asp:Button ID="BtnModal" runat="server" Text="Mostrar" style="display:none;"/>
+        <ajaxToolkit:ModalPopupExtender ID="AjaModal" runat="server" OkControlID="CerrarModal" CancelControlID="CerrarModal" TargetControlID="BtnModal" PopupControlID="VtnModal"></ajaxToolkit:ModalPopupExtender>
     </form>
 </body>
 </html>
