@@ -29,7 +29,7 @@
                 <asp:Label ID="LabelPrueba2" runat="server"></asp:Label>
             </div>
             <div>
-                <asp:GridView ID="CPUGrid" runat="server" AutoGenerateColumns="False">
+                <asp:GridView ID="CPUGrid" runat="server" AutoGenerateColumns="False" OnRowCommand="QuitarBtn">
                     <Columns>
                         <asp:TemplateField HeaderText="No Serie"></asp:TemplateField>
                         <asp:TemplateField HeaderText="Tipo"></asp:TemplateField>
@@ -43,7 +43,7 @@
                         <asp:TemplateField HeaderText="Office"></asp:TemplateField>
                         <asp:TemplateField HeaderText="Procesador"></asp:TemplateField>
                         <asp:TemplateField HeaderText="No Inventario"></asp:TemplateField>
-                        <asp:ButtonField Text="Quitar" />
+                        <asp:ButtonField Text="Quitar" ButtonType="Button"  />
                     </Columns>
                 </asp:GridView>
             </div>

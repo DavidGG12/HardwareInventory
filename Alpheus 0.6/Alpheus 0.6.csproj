@@ -70,6 +70,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Alta.aspx" />
     <Content Include="BusquedaMantenimiento.aspx" />
     <Content Include="computadoras.aspx" />
     <Content Include="css\Busqueda.css" />
@@ -83,6 +84,13 @@
     <Content Include="WebForm2.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alta.aspx.cs">
+      <DependentUpon>Alta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Alta.aspx.designer.cs">
+      <DependentUpon>Alta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BusquedaMantenimiento.aspx.cs">
       <DependentUpon>BusquedaMantenimiento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -32,6 +32,14 @@ namespace Alpheus_0._6
             };
             cmd.Connection.Open();
 
+            //CONVERTIR TODOS LOS REGISTROS EN MAYUSCULAS
+            NombreTxt.Text = NombreTxt.Text.ToUpper();
+            MarcaTxt.Text = MarcaTxt.Text.ToUpper();
+            ModeloTxt.Text = ModeloTxt.Text.ToUpper();
+            SOText.Text = SOText.Text.ToUpper();
+            OfficeTxt.Text = OfficeTxt.Text.ToUpper();
+            ObservacionTxt.Text = ObservacionTxt.Text.ToUpper();
+
             cmd.Parameters.Add("@No_Serie", SqlDbType.VarChar, 100).Value = NoSerieTxt.Text;
             cmd.Parameters.Add("@Tipo", SqlDbType.VarChar, 100).Value = TipoList.Text;
             cmd.Parameters.Add("@Nombre", SqlDbType.VarChar, 100).Value = NombreTxt.Text;
@@ -45,8 +53,6 @@ namespace Alpheus_0._6
             cmd.Parameters.Add("@Procesador", SqlDbType.VarChar, 100).Value = ProcesadorTxt.Text;
             cmd.Parameters.Add("@NoInventario", SqlDbType.VarChar, 100).Value = NoInventarioTxt.Text;
             cmd.Parameters.Add("@Estatus", SqlDbType.VarChar, 100).Value = EstatusList.Text;
-
-            //CONVERTIR FECHAS EN DATE
             cmd.Parameters.Add("@Fecha_Entrega", SqlDbType.Date).Value = fecha;
             cmd.Parameters.Add("@Observacion", SqlDbType.Text).Value = ObservacionTxt.Text;
 
