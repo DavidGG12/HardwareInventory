@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
+using System.IO;
 
 namespace Alpheus_0._6
 {
@@ -57,15 +58,17 @@ namespace Alpheus_0._6
 
                 cmd.Connection.Close();
             }
-            catch (Exception ex)
+            catch (Exception er)
             {
                 try
                 {
+                    string path = @"C:\BACKUP";
+                    /*
                     string conectar = ConfigurationManager.ConnectionStrings["Backup"].ConnectionString;
-                    SqlConnection con = new SqlConnection(conectar);
-
+                    SqlConnection con = new SqlConnection(conectar); 
+                    string direccion = "C:\BACKUP\AlpheusBak.bak";
                     con.Open();
-                    string query = "RESTORE DATABASE AlpheusPlus TO DISK = 'c:\backup\AlpheusBak.bak'";
+                    string query = "RESTORE DATABASE AlpheusPlus TO DISK = 'C:\BACKUP'";
 
                     SqlCommand cmd = new SqlCommand(query, con);
 
@@ -73,10 +76,19 @@ namespace Alpheus_0._6
 
                     msg.Text = "Base de Datos recuperada.";
                     AjaModal.Show();
+                    */
+                    if(!Directory.Exists(path))
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+                    else
+                    {
+
+                    }
                 }
                 catch (Exception) 
                 {
-                    msg.Text = "Base de Datos inaccesible.";
+                    msg.Text = er.Message;
                     AjaModal.Show();
                 }
             }

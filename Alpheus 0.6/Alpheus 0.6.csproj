@@ -70,6 +70,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Alta.aspx" />
     <Content Include="BusquedaMantenimiento.aspx" />
     <Content Include="computadoras.aspx" />
     <Content Include="css\Busqueda.css" />
@@ -78,11 +79,19 @@
     <Content Include="img\icon.ico" />
     <Content Include="img\icon.png" />
     <Content Include="Login.aspx" />
+    <Content Include="Registro.aspx" />
     <Content Include="Verificar.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm2.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alta.aspx.cs">
+      <DependentUpon>Alta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Alta.aspx.designer.cs">
+      <DependentUpon>Alta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="BusquedaMantenimiento.aspx.cs">
       <DependentUpon>BusquedaMantenimiento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -106,6 +115,13 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registro.aspx.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registro.aspx.designer.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Verificar.aspx.cs">
       <DependentUpon>Verificar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

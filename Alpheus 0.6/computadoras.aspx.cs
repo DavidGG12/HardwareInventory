@@ -20,7 +20,7 @@ namespace Alpheus_0._6
 
         protected void Registrar_Click(object sender, EventArgs e)
         {
-            string usuario = null;
+            string fecha = DateTime.Now.ToString("dd/MM/yyyy");
 
             string conectar = ConfigurationManager.ConnectionStrings["MatiasConnection"].ConnectionString;
             SqlConnection con = new SqlConnection(conectar);
@@ -32,98 +32,38 @@ namespace Alpheus_0._6
             };
             cmd.Connection.Open();
 
-            if(String.IsNullOrEmpty(UsuarioTxt.Text))
+            //CONVERTIR TODOS LOS REGISTROS EN MAYUSCULAS
+            NombreTxt.Text = NombreTxt.Text.ToUpper();
+            MarcaTxt.Text = MarcaTxt.Text.ToUpper();
+            ModeloTxt.Text = ModeloTxt.Text.ToUpper();
+            SOText.Text = SOText.Text.ToUpper();
+            OfficeTxt.Text = OfficeTxt.Text.ToUpper();
+            ObservacionTxt.Text = ObservacionTxt.Text.ToUpper();
+
+            cmd.Parameters.Add("@No_Serie", SqlDbType.VarChar, 100).Value = NoSerieTxt.Text;
+            cmd.Parameters.Add("@Tipo", SqlDbType.VarChar, 100).Value = TipoList.Text;
+            cmd.Parameters.Add("@Nombre", SqlDbType.VarChar, 100).Value = NombreTxt.Text;
+            cmd.Parameters.Add("@Marca", SqlDbType.VarChar, 100).Value = MarcaTxt.Text;
+            cmd.Parameters.Add("@Modelo", SqlDbType.VarChar, 100).Value = ModeloTxt.Text;
+            cmd.Parameters.Add("@RAM", SqlDbType.Int).Value = RAMTxt.Text;
+            cmd.Parameters.Add("@DISCODURO", SqlDbType.Int).Value = DiscoTxt.Text;
+            cmd.Parameters.Add("@SO", SqlDbType.VarChar, 100).Value = SOText.Text;
+            cmd.Parameters.Add("@Office", SqlDbType.VarChar, 100).Value = OfficeTxt.Text;
+            //COLOCAR MÁS TEXT BOX A PROCESADOR PARA LOS GHZ Y TIPO
+            cmd.Parameters.Add("@Procesador", SqlDbType.VarChar, 100).Value = ProcesadorTxt.Text;
+            cmd.Parameters.Add("@NoInventario", SqlDbType.VarChar, 100).Value = NoInventarioTxt.Text;
+            cmd.Parameters.Add("@Estatus", SqlDbType.VarChar, 100).Value = EstatusList.Text;
+            cmd.Parameters.Add("@Fecha_Entrega", SqlDbType.Date).Value = fecha;
+            cmd.Parameters.Add("@Observacion", SqlDbType.Text).Value = ObservacionTxt.Text;
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
             {
-                usuario = "NO";
-                /*
-                try
-                {
-
-                }
-                catch(Exception ex)
-                {
-                    Error.Text = "Error en el registro.";
-                }
-                */
-                cmd.Parameters.Add("@Subarea", SqlDbType.VarChar, 100).Value = SubList.Text;
-                cmd.Parameters.Add("@No_Serie", SqlDbType.VarChar, 100).Value = NoSerieTxt.Text;
-                cmd.Parameters.Add("@Tipo", SqlDbType.VarChar, 100).Value = TipoList.Text;
-                cmd.Parameters.Add("@Usuario", SqlDbType.VarChar, 100).Value = usuario;
-                cmd.Parameters.Add("@Nombre", SqlDbType.VarChar, 100).Value = NombreTxt.Text;
-                cmd.Parameters.Add("@Marca", SqlDbType.VarChar, 100).Value = MarcaTxt.Text;
-                cmd.Parameters.Add("@Modelo", SqlDbType.VarChar, 100).Value = ModeloTxt.Text;
-                //CONVERTIR RAM Y DISCODURO EN STRING
-                cmd.Parameters.Add("@RAM", SqlDbType.Int).Value = RAMTxt.Text;
-                cmd.Parameters.Add("@DISCODURO", SqlDbType.Int).Value = DiscoTxt.Text;
-
-                cmd.Parameters.Add("@SO", SqlDbType.VarChar, 100).Value = SOText.Text;
-                cmd.Parameters.Add("@Office", SqlDbType.VarChar, 100).Value = OfficeTxt.Text;
-                //COLOCAR MÁS TEXT BOX A PROCESADOR PARA LOS GHZ Y TIPO
-                cmd.Parameters.Add("@Procesador", SqlDbType.VarChar, 100).Value = ProcesadorTxt.Text;
-                cmd.Parameters.Add("@Mouse", SqlDbType.VarChar, 100).Value = MouseList.Text;
-                cmd.Parameters.Add("@Teclado", SqlDbType.VarChar, 100).Value = TecladoList.Text;
-                cmd.Parameters.Add("@Monitor", SqlDbType.VarChar, 100).Value = MonitorList.Text;
-                cmd.Parameters.Add("@NoInventario", SqlDbType.VarChar, 100).Value = NoInventarioTxt.Text;
-                cmd.Parameters.Add("@Estatus", SqlDbType.VarChar, 100).Value = EstatusList.Text;
-                
-                //CONVERTIR FECHAS EN DATE
-                cmd.Parameters.Add("@Fecha_ult", SqlDbType.Date).Value = FechaUltTxt.Text;
-                cmd.Parameters.Add("@Fecha_pro", SqlDbType.Date).Value = FechaProxTxt.Text;
-
-                cmd.Parameters.Add("@Encargado", SqlDbType.VarChar, 100).Value = EncargadoList.Text;
-                cmd.Parameters.Add("@Observacion", SqlDbType.Text).Value = ObservacionTxt.Text;
-
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.Read())
-                {
-                    Error.Text = "No Registrado";
-                }
-                else
-                {
-                    Error.Text = "Registrado";
-                }
+                Error.Text = "No Registrado";
             }
-            else 
+            else
             {
-                usuario = UsuarioTxt.Text;
-
-                cmd.Parameters.Add("@Subarea", SqlDbType.VarChar, 100).Value = SubList.Text;
-                cmd.Parameters.Add("@No_Serie", SqlDbType.VarChar, 100).Value = NoSerieTxt.Text;
-                cmd.Parameters.Add("@Tipo", SqlDbType.VarChar, 100).Value = TipoList.Text;
-                cmd.Parameters.Add("@Usuario", SqlDbType.VarChar, 100).Value = usuario;
-                cmd.Parameters.Add("@Nombre", SqlDbType.VarChar, 100).Value = NombreTxt.Text;
-                cmd.Parameters.Add("@Marca", SqlDbType.VarChar, 100).Value = MarcaTxt.Text;
-                cmd.Parameters.Add("@Modelo", SqlDbType.VarChar, 100).Value = ModeloTxt.Text;
-                //CONVERTIR RAM Y DISCODURO EN STRING
-                cmd.Parameters.Add("@RAM", SqlDbType.Int).Value = RAMTxt.Text;
-                cmd.Parameters.Add("@DISCODURO", SqlDbType.Int).Value = DiscoTxt.Text;
-
-                cmd.Parameters.Add("@SO", SqlDbType.VarChar, 100).Value = SOText.Text;
-                cmd.Parameters.Add("@Office", SqlDbType.VarChar, 100).Value = OfficeTxt.Text;
-                //COLOCAR MÁS TEXT BOX A PROCESADOR PARA LOS GHZ Y TIPO
-                cmd.Parameters.Add("@Procesador", SqlDbType.VarChar, 100).Value = ProcesadorTxt.Text;
-                cmd.Parameters.Add("@Mouse", SqlDbType.VarChar, 100).Value = MouseList.Text;
-                cmd.Parameters.Add("@Teclado", SqlDbType.VarChar, 100).Value = TecladoList.Text;
-                cmd.Parameters.Add("@Monitor", SqlDbType.VarChar, 100).Value = MonitorList.Text;
-                cmd.Parameters.Add("@NoInventario", SqlDbType.VarChar, 100).Value = NoInventarioTxt.Text;
-                cmd.Parameters.Add("@Estatus", SqlDbType.VarChar, 100).Value = EstatusList.Text;
-
-                //CONVERTIR FECHAS EN DATE
-                cmd.Parameters.Add("@Fecha_ult", SqlDbType.Date).Value = FechaUltTxt.Text;
-                cmd.Parameters.Add("@Fecha_pro", SqlDbType.Date).Value = FechaProxTxt.Text;
-
-                cmd.Parameters.Add("@Encargado", SqlDbType.VarChar, 100).Value = EncargadoList.Text;
-                cmd.Parameters.Add("@Observacion", SqlDbType.Text).Value = ObservacionTxt.Text;
-
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.Read())
-                {
-                    Error.Text = "No Registrado";
-                }
-                else
-                {
-                    Error.Text = "Registrado";
-                }
+                Error.Text = "Registrado";
             }
         }
     }

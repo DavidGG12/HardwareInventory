@@ -22,7 +22,13 @@ namespace Alpheus_0._6
             public string Office { get; set; }
             public string Procesador { get; set; }
             public string NoInventario { get; set; }
-            //public string Dat2;
+
+
+            public string NoSerieDisp { get; set; }
+            public string TipoDisp { get; set; }
+            public string MarcaDisp { get; set; }
+            public string ModeloDisp { get; set; }
+            public string NoInventarioDisp { get; set; }
         }
     }
 }
