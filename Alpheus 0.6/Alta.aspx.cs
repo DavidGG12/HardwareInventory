@@ -42,6 +42,22 @@ namespace Alpheus_0._6
             }
         }
 
+        protected void InsertarDisp()
+        {
+            ViewState["Disp"] = Agregar;
+            DisGrid.DataSource = Agregar;
+            DisGrid.DataBind();
+            for (int k = 0; k < Agregar.Count; k++)
+            {
+                DisGrid.SelectedIndex = k;
+                DisGrid.SelectedRow.Cells[0].Text = Agregar[k].NoSerieDisp;
+                DisGrid.SelectedRow.Cells[1].Text = Agregar[k].TipoDisp;
+                DisGrid.SelectedRow.Cells[2].Text = Agregar[k].MarcaDisp;
+                DisGrid.SelectedRow.Cells[3].Text = Agregar[k].ModeloDisp;
+                DisGrid.SelectedRow.Cells[4].Text = Agregar[k].NoInventarioDisp;
+            }
+        }
+
         protected void Registrar_Click(object sender, EventArgs e)
         {
             string conectar = ConfigurationManager.ConnectionStrings["MatiasConnection"].ConnectionString;
@@ -230,7 +246,63 @@ namespace Alpheus_0._6
                         DataTable DatosDisp = new DataTable();
                         adapterDisp.Fill(DatosDisp);
 
+                        if (DatosDisp.Rows.Count > 0)
+                        {
+                            if (ViewState["Disp"] == null)
+                            {
+                                //REGISTRA TODA LA CONSULTA EN EL GRID
+                                Agregar.Add(new Busqueda.GridV
+                                {
+                                    NoSerie = BuscarTxt.Text,
+                                    Tipo = DatosDisp.Rows[0].ItemArray[1].ToString(),
+                                    Marca = DatosDisp.Rows[0].ItemArray[2].ToString(),
+                                    Modelo = DatosDisp.Rows[0].ItemArray[3].ToString(),
+                                    NoInventario = DatosDisp.Rows[0].ItemArray[4].ToString()
+                                });
 
+                                //COLOCAR OTRO QUERY PARA MANDAR A TRAER EL AREA Y LAS FECHAS DEL MANTENIMIENTO
+
+                                InsertarDisp();
+                            }
+                            else
+                            {
+                                bandera = false;
+
+
+                                for (int i = 0; i <= Agregar.Count; i++)
+                                {
+                                    if (DisGrid.SelectedRow.Cells[0].Text == BuscarTxt.Text)
+                                    {
+                                        bandera = true;
+                                        break;
+
+                                    }
+                                }
+
+                                if (bandera != true)
+                                {
+                                    Agregar = ViewState["Disp"] as List<Busqueda.GridV>;
+
+                                    //REGISTRA TODA LA CONSULTA EN EL GRID
+                                    Agregar.Add(new Busqueda.GridV
+                                    {
+                                        NoSerie = BuscarTxt.Text,
+                                        Tipo = DatosDisp.Rows[0].ItemArray[1].ToString(),
+                                        Marca = DatosDisp.Rows[0].ItemArray[2].ToString(),
+                                        Modelo = DatosDisp.Rows[0].ItemArray[3].ToString(),
+                                        NoInventario = DatosDisp.Rows[0].ItemArray[4].ToString()
+                                    });
+
+                                    //COLOCAR OTRO QUERY PARA MANDAR A TRAER EL AREA Y LAS FECHAS DEL MANTENIMIENTO
+
+                                    InsertarDisp();
+                                }
+                                else
+                                {
+                                    error.Text = "Registro ya ingresado.";
+                                }
+                            }
+                        }
                     }
                 }
                 con.Close();

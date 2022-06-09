@@ -43,11 +43,6 @@ namespace Alpheus_0._6
             }
         }
 
-        protected void Busqueda(string query)
-        {
-
-        }
-
         protected void Buscar_Click(object sender, EventArgs e)
         {
             string conectar = ConfigurationManager.ConnectionStrings["MatiasConnection"].ConnectionString;
