@@ -63,6 +63,11 @@
                         <br />
                         <asp:Label ID="NoSerie" runat="server" Text="No. Serie: " />
                         <asp:TextBox ID="NoSerieTxt" runat="server"></asp:TextBox>
+
+                        <asp:Label ID="Area" runat="server" Text="Area: " />
+                        <asp:DropDownList ID="AreaList" runat="server" DataSourceID="AreaSql" DataTextField="Subarea" DataValueField="Subarea"></asp:DropDownList>
+                        
+                        <asp:SqlDataSource ID="AreaSql" runat="server" ConnectionString="<%$ ConnectionStrings:MatiasConnection %>" SelectCommand="SELECT [Subarea] FROM [Subareas]"></asp:SqlDataSource>
                         
                         <asp:Label ID="Tipo" runat="server" Text="Tipo: " />
                         <asp:DropDownList ID="TipoList" runat="server">
