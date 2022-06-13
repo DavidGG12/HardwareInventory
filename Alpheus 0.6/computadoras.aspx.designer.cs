@@ -60,6 +60,33 @@ namespace Alpheus_0._6
         protected global::System.Web.UI.WebControls.TextBox NoSerieTxt;
 
         /// <summary>
+        /// Control Area.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Area;
+
+        /// <summary>
+        /// Control AreaList.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList AreaList;
+
+        /// <summary>
+        /// Control AreaSql.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource AreaSql;
+
+        /// <summary>
         /// Control Tipo.
         /// </summary>
         /// <remarks>
