@@ -14,7 +14,7 @@ namespace Alpheus_0._6
         protected void Page_Load(object sender, EventArgs e)
         {
             String UsuarioLogeado = Session["UsuarioLogeado"].ToString();
-
+            Error_Verificar.Text = "Usuario";
             string conectar = ConfigurationManager.ConnectionStrings["MatiasConnection"].ConnectionString;
             SqlConnection con = new SqlConnection(conectar);
 
@@ -22,17 +22,19 @@ namespace Alpheus_0._6
 
             SqlCommand cmd = new SqlCommand("SELECT idTipo FROM Usuario WHERE Usuario = '" + UsuarioLogeado + "'", con);
             SqlDataReader dr = cmd.ExecuteReader();
-
-            if(dr.Read())
+            Error_Verificar.Text = "Consulta";
+            if (dr.Read())
             {
                 String tipo = dr["idTipo"].ToString();
-
-                if(tipo.Equals("1004"))
+                Error_Verificar.Text = "No Entré";
+                if (tipo.Equals("1004"))
                 {
+                    Error_Verificar.Text = "No entré";
                     Response.Redirect("computadoras.aspx");
                 }
                 else
                 {
+                    Error_Verificar.Text = "Entré";
                     Response.Redirect("computadoras.aspx");
                 }
             }
