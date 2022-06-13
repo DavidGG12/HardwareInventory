@@ -44,7 +44,7 @@
                 <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
                     <a href="#"><i class="fas fa-desktop"></i><span>CPU</span></a>
                     <a href="#"><i class="fas fa-mouse"></i><span>Dispositivo</span></a>
-                    <a href="#"><i class="fas fa-users"></i><span>Registro Usuario</span></a>
+                    <a href="Registro.aspx"><i class="fas fa-users"></i><span>Registro Usuario</span></a>
                     <a href="#"><i class="fas fa-map-marker-alt"></i><span>Áreas</span></a>
                     
                 </nav>
@@ -54,10 +54,13 @@
                     <!--Tabla va aquí-->
                     <div class="columna col-lg-6">
                         <asp:Label ID="Error" runat="server" Text="" />
-
                         <br />
                         <br />
-                        
+                        <asp:RadioButtonList ID="DispCPURadio" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DispCPURadio_SelectedIndexChanged" RepeatDirection="Horizontal">
+                            <asp:ListItem Value="1" Text="Dispositivos" Selected="True">Dispositivos</asp:ListItem>
+                            <asp:ListItem Value="2" Text="CPU">CPU</asp:ListItem>
+                        </asp:RadioButtonList>
+                        <br />
                         <asp:Label ID="NoSerie" runat="server" Text="No. Serie: " />
                         <asp:TextBox ID="NoSerieTxt" runat="server"></asp:TextBox>
                         
@@ -68,7 +71,7 @@
                         </asp:DropDownList>
 
                         <asp:Label ID="Nombre" runat="server" Text="Nombre: " />
-                        <asp:TextBox ID="NombreTxt" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="NombreTxt" runat="server" Enabled="False"></asp:TextBox>
 
                         <asp:Label ID="Marca" runat="server" Text="Marca: " />
                         <asp:TextBox ID="MarcaTxt" runat="server"></asp:TextBox>
@@ -77,19 +80,19 @@
                         <asp:TextBox ID="ModeloTxt" runat="server"></asp:TextBox>
 
                         <asp:Label ID="RAM" runat="server" Text="Tamaño RAM GB: " />
-                        <asp:TextBox ID="RAMTxt" runat="server" TextMode="Number"></asp:TextBox>
+                        <asp:TextBox ID="RAMTxt" runat="server" TextMode="Number" Enabled="False"></asp:TextBox>
 
                         <asp:Label ID="DiscoDuro" runat="server" Text="Tamaño Disco Duro GB: " />
-                        <asp:TextBox ID="DiscoTxt" runat="server" TextMode="Number"></asp:TextBox>
+                        <asp:TextBox ID="DiscoTxt" runat="server" TextMode="Number" Enabled="False"></asp:TextBox>
 
                         <asp:Label ID="SO" runat="server" Text="Sistema Operativo: " />
-                        <asp:TextBox ID="SOText" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="SOText" runat="server" Enabled="False"></asp:TextBox>
 
                         <asp:Label ID="Office" runat="server" Text="Office: " />
-                        <asp:TextBox ID="OfficeTxt" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="OfficeTxt" runat="server" Enabled="False"></asp:TextBox>
 
                         <asp:Label ID="Procesador" runat="server" Text="Procesador: " />
-                        <asp:TextBox ID="ProcesadorTxt" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="ProcesadorTxt" runat="server" Enabled="False"></asp:TextBox>
 
                         <asp:Label ID="NoInventario" runat="server" Text="No Inventario: " />
                         <asp:TextBox ID="NoInventarioTxt" runat="server"></asp:TextBox>

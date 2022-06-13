@@ -40,7 +40,7 @@
                     <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
                         <a href="#"><i class="fas fa-desktop"></i><span>CPU</span></a>
                         <a href="#"><i class="fas fa-mouse"></i><span>Dispositivo</span></a>
-                        <a href="#"><i class="fas fa-users"></i><span>Registro Usuario</span></a>
+                        <a href="Registro.aspx"><i class="fas fa-users"></i><span>Registro Usuario</span></a>
                         <a href="#"><i class="fas fa-map-marker-alt"></i><span>Áreas</span></a>
                     
                     </nav>

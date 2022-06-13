@@ -33,7 +33,7 @@ namespace Alpheus_0._6
                 }
                 else
                 {
-                    Response.Redirect("BusquedaMantenimiento.aspx");
+                    Response.Redirect("computadoras.aspx");
                 }
             }
         }
