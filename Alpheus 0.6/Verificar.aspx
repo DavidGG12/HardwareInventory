@@ -10,6 +10,7 @@
 <body>
     <form id="form1" runat="server">
         <div>
+            <asp:Label ID ="Error_Verificar" runat="server" Text="" />
         </div>
     </form>
 </body>

@@ -73,9 +73,16 @@
     <Content Include="Alta.aspx" />
     <Content Include="BusquedaMantenimiento.aspx" />
     <Content Include="computadoras.aspx" />
+    <Content Include="css\all.css" />
+    <Content Include="css\bootstrap-material-design.min.css" />
+    <Content Include="css\bootstrap.min.css" />
     <Content Include="css\Busqueda.css" />
     <Content Include="css\estiloadm.css" />
+    <Content Include="css\jquery.mCustomScrollbar.css" />
     <Content Include="css\Login.css" />
+    <Content Include="css\normalize.css" />
+    <Content Include="css\sweetalert2.min.css" />
+    <Content Include="font-6\css\all.css" />
     <Content Include="img\icon.ico" />
     <Content Include="img\icon.png" />
     <Content Include="Login.aspx" />
@@ -138,6 +145,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\bootstrap.min.css.map" />
+    <Content Include="font-6\webfonts\fa-brands-400.ttf" />
+    <Content Include="font-6\webfonts\fa-brands-400.woff2" />
+    <Content Include="font-6\webfonts\fa-regular-400.ttf" />
+    <Content Include="font-6\webfonts\fa-regular-400.woff2" />
+    <Content Include="font-6\webfonts\fa-solid-900.ttf" />
+    <Content Include="font-6\webfonts\fa-solid-900.woff2" />
+    <Content Include="font-6\webfonts\fa-v4compatibility.ttf" />
+    <Content Include="font-6\webfonts\fa-v4compatibility.woff2" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -146,6 +162,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

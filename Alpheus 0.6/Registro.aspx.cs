@@ -14,7 +14,43 @@ namespace Alpheus_0._6
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            String UsuarioLogeado = Session["UsuarioLogeado"].ToString();
 
+            string conectar = ConfigurationManager.ConnectionStrings["MatiasConnection"].ConnectionString;
+            SqlConnection con = new SqlConnection(conectar);
+
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand("SELECT idTipo FROM Usuario WHERE Usuario = '" + UsuarioLogeado + "'", con);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.Read())
+            {
+                String tipo = dr["idTipo"].ToString();
+
+                if (tipo.Equals("1004"))
+                {
+                    TipoList.Enabled = true;
+                    Nombre.Enabled = true;
+                    Apellido_Paterno.Enabled = true;
+                    Apellido_Materno.Enabled = true;
+                    Usuario.Enabled = true;
+                    Contraseña.Enabled = true;
+                    Contraseña_Revalidar.Enabled = true;
+                    Registrar.Enabled = true;
+                }
+                else
+                {
+                    TipoList.Enabled = false;
+                    Nombre.Enabled = false;
+                    Apellido_Paterno.Enabled = false;
+                    Apellido_Materno.Enabled = false;
+                    Usuario.Enabled = false;
+                    Contraseña.Enabled = false;
+                    Contraseña_Revalidar.Enabled = false;
+                    Registrar.Enabled = false;
+                }
+            }
         }
 
         protected void Registrar_Click(object sender, EventArgs e)

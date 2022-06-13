@@ -20,8 +20,11 @@ namespace Alpheus_0._6
 
         protected void boton_ingresar_Click(object sender, EventArgs e)
         {
+            string usuario, contraseña;
             try
             {
+                usuario = Usuario.Text;
+                contraseña = Contraseña.Text;
                 string conectar = ConfigurationManager.ConnectionStrings["MatiasConnection"].ConnectionString;
                 SqlConnection con = new SqlConnection(conectar);
 
@@ -31,28 +34,26 @@ namespace Alpheus_0._6
                     CommandType = CommandType.StoredProcedure
                 };
                 cmd.Connection.Open();
-                cmd.Parameters.Add("@usuario", SqlDbType.VarChar, 20).Value = Usuario.Text;
-                cmd.Parameters.Add("@contraseña", SqlDbType.VarChar, 20).Value = contraseña.Text;
+                cmd.Parameters.Add("@usuario", SqlDbType.VarChar, 20).Value = usuario;
+                cmd.Parameters.Add("@contraseña", SqlDbType.VarChar, 20).Value = contraseña;
 
-                if (String.IsNullOrEmpty(Usuario.Text) || String.IsNullOrEmpty(contraseña.Text))
+                if (String.IsNullOrEmpty(usuario) || String.IsNullOrEmpty(contraseña))
                 {
-                    msg.Text = "Alguno de los campos está vacío.";
-                    AjaModal.Show();
+                    error_login.Text = "Error no están llenos";
                 }
                 else
                 {
                     SqlDataReader dr = cmd.ExecuteReader();
                     if (dr.Read())
                     {
-                        Session["UsuarioLogeado"] = Usuario.Text;
-                        msg.Text = "Iniciado";
-                        AjaModal.Show();
+                        Session["UsuarioLogeado"] = usuario;
                         Response.Redirect("Verificar.aspx");
+                        
                     }
                     else
                     {
-                        msg.Text = "Correo/contraseña inválidos";
-                        AjaModal.Show();
+                        error_login.Text = "No lo encontré";
+
                     }
                 }
 
@@ -62,41 +63,24 @@ namespace Alpheus_0._6
             {
                 try
                 {
-                    string path = @"C:\BACKUP";
-                    /*
-                    string conectar = ConfigurationManager.ConnectionStrings["Backup"].ConnectionString;
+                    string path = @"C:\BACKUP\", fecha_backup = DateTime.Now.ToString("dd_MM_yyyy");
+                    
+                    string conectar = ConfigurationManager.ConnectionStrings["MatiasConnection"].ConnectionString;
                     SqlConnection con = new SqlConnection(conectar); 
-                    string direccion = "C:\BACKUP\AlpheusBak.bak";
                     con.Open();
-                    string query = "RESTORE DATABASE AlpheusPlus TO DISK = 'C:\BACKUP'";
+                    string query = "RESTORE DATABASE AlpheusPlus FROM DISK = '" + path + fecha_backup + ".bak'";
 
                     SqlCommand cmd = new SqlCommand(query, con);
 
                     SqlDataReader dr = cmd.ExecuteReader();
 
-                    msg.Text = "Base de Datos recuperada.";
-                    AjaModal.Show();
-                    */
-                    if(!Directory.Exists(path))
-                    {
-                        Directory.CreateDirectory(path);
-                    }
-                    else
-                    {
-
-                    }
+                    
                 }
                 catch (Exception) 
                 {
-                    msg.Text = er.Message;
-                    AjaModal.Show();
+                    error_login.Text = "Error base";
                 }
             }
-        }
-
-        protected void boton_registrar_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Registro_Usuario.aspx");
         }
     }
 }

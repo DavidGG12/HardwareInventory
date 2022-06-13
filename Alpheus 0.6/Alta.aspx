@@ -50,10 +50,8 @@
                 <div class="row justify-content-center align-content-center text-center">
                     <!--Tabla va aquí-->
                     <div class="columna col-lg-6">
-                        <label>Área de origen:</label>
-                        <asp:DropDownList ID="AreaOrigenList" runat="server" DataSourceID="Area" DataTextField="Subarea" DataValueField="Subarea"></asp:DropDownList>
-                        <asp:SqlDataSource ID="Area" runat="server" ConnectionString="<%$ ConnectionStrings:MatiasConnection %>" SelectCommand="SELECT [Subarea] FROM [Subareas]"></asp:SqlDataSource>
-                        <label>Resguardatario: </label>
+                        &nbsp;<asp:SqlDataSource ID="Area" runat="server" ConnectionString="<%$ ConnectionStrings:MatiasConnection %>" SelectCommand="SELECT [Subarea] FROM [Subareas]"></asp:SqlDataSource>
+                        <label>No. de Control Interno: </label>
                         <asp:TextBox ID="ResguardatarioTxt" runat="server"></asp:TextBox>
                         <br />
                         <br />

@@ -4,42 +4,41 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <link rel="stylesheet" href="css/Login.css" type="text/css" />
-    <link rel="icon" type="image/ico" href="img/icon.ico" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+    <!--titulo de la pestaña-->
     <title>Iniciar Sesión</title>
+    <!--estilos para iconos font awesome-->
+    <link href="font-6/css/all.css" rel="stylesheet" />
+     <!--Conexión a la hoja de estilos-->
+     <link rel="stylesheet" href="css/Login.css" type="text/css" />
+    <!--icono de la pestaña-->
+    <link rel="icon" type="image/ico" href="img/icon.ico" />
+     <!--Fuentes de texto en la pagina-->
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet"/> 
+    <link href="https://fonts.googleapis.com/css?family=Overpass&display=swap" rel="stylesheet"/>
+    <!--Scrips de transiciones-->
+    <script type="text/javascript"></script>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div class="box">
-            <asp:ScriptManager ID="scm" runat="server"></asp:ScriptManager>
-            <asp:Panel ID="VtnModal" runat="server" style="display: none; width: 340px; height: 240px;" class="ModalContenedor">
-                <div style="width: 340px; height: 240px;">
-                    <asp:Label ID="msg" runat="server" />
-                    <br />
-                    <asp:Button ID="CerrarModal" runat="server" Text="Cerrar" />
+    <!--Mensaje de Advertencia-->
+  <asp:Label ID="Error" runat="server" />
+      <!--Contenedor-->
+      <div id="contenedor">
+          <div id="central">
+              <div id="login">
+                 
+                  <!--Estilo del titulo -->
+                  <div class="titulo">Bienvenido</div>                  
+                  <!--formulario-->
+                    <form id="form2" class="login" runat="server"> 
+                        <asp:Label runat="server" ID="error_login" Text="" />
+                        <asp:TextBox ID="Usuario" name="Usuario" placeholder="Usuario" runat="server" CssClass="input"></asp:TextBox>
+                         <asp:TextBox ID="Contraseña" placeholder="Contraseña" required="required" runat="server" TextMode="Password" CssClass="input"/>
+                         <asp:Button ID="boton" runat="server" Text="Ingresar" CssClass="boton" OnClick="boton_ingresar_Click"/>
+                         
+                        </form>
+                  </div>
                 </div>
-            </asp:Panel>
-            <asp:Label ID="Error" runat="server" />
-                <br />
-                <label>Usuario: </label>
-                <br />
-                <asp:TextBox ID="Usuario" runat="server" Text="" class="Usuario" placeholder="Usuario"/>
-                <br />
-                <br />
-                <label>Contraseña: </label>
-                <br />
-
-                <asp:TextBox ID="contraseña" runat="server" Text="" placeholder="********" class="contraseña" TextMode ="Password" />
-                <br />
-                <br />
-                <asp:Button ID="boton_ingresar" runat="server" Text="Iniciar Sesión"  CssClass="boton_ingresar" OnClick="boton_ingresar_Click"/>
-                <!--&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp-->
-                <asp:Button ID="boton_registrar" runat="server" Text="Registrarse"  CssClass="boton_registrar"/>
-            <br />
-        </div>
-        <asp:Button ID="BtnModal" runat="server" Text="Mostrar" style="display:none;"/>
-        <ajaxToolkit:ModalPopupExtender ID="AjaModal" runat="server" OkControlID="CerrarModal" CancelControlID="CerrarModal" TargetControlID="BtnModal" PopupControlID="VtnModal"></ajaxToolkit:ModalPopupExtender>
-    </form>
-</body>
+          </div>        
+      </body>
 </html>
