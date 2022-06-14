@@ -14,6 +14,7 @@ namespace Alpheus_0._6
     {
         List<Busqueda.GridV> Agregar = new List<Busqueda.GridV>();
         public Boolean bandera = false;
+
         protected void Page_Load(object sender, EventArgs e)
         {
 

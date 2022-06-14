@@ -72,6 +72,7 @@
   <ItemGroup>
     <Content Include="Alta.aspx" />
     <Content Include="BusquedaMantenimiento.aspx" />
+    <Content Include="Cambio.aspx" />
     <Content Include="computadoras.aspx" />
     <Content Include="css\all.css" />
     <Content Include="css\bootstrap-material-design.min.css" />
@@ -107,6 +108,13 @@
       <DependentUpon>BusquedaMantenimiento.aspx</DependentUpon>
     </Compile>
     <Compile Include="Busqueda.cs" />
+    <Compile Include="Cambio.aspx.cs">
+      <DependentUpon>Cambio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cambio.aspx.designer.cs">
+      <DependentUpon>Cambio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="computadoras.aspx.cs">
       <DependentUpon>computadoras.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
