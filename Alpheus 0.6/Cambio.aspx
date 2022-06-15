@@ -63,16 +63,16 @@
                         <asp:Label ID="Nombre" runat="server" Text="Nombre del Solicitante: "></asp:Label>
                         <asp:DropDownList ID="NombreList" runat="server" DataSourceID="NombreSql" DataTextField="Usuario_Recibidor" DataValueField="Usuario_Recibidor"></asp:DropDownList>
                         <asp:SqlDataSource ID="NombreSql" runat="server" ConnectionString="<%$ ConnectionStrings:MatiasConnection %>" SelectCommand="SELECT [Usuario_Recibidor] FROM [Transferencia]"></asp:SqlDataSource>
-                        <asp:Button ID="BuscarBtn" runat="server" Text="Buscar" />
+                        <asp:Button ID="BuscarBtn" runat="server" Text="Buscar" OnClick="BuscarBtn_Click" />
                         <br />
                         <br />
-                        <asp:Label ID="Area" runat="server" Text="Area:"></asp:Label>
+                        <asp:Label ID="AreaLbl" runat="server" Text="Area:"></asp:Label>
                         <br />
-                        <asp:Label ID="Marca" runat="server" Text="Marca:"></asp:Label>
-                        <asp:Label ID="NoSerie" runat="server" Text="No. de Serie: "></asp:Label>
+                        <asp:Label ID="MarcaLbl" runat="server" Text="Marca:"></asp:Label>
+                        <asp:Label ID="NoSerieLbl" runat="server" Text="No. de Serie: "></asp:Label>
                         <br />
-                        <asp:Label ID="Inventario" runat="server" Text="No. de Inventario: "></asp:Label>
-                        <asp:Label ID="Modelo" runat="server" Text="Modelo: "></asp:Label>
+                        <asp:Label ID="InventarioLbl" runat="server" Text="No. de Inventario: "></asp:Label>
+                        <asp:Label ID="ModeloLbl" runat="server" Text="Modelo: "></asp:Label>
                         <br />
                         <br />
                         <asp:Label ID="TipoMantenimiento" runat="server" Text="Tipo de Mantenimiento: "></asp:Label>
@@ -89,15 +89,15 @@
                         <asp:TextBox ID="ObservacionTxt" runat="server"></asp:TextBox>
                         <br />
                         <br />
-                        <asp:Label ID="Entrega" runat="server" Text="Entrega"></asp:Label>
-                        <asp:Label ID="Retira" runat="server" Text="Retira"></asp:Label>
-                        <br />
                         <asp:Label ID="NoSerie1" runat="server" Text="No. de Serie: "></asp:Label>
                         <asp:DropDownList ID="NoSerieListCPU" runat="server" Enabled="false" DataSourceID="NoSerieSql" DataTextField="NoSerie" DataValueField="NoSerie"></asp:DropDownList>
                         <asp:SqlDataSource ID="NoSerieSql" runat="server" ConnectionString="<%$ ConnectionStrings:MatiasConnection %>" SelectCommand="SELECT [NoSerie] FROM [CPU]"></asp:SqlDataSource>
                         <asp:Label ID="NoSerie2" runat="server" Text="No. de Serie: "></asp:Label>
                         <asp:DropDownList ID="NoSerieListDisp" runat="server"></asp:DropDownList>
                         <br />
+                        <br />
+                        <asp:Label ID="Entrega" runat="server" Text="Entrega"></asp:Label>
+                        <asp:Label ID="Retira" runat="server" Text="Retira"></asp:Label>
                         <br />
                         <asp:Label ID="TipoLblEntrega" runat="server" Text="Tipo: "></asp:Label>
                         <asp:Label ID="TipoLblRetiro" runat="server"  Text="Tipo:"></asp:Label>
@@ -115,7 +115,7 @@
                         <asp:Label ID="NoInventarioLblRetiro" runat="server" Text="No. de Inventario: "></asp:Label>
                         <br />
                         <br />
-                        <asp:Button ID="RegistrarBtn" runat="server" Text="Registrar" />
+                        <asp:Button ID="RegistrarBtn" runat="server" Text="Registrar" OnClick="RegistrarBtn_Click" />
                     </div>
                 </div>
             </main>

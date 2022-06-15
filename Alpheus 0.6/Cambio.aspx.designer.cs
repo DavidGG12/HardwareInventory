@@ -96,49 +96,49 @@ namespace Alpheus_0._6
         protected global::System.Web.UI.WebControls.Button BuscarBtn;
 
         /// <summary>
-        /// Control Area.
+        /// Control AreaLbl.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Area;
+        protected global::System.Web.UI.WebControls.Label AreaLbl;
 
         /// <summary>
-        /// Control Marca.
+        /// Control MarcaLbl.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Marca;
+        protected global::System.Web.UI.WebControls.Label MarcaLbl;
 
         /// <summary>
-        /// Control NoSerie.
+        /// Control NoSerieLbl.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NoSerie;
+        protected global::System.Web.UI.WebControls.Label NoSerieLbl;
 
         /// <summary>
-        /// Control Inventario.
+        /// Control InventarioLbl.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Inventario;
+        protected global::System.Web.UI.WebControls.Label InventarioLbl;
 
         /// <summary>
-        /// Control Modelo.
+        /// Control ModeloLbl.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Modelo;
+        protected global::System.Web.UI.WebControls.Label ModeloLbl;
 
         /// <summary>
         /// Control TipoMantenimiento.
@@ -186,24 +186,6 @@ namespace Alpheus_0._6
         protected global::System.Web.UI.WebControls.TextBox ObservacionTxt;
 
         /// <summary>
-        /// Control Entrega.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Entrega;
-
-        /// <summary>
-        /// Control Retira.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Retira;
-
-        /// <summary>
         /// Control NoSerie1.
         /// </summary>
         /// <remarks>
@@ -247,6 +229,24 @@ namespace Alpheus_0._6
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList NoSerieListDisp;
+
+        /// <summary>
+        /// Control Entrega.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Entrega;
+
+        /// <summary>
+        /// Control Retira.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Retira;
 
         /// <summary>
         /// Control TipoLblEntrega.
