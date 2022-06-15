@@ -50,6 +50,14 @@
                 <div class="row justify-content-center align-content-center text-center">
                     <!--Tabla va aquí-->
                     <div class="columna col-lg-6">
+                        <br />
+                        <asp:Label ID="Error" runat="server" Text="" ></asp:Label>
+                        <br />
+                        <asp:RadioButtonList ID="CPUDispRBtnList" runat="server" RepeatDirection="Horizontal">
+                            <asp:ListItem Selected="True">Dispositivos</asp:ListItem>
+                            <asp:ListItem>CPU</asp:ListItem>
+                        </asp:RadioButtonList>
+                        <br />
                         &nbsp;<asp:SqlDataSource ID="Area" runat="server" ConnectionString="<%$ ConnectionStrings:MatiasConnection %>" SelectCommand="SELECT [Subarea] FROM [Subareas]"></asp:SqlDataSource>
                         <label>No. de Control Interno: </label>
                         <asp:TextBox ID="ResguardatarioTxt" runat="server"></asp:TextBox>
