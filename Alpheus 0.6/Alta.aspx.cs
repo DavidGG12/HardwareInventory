@@ -133,7 +133,7 @@ namespace Alpheus_0._6
                             //IMPLEMENTAR SP DE CPU Y DISP
                             for (int i = 0; i <= rowsDisp; i++)
                             {
-                                if(Dispositivos.Mouse(DisGrid.SelectedRow.Cells[0].Text, NoControlTxt.Text) == "SI")
+                                if(Dispositivos.Mouse(DisGrid.SelectedRow.Cells[1].Text, NoControlTxt.Text).ToString() == "SI")
                                 {
                                     mouse = DisGrid.SelectedRow.Cells[0].Text;
                                     break;
@@ -142,7 +142,7 @@ namespace Alpheus_0._6
 
                             for (int i = 0; i <= rowsDisp; i++)
                             {
-                                if (Dispositivos.Monitor(DisGrid.SelectedRow.Cells[0].Text, NoControlTxt.Text) == "SI")
+                                if (Dispositivos.Monitor(DisGrid.SelectedRow.Cells[1].Text, NoControlTxt.Text).ToString() == "SI")
                                 {
                                     monitor = DisGrid.SelectedRow.Cells[0].Text;
                                     break;
@@ -151,7 +151,7 @@ namespace Alpheus_0._6
 
                             for (int i = 0; i <= rowsDisp; i++)
                             {
-                                if (Dispositivos.Teclado(DisGrid.SelectedRow.Cells[0].Text, NoControlTxt.Text) == "SI")
+                                if (Dispositivos.Teclado(DisGrid.SelectedRow.Cells[1].Text, NoControlTxt.Text).ToString() == "SI")
                                 {
                                     teclado = DisGrid.SelectedRow.Cells[0].Text;
                                     break;
@@ -175,7 +175,7 @@ namespace Alpheus_0._6
                             }
                             else
                             {
-                                Errorl.Text = "Tienes que agregar el sp de disp";
+                                Errorl.Text = "Tienes que agregar el sp de disp" + DisGrid.SelectedRow.Cells[1].Text;
                             }
 
                             

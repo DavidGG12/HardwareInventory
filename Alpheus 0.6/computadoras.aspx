@@ -111,6 +111,9 @@
                                         <asp:DropDownList ID="TipoList" runat="server">
                                         <asp:ListItem>LAPTOP</asp:ListItem>
                                         <asp:ListItem>PC</asp:ListItem>
+                                            <asp:ListItem>MOUSE</asp:ListItem>
+                                            <asp:ListItem>TECLADO</asp:ListItem>
+                                            <asp:ListItem>MONITOR</asp:ListItem>
                                      </asp:DropDownList>
                                  </div>
                              </div>

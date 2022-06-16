@@ -16,11 +16,42 @@ namespace Alpheus_0._6
         SqlConnection con = new SqlConnection(conectar);
         protected void Page_Load(object sender, EventArgs e)
         {
-            //COLOCAR QUE SOLO EL ADMINISTRADOR PUEDE INTERACTUAR CON ESTA INTERFAZ
             Sesion nombre = new Sesion();
             String UsuarioLogeado = Session["UsuarioLogeado"].ToString();
 
             SesionLbl.Text = nombre.Nombre(UsuarioLogeado).ToString();
+
+            string conectar = ConfigurationManager.ConnectionStrings["MatiasConnection"].ConnectionString;
+            SqlConnection con = new SqlConnection(conectar);
+
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand("SELECT idTipo FROM Usuario WHERE Usuario = '" + UsuarioLogeado + "'", con);
+            SqlDataReader dr = cmd.ExecuteReader();
+
+            if (dr.Read())
+            {
+                String tipo = dr["idTipo"].ToString();
+
+                if (tipo.Equals("1004"))
+                {
+                    AreaSubAreaListTxt.Enabled = true;
+                    AdminLabRBtnList.Enabled = true;
+                    AreaTxt.Enabled = true;
+                    AreaListTxt.Enabled = true;
+                    SubAreaTxt.Enabled = true;
+                    Registrar.Enabled = true;
+                }
+                else
+                {
+                    AreaSubAreaListTxt.Enabled = false;
+                    AdminLabRBtnList.Enabled = false;
+                    AreaTxt.Enabled = false;
+                    AreaListTxt.Enabled = false;
+                    SubAreaTxt.Enabled = false;
+                    Registrar.Enabled = false;
+                }
+            }
         }
 
         protected void AreaSubAreaListTxt_SelectedIndexChanged(object sender, EventArgs e)
