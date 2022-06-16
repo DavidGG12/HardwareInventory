@@ -61,7 +61,7 @@
                         <asp:TextBox ID="FolioTxt" runat="server" ></asp:TextBox>
                         <br />
                         <asp:Label ID="Nombre" runat="server" Text="Nombre del Solicitante: "></asp:Label>
-                        <asp:DropDownList ID="NombreList" runat="server" DataSourceID="NombreSql" DataTextField="Usuario_Recibidor" DataValueField="Usuario_Recibidor"></asp:DropDownList>
+                        <asp:DropDownList ID="NombreTxtList" runat="server" DataSourceID="NombreSql" DataTextField="Usuario_Recibidor" DataValueField="Usuario_Recibidor"></asp:DropDownList>
                         <asp:SqlDataSource ID="NombreSql" runat="server" ConnectionString="<%$ ConnectionStrings:MatiasConnection %>" SelectCommand="SELECT [Usuario_Recibidor] FROM [Transferencia]"></asp:SqlDataSource>
                         <asp:Button ID="BuscarBtn" runat="server" Text="Buscar" OnClick="BuscarBtn_Click" />
                         <br />
@@ -90,7 +90,7 @@
                         <br />
                         <br />
                         <asp:Label ID="NoSerie1" runat="server" Text="No. de Serie: "></asp:Label>
-                        <asp:DropDownList ID="NoSerieListCPU" runat="server" Enabled="false" DataSourceID="NoSerieSql" DataTextField="NoSerie" DataValueField="NoSerie"></asp:DropDownList>
+                        <asp:DropDownList ID="NoSerieListCPU" runat="server" Enabled="false" DataSourceID="NoSerieSql" DataTextField="NoSerie" DataValueField="NoSerie" AutoPostBack="true" OnSelectedIndexChanged="NoSerieListCPU_SelectedIndexChanged"></asp:DropDownList>
                         <asp:SqlDataSource ID="NoSerieSql" runat="server" ConnectionString="<%$ ConnectionStrings:MatiasConnection %>" SelectCommand="SELECT [NoSerie] FROM [CPU]"></asp:SqlDataSource>
                         <asp:Label ID="NoSerie2" runat="server" Text="No. de Serie: "></asp:Label>
                         <asp:DropDownList ID="NoSerieListDisp" runat="server"></asp:DropDownList>

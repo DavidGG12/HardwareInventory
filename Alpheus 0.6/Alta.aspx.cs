@@ -13,6 +13,7 @@ namespace Alpheus_0._6
     public partial class Alta : System.Web.UI.Page
     {
         List<Busqueda.GridV> Agregar = new List<Busqueda.GridV>();
+        List<Busqueda.GridVDisp> AgregarDisp = new List<Busqueda.GridVDisp>();
         public Boolean bandera = false;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -45,105 +46,115 @@ namespace Alpheus_0._6
 
         protected void InsertarDisp()
         {
-            ViewState["Disp"] = Agregar;
-            DisGrid.DataSource = Agregar;
+            ViewState["Disp"] = AgregarDisp;
+            DisGrid.DataSource = AgregarDisp;
             DisGrid.DataBind();
-            for (int k = 0; k < Agregar.Count; k++)
+            for (int k = 0; k < AgregarDisp.Count; k++)
             {
                 DisGrid.SelectedIndex = k;
-                DisGrid.SelectedRow.Cells[0].Text = Agregar[k].NoSerieDisp;
-                DisGrid.SelectedRow.Cells[1].Text = Agregar[k].TipoDisp;
-                DisGrid.SelectedRow.Cells[2].Text = Agregar[k].MarcaDisp;
-                DisGrid.SelectedRow.Cells[3].Text = Agregar[k].ModeloDisp;
-                DisGrid.SelectedRow.Cells[4].Text = Agregar[k].NoInventarioDisp;
+                DisGrid.SelectedRow.Cells[0].Text = AgregarDisp[k].NoSerieDisp;
+                DisGrid.SelectedRow.Cells[1].Text = AgregarDisp[k].TipoDisp;
+                DisGrid.SelectedRow.Cells[2].Text = AgregarDisp[k].MarcaDisp;
+                DisGrid.SelectedRow.Cells[3].Text = AgregarDisp[k].ModeloDisp;
+                DisGrid.SelectedRow.Cells[4].Text = AgregarDisp[k].NoInventarioDisp;
             }
         }
 
         protected void Registrar_Click(object sender, EventArgs e)
         {
-            string conectar = ConfigurationManager.ConnectionStrings["MatiasConnection"].ConnectionString;
-            SqlConnection con = new SqlConnection(conectar);
+            try
+            {
+                string fecha = DateTime.Now.ToString("dd/MM/yyyy");
+                int rows = Agregar.Count;
+                string conectar = ConfigurationManager.ConnectionStrings["MatiasConnection"].ConnectionString;
+                SqlConnection con = new SqlConnection(conectar);
 
+                SqlCommand cmd = new SqlCommand("SP_TransferenciaCPU", con)
+                {
+                    CommandType = CommandType.StoredProcedure
+                };
+                cmd.Connection.Open();
 
+                if(String.IsNullOrEmpty(NoControlTxt.Text) || String.IsNullOrEmpty(RecibeTxt.Text) || String.IsNullOrEmpty(MotivoTxt.Text))
+                {
+                    Errorl.Text = "Alguno de los campos está vacío.";
+                }
+                else
+                {
+                    RecibeTxt.Text = NoControlTxt.Text.ToUpper();
+                    MotivoTxt.Text = MotivoTxt.Text.ToUpper();
+
+                    if(Agregar.Count > 1)
+                    {
+                        Errorl.Text = "¡Lo siento! Solo se puede transferir un equipo por persona.";
+                    }
+                    else
+                    {
+                        if(AgregarDisp.Count == 0)
+                        {
+                            cmd.Parameters.Add("@NoSerieCPU", SqlDbType.VarChar, 100).Value = CPUGrid.SelectedRow.Cells[0].Text;
+                            cmd.Parameters.Add("@NoControl", SqlDbType.VarChar, 500).Value = NoControlTxt.Text;
+                            cmd.Parameters.Add("@Usuario", SqlDbType.VarChar, 100).Value = UsuarioList.Text;
+                            cmd.Parameters.Add("@Subarea", SqlDbType.VarChar, 100).Value = AreaDestinoList.Text;
+                            cmd.Parameters.Add("@Usuario_Recibe", SqlDbType.VarChar, 100).Value = RecibeTxt.Text;
+                            cmd.Parameters.Add("@Fecha_Emision", SqlDbType.Date).Value = fecha;
+                            cmd.Parameters.Add("@Fecha_Entrega", SqlDbType.Date).Value = fecha;
+                            
+                            SqlDataReader dr = cmd.ExecuteReader();
+                        }
+                        else 
+                        {
+                            //IMPLEMENTAR SP DE CPU Y DISP
+                        }
+                    }
+                }
+            }
+            catch(Exception er)
+            {
+                Errorl.Text = er.Message;
+            }
         }
 
         protected void Buscar_Click(object sender, EventArgs e)
         {
-            string conectar = ConfigurationManager.ConnectionStrings["MatiasConnection"].ConnectionString;
-            SqlConnection con = new SqlConnection(conectar);
-            string query;
-
-            if (String.IsNullOrEmpty(BuscarTxt.Text))
+            try
             {
-                error.Text = "Campo vacío.";
-            }
-            else
-            {
-                BuscarTxt.Text = BuscarTxt.Text.ToUpper();
+                string conectar = ConfigurationManager.ConnectionStrings["MatiasConnection"].ConnectionString;
+                SqlConnection con = new SqlConnection(conectar);
+                string query;
 
-                query = "SELECT NoSerie, Tipo, Nombre, Marca, Modelo, [RAM GB], [DiscoDuro GB], SO, Office, Procesador, NoInventario FROM CPU WHERE NoSerie = '" + BuscarTxt.Text + "'";
-                con.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter(query, con);
-                DataTable Datos = new DataTable();
-                adapter.Fill(Datos);
-
-                if (Datos.Rows.Count > 0)
+                if (String.IsNullOrEmpty(BuscarTxt.Text))
                 {
-                    if (ViewState["CPU"] == null)
+                    error.Text = "Campo vacío.";
+                }
+                else
+                {
+                    BuscarTxt.Text = BuscarTxt.Text.ToUpper();
+
+                    query = "SELECT NoSerie, Tipo, Nombre, Marca, Modelo, [RAM GB], [DiscoDuro GB], SO, Office, Procesador, NoInventario FROM CPU WHERE NoSerie = '" + BuscarTxt.Text + "'";
+                    con.Open();
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, con);
+                    DataTable Datos = new DataTable();
+                    adapter.Fill(Datos);
+
+                    if (Datos.Rows.Count > 0)
                     {
-                        //REGISTRA TODA LA CONSULTA EN EL GRID
-                        Agregar.Add(new Busqueda.GridV
+                        if (ViewState["CPU"] == null)
                         {
-                            NoSerie = BuscarTxt.Text,
-                            Tipo = Datos.Rows[0].ItemArray[1].ToString(),
-                            Nombre = Datos.Rows[0].ItemArray[2].ToString(),
-                            Marca = Datos.Rows[0].ItemArray[3].ToString(),
-                            Modelo = Datos.Rows[0].ItemArray[4].ToString(),
-                            RAM = Datos.Rows[0].ItemArray[5].ToString(),
-                            DiscoDuro = Datos.Rows[0].ItemArray[6].ToString(),
-                            SO = Datos.Rows[0].ItemArray[7].ToString(),
-                            Office = Datos.Rows[0].ItemArray[8].ToString(),
-                            Procesador = Datos.Rows[0].ItemArray[9].ToString(),
-                            NoInventario = Datos.Rows[0].ItemArray[10].ToString()
-                        });
-
-                        //COLOCAR OTRO QUERY PARA MANDAR A TRAER EL AREA Y LAS FECHAS DEL MANTENIMIENTO
-
-                        InsertBusq();
-                    }
-                    else
-                    {
-                        bandera = false;
-
-
-                        for (int i = 0; i <= Agregar.Count; i++)
-                        {
-                            if (CPUGrid.SelectedRow.Cells[0].Text == BuscarTxt.Text)
-                            {
-                                bandera = true;
-                                break;
-
-                            }
-                        }
-
-                        if (bandera != true)
-                        {
-                            Agregar = ViewState["CPU"] as List<Busqueda.GridV>;
-
                             //REGISTRA TODA LA CONSULTA EN EL GRID
                             Agregar.Add(new Busqueda.GridV
                             {
                                 NoSerie = BuscarTxt.Text,
                                 Tipo = Datos.Rows[0].ItemArray[1].ToString(),
-                                Nombre = Datos.Rows[0].ItemArray[3].ToString(),
-                                Marca = Datos.Rows[0].ItemArray[4].ToString(),
-                                Modelo = Datos.Rows[0].ItemArray[5].ToString(),
-                                RAM = Datos.Rows[0].ItemArray[6].ToString(),
-                                DiscoDuro = Datos.Rows[0].ItemArray[7].ToString(),
-                                SO = Datos.Rows[0].ItemArray[8].ToString(),
-                                Office = Datos.Rows[0].ItemArray[9].ToString(),
-                                Procesador = Datos.Rows[0].ItemArray[10].ToString(),
-                                NoInventario = Datos.Rows[0].ItemArray[11].ToString()
+                                Nombre = Datos.Rows[0].ItemArray[2].ToString(),
+                                Marca = Datos.Rows[0].ItemArray[3].ToString(),
+                                Modelo = Datos.Rows[0].ItemArray[4].ToString(),
+                                RAM = Datos.Rows[0].ItemArray[5].ToString(),
+                                DiscoDuro = Datos.Rows[0].ItemArray[6].ToString(),
+                                SO = Datos.Rows[0].ItemArray[7].ToString(),
+                                Office = Datos.Rows[0].ItemArray[8].ToString(),
+                                Procesador = Datos.Rows[0].ItemArray[9].ToString(),
+                                NoInventario = Datos.Rows[0].ItemArray[10].ToString()
                             });
 
                             //COLOCAR OTRO QUERY PARA MANDAR A TRAER EL AREA Y LAS FECHAS DEL MANTENIMIENTO
@@ -152,60 +163,16 @@ namespace Alpheus_0._6
                         }
                         else
                         {
-                            error.Text = "Registro ya ingresado.";
-                        }
-                    }
-                }
-                //BÚSQUEDA POR 'NO DE INVENTARIO'
-                else
-                {
-                    query = "SELECT NoSerie, Tipo, Nombre, Marca, Modelo, [RAM GB], [DiscoDuro GB], SO, Office, Procesador, NoInventario FROM CPU WHERE NoInventario = '" + BuscarTxt.Text + "'";
-                    SqlDataAdapter adapterInventario = new SqlDataAdapter(query, con);
-                    DataTable DatosInventario = new DataTable();
-                    adapterInventario.Fill(DatosInventario);
-
-                    if (DatosInventario.Rows.Count > 0)
-                    {
-                        if (ViewState["CPU"] == null)
-                        {
-                            for (int j = 0; j < DatosInventario.Rows.Count; j++)
-                            {
-                                if (ViewState["CPU"] != null)
-                                {
-                                    Agregar = ViewState["CPU"] as List<Busqueda.GridV>;
-                                }
-                                //REGISTRA TODA LA CONSULTA EN EL GRID
-                                Agregar.Add(new Busqueda.GridV
-                                {
-                                    NoSerie = DatosInventario.Rows[j].ItemArray[0].ToString(),
-                                    Tipo = DatosInventario.Rows[j].ItemArray[1].ToString(),
-                                    Nombre = DatosInventario.Rows[j].ItemArray[3].ToString(),
-                                    Marca = DatosInventario.Rows[j].ItemArray[4].ToString(),
-                                    Modelo = DatosInventario.Rows[j].ItemArray[5].ToString(),
-                                    RAM = DatosInventario.Rows[j].ItemArray[6].ToString(),
-                                    DiscoDuro = DatosInventario.Rows[j].ItemArray[7].ToString(),
-                                    SO = DatosInventario.Rows[j].ItemArray[8].ToString(),
-                                    Office = DatosInventario.Rows[j].ItemArray[9].ToString(),
-                                    Procesador = DatosInventario.Rows[j].ItemArray[10].ToString(),
-                                    NoInventario = DatosInventario.Rows[j].ItemArray[11].ToString()
-                                });
-
-                                //COLOCAR OTRO QUERY PARA MANDAR A TRAER EL AREA Y LAS FECHAS DEL MANTENIMIENTO
-
-                                InsertBusq();
-                            }
-                        }
-                        else
-                        {
                             bandera = false;
 
 
                             for (int i = 0; i <= Agregar.Count; i++)
                             {
-                                if (CPUGrid.SelectedRow.Cells[11].Text == BuscarTxt.Text)
+                                if (CPUGrid.SelectedRow.Cells[0].Text == BuscarTxt.Text)
                                 {
                                     bandera = true;
                                     break;
+
                                 }
                             }
 
@@ -217,29 +184,24 @@ namespace Alpheus_0._6
                                 Agregar.Add(new Busqueda.GridV
                                 {
                                     NoSerie = BuscarTxt.Text,
-                                    Tipo = DatosInventario.Rows[0].ItemArray[1].ToString(),
-                                    Nombre = DatosInventario.Rows[0].ItemArray[3].ToString(),
-                                    Marca = DatosInventario.Rows[0].ItemArray[4].ToString(),
-                                    Modelo = DatosInventario.Rows[0].ItemArray[5].ToString(),
-                                    RAM = DatosInventario.Rows[0].ItemArray[6].ToString(),
-                                    DiscoDuro = DatosInventario.Rows[0].ItemArray[7].ToString(),
-                                    SO = DatosInventario.Rows[0].ItemArray[8].ToString(),
-                                    Office = DatosInventario.Rows[0].ItemArray[9].ToString(),
-                                    Procesador = DatosInventario.Rows[0].ItemArray[10].ToString(),
-                                    NoInventario = DatosInventario.Rows[0].ItemArray[11].ToString()
+                                    Tipo = Datos.Rows[0].ItemArray[1].ToString(),
+                                    Nombre = Datos.Rows[0].ItemArray[2].ToString(),
+                                    Marca = Datos.Rows[0].ItemArray[3].ToString(),
+                                    Modelo = Datos.Rows[0].ItemArray[4].ToString(),
+                                    RAM = Datos.Rows[0].ItemArray[5].ToString(),
+                                    DiscoDuro = Datos.Rows[0].ItemArray[6].ToString(),
+                                    SO = Datos.Rows[0].ItemArray[7].ToString(),
+                                    Office = Datos.Rows[0].ItemArray[8].ToString(),
+                                    Procesador = Datos.Rows[0].ItemArray[9].ToString(),
+                                    NoInventario = Datos.Rows[0].ItemArray[10].ToString()
                                 });
 
                                 //COLOCAR OTRO QUERY PARA MANDAR A TRAER EL AREA Y LAS FECHAS DEL MANTENIMIENTO
 
                                 InsertBusq();
                             }
-                            else
-                            {
-                                error.Text = "Error";
-                            }
                         }
                     }
-                    //COLOCAR BUSQUEDA EN DISPOSITIVOS
                     else
                     {
                         query = "SELECT NoSerie, Tipo, Marca, Modelo, NoInventario FROM Dispositivos WHERE NoSerie = '" + BuscarTxt.Text + "'";
@@ -252,13 +214,13 @@ namespace Alpheus_0._6
                             if (ViewState["Disp"] == null)
                             {
                                 //REGISTRA TODA LA CONSULTA EN EL GRID
-                                Agregar.Add(new Busqueda.GridV
+                                AgregarDisp.Add(new Busqueda.GridVDisp
                                 {
-                                    NoSerie = BuscarTxt.Text,
-                                    Tipo = DatosDisp.Rows[0].ItemArray[1].ToString(),
-                                    Marca = DatosDisp.Rows[0].ItemArray[2].ToString(),
-                                    Modelo = DatosDisp.Rows[0].ItemArray[3].ToString(),
-                                    NoInventario = DatosDisp.Rows[0].ItemArray[4].ToString()
+                                    NoSerieDisp = BuscarTxt.Text,
+                                    TipoDisp = DatosDisp.Rows[0].ItemArray[1].ToString(),
+                                    MarcaDisp = DatosDisp.Rows[0].ItemArray[2].ToString(),
+                                    ModeloDisp = DatosDisp.Rows[0].ItemArray[3].ToString(),
+                                    NoInventarioDisp = DatosDisp.Rows[0].ItemArray[4].ToString()
                                 });
 
                                 //COLOCAR OTRO QUERY PARA MANDAR A TRAER EL AREA Y LAS FECHAS DEL MANTENIMIENTO
@@ -282,32 +244,37 @@ namespace Alpheus_0._6
 
                                 if (bandera != true)
                                 {
-                                    Agregar = ViewState["Disp"] as List<Busqueda.GridV>;
+                                    AgregarDisp = ViewState["Disp"] as List<Busqueda.GridVDisp>;
 
                                     //REGISTRA TODA LA CONSULTA EN EL GRID
-                                    Agregar.Add(new Busqueda.GridV
+                                    AgregarDisp.Add(new Busqueda.GridVDisp
                                     {
-                                        NoSerie = BuscarTxt.Text,
-                                        Tipo = DatosDisp.Rows[0].ItemArray[1].ToString(),
-                                        Marca = DatosDisp.Rows[0].ItemArray[2].ToString(),
-                                        Modelo = DatosDisp.Rows[0].ItemArray[3].ToString(),
-                                        NoInventario = DatosDisp.Rows[0].ItemArray[4].ToString()
+                                        NoSerieDisp = BuscarTxt.Text,
+                                        TipoDisp = DatosDisp.Rows[0].ItemArray[1].ToString(),
+                                        MarcaDisp = DatosDisp.Rows[0].ItemArray[2].ToString(),
+                                        ModeloDisp = DatosDisp.Rows[0].ItemArray[3].ToString(),
+                                        NoInventarioDisp = DatosDisp.Rows[0].ItemArray[4].ToString()
                                     });
 
                                     //COLOCAR OTRO QUERY PARA MANDAR A TRAER EL AREA Y LAS FECHAS DEL MANTENIMIENTO
 
                                     InsertarDisp();
                                 }
-                                else
-                                {
-                                    error.Text = "Registro ya ingresado.";
-                                }
                             }
                         }
+                        else
+                        {
+                            error.Text = "Registro no encontrado";
+                        }
                     }
+                    con.Close();
                 }
-                con.Close();
             }
+            catch (Exception er)
+            {
+                Errorl.Text = er.Message;
+            }
+            
         }
 
         protected void QuitarBtn(object sender, GridViewCommandEventArgs e)
@@ -317,6 +284,15 @@ namespace Alpheus_0._6
             Agregar = ViewState["CPU"] as List<Busqueda.GridV>;
             Agregar.RemoveAt(f);
             InsertBusq();
+        }
+
+        protected void QuitarBtnDisp(object sender, GridViewCommandEventArgs e)
+        {
+            int f = Convert.ToInt32(e.CommandArgument);
+            AgregarDisp.Clear();
+            AgregarDisp = ViewState["Disp"] as List<Busqueda.GridVDisp>;
+            AgregarDisp.RemoveAt(f);
+            InsertarDisp();
         }
     }
 }

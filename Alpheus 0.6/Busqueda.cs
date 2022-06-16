@@ -22,8 +22,11 @@ namespace Alpheus_0._6
             public string Office { get; set; }
             public string Procesador { get; set; }
             public string NoInventario { get; set; }
+        }
 
-
+        [Serializable()]
+        public class GridVDisp
+        { 
             public string NoSerieDisp { get; set; }
             public string TipoDisp { get; set; }
             public string MarcaDisp { get; set; }

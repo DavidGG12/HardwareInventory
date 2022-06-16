@@ -11,7 +11,7 @@ namespace Alpheus_0._6
 {
 
 
-    public partial class Alta
+    public partial class Registrar_Area
     {
 
         /// <summary>
@@ -24,13 +24,22 @@ namespace Alpheus_0._6
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control Errorl.
+        /// Control Error.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Errorl;
+        protected global::System.Web.UI.WebControls.Label Error;
+
+        /// <summary>
+        /// Control AreaSubAreaListTxt.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButtonList AreaSubAreaListTxt;
 
         /// <summary>
         /// Control Area.
@@ -39,115 +48,70 @@ namespace Alpheus_0._6
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource Area;
+        protected global::System.Web.UI.WebControls.Label Area;
 
         /// <summary>
-        /// Control NoControlTxt.
+        /// Control AdminLabRBtnList.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NoControlTxt;
+        protected global::System.Web.UI.WebControls.RadioButtonList AdminLabRBtnList;
 
         /// <summary>
-        /// Control AreaDestinoList.
+        /// Control AreaTxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList AreaDestinoList;
+        protected global::System.Web.UI.WebControls.TextBox AreaTxt;
 
         /// <summary>
-        /// Control UbicacionList.
+        /// Control AreaSub.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList UbicacionList;
+        protected global::System.Web.UI.WebControls.Label AreaSub;
 
         /// <summary>
-        /// Control UsuarioList.
+        /// Control AreaListTxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList UsuarioList;
+        protected global::System.Web.UI.WebControls.DropDownList AreaListTxt;
 
         /// <summary>
-        /// Control Usuario.
+        /// Control AreaSql.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource Usuario;
+        protected global::System.Web.UI.WebControls.SqlDataSource AreaSql;
 
         /// <summary>
-        /// Control RecibeTxt.
+        /// Control SubArea.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox RecibeTxt;
+        protected global::System.Web.UI.WebControls.Label SubArea;
 
         /// <summary>
-        /// Control MotivoTxt.
+        /// Control SubAreaTxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox MotivoTxt;
-
-        /// <summary>
-        /// Control error.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label error;
-
-        /// <summary>
-        /// Control BuscarTxt.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox BuscarTxt;
-
-        /// <summary>
-        /// Control Buscar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Buscar;
-
-        /// <summary>
-        /// Control CPUGrid.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView CPUGrid;
-
-        /// <summary>
-        /// Control DisGrid.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView DisGrid;
+        protected global::System.Web.UI.WebControls.TextBox SubAreaTxt;
 
         /// <summary>
         /// Control Registrar.

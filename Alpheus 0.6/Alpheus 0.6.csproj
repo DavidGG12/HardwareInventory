@@ -87,6 +87,7 @@
     <Content Include="img\icon.ico" />
     <Content Include="img\icon.png" />
     <Content Include="Login.aspx" />
+    <Content Include="Registrar_Area.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="Verificar.aspx" />
     <Content Include="Web.config" />
@@ -130,6 +131,13 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registrar_Area.aspx.cs">
+      <DependentUpon>Registrar_Area.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registrar_Area.aspx.designer.cs">
+      <DependentUpon>Registrar_Area.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Registro.aspx.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

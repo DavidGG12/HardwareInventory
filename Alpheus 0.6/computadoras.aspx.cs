@@ -177,7 +177,7 @@ namespace Alpheus_0._6
             }
             catch (Exception er)
             {
-                Error.Text = "Error en el registro.";
+                Error.Text = er.Message;
             }
             
         }
