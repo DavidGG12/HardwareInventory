@@ -16,6 +16,7 @@ namespace Alpheus_0._6
         List<Busqueda.GridVDisp> AgregarDisp = new List<Busqueda.GridVDisp>();
         public Boolean bandera = false;
         VerificarTrans Verificar = new VerificarTrans();
+        Dispositivos Dispositivos = new Dispositivos();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -66,7 +67,9 @@ namespace Alpheus_0._6
             try
             {
                 string fecha = DateTime.Now.ToString("dd/MM/yyyy");
-                int rows = Agregar.Count;
+                int rows = CPUGrid.Rows.Count, rowsDisp = DisGrid.Rows.Count;
+                string teclado, mouse, monitor;
+
                 string conectar = ConfigurationManager.ConnectionStrings["MatiasConnection"].ConnectionString;
                 SqlConnection con = new SqlConnection(conectar);
 
@@ -85,16 +88,23 @@ namespace Alpheus_0._6
                     RecibeTxt.Text = NoControlTxt.Text.ToUpper();
                     MotivoTxt.Text = MotivoTxt.Text.ToUpper();
 
-                    if(Agregar.Count >= 1)
+                    if(rows > 1)
                     {
-                        Errorl.Text = "¡Lo siento! Solo se puede transferir un equipo por persona.";
+                        Errorl.Text = "¡Lo siento! Solo se puede transferir un equipo por persona."+rows;
                     }
-                    else
+                    else if(rows == 1)
                     {
-                        if(AgregarDisp.Count == 0)
+                        if(rowsDisp == 0)
                         {
                             try
                             {
+                                teclado = "NO";
+                                monitor = "NO";
+                                mouse = "NO";
+
+                                cmd.Parameters.Add("@Mouse", SqlDbType.VarChar, 100).Value = mouse;
+                                cmd.Parameters.Add("@Teclado", SqlDbType.VarChar, 100).Value = teclado;
+                                cmd.Parameters.Add("@Monitor", SqlDbType.VarChar, 100).Value = monitor;
                                 cmd.Parameters.Add("@NoSerieCPU", SqlDbType.VarChar, 100).Value = CPUGrid.SelectedRow.Cells[0].Text;
                                 cmd.Parameters.Add("@NoControl", SqlDbType.VarChar, 500).Value = NoControlTxt.Text;
                                 cmd.Parameters.Add("@Usuario", SqlDbType.VarChar, 100).Value = UsuarioList.Text;
@@ -104,7 +114,7 @@ namespace Alpheus_0._6
                                 cmd.Parameters.Add("@Fecha_Entrega", SqlDbType.Date).Value = fecha;
 
                                 SqlDataReader dr = cmd.ExecuteReader();
-                                Errorl.Text = Verificar.RollBack_Commit(NoControlTxt.Text, CPUGrid.SelectedRow.Cells[0].Text) + Agregar.Count;
+                                Errorl.Text = Verificar.RollBack_Commit(NoControlTxt.Text, CPUGrid.SelectedRow.Cells[0].Text);
                             }
                             catch (Exception er)
                             {
@@ -113,8 +123,64 @@ namespace Alpheus_0._6
                         }
                         else 
                         {
+                            teclado = "NO";
+                            monitor = "NO";
+                            mouse = "NO";
+
                             //IMPLEMENTAR SP DE CPU Y DISP
+                            for (int i = 0; i <= rowsDisp; i++)
+                            {
+                                if(Dispositivos.Mouse(DisGrid.SelectedRow.Cells[0].Text, NoControlTxt.Text) == "SI")
+                                {
+                                    mouse = DisGrid.SelectedRow.Cells[0].Text;
+                                    break;
+                                }
+                            }
+
+                            for (int i = 0; i <= rowsDisp; i++)
+                            {
+                                if (Dispositivos.Monitor(DisGrid.SelectedRow.Cells[0].Text, NoControlTxt.Text) == "SI")
+                                {
+                                    monitor = DisGrid.SelectedRow.Cells[0].Text;
+                                    break;
+                                }
+                            }
+
+                            for (int i = 0; i <= rowsDisp; i++)
+                            {
+                                if (Dispositivos.Teclado(DisGrid.SelectedRow.Cells[0].Text, NoControlTxt.Text) == "SI")
+                                {
+                                    teclado = DisGrid.SelectedRow.Cells[0].Text;
+                                    break;
+                                }
+                            }
+
+                            if(teclado == "SI" || monitor == "SI" || mouse == "SI")
+                            {
+                                cmd.Parameters.Add("@Mouse", SqlDbType.VarChar, 100).Value = mouse;
+                                cmd.Parameters.Add("@Teclado", SqlDbType.VarChar, 100).Value = teclado;
+                                cmd.Parameters.Add("@Monitor", SqlDbType.VarChar, 100).Value = monitor;
+                                cmd.Parameters.Add("@NoSerieCPU", SqlDbType.VarChar, 100).Value = CPUGrid.SelectedRow.Cells[0].Text;
+                                cmd.Parameters.Add("@NoControl", SqlDbType.VarChar, 500).Value = NoControlTxt.Text;
+                                cmd.Parameters.Add("@Usuario", SqlDbType.VarChar, 100).Value = UsuarioList.Text;
+                                cmd.Parameters.Add("@Subarea", SqlDbType.VarChar, 100).Value = AreaDestinoList.Text;
+                                cmd.Parameters.Add("@Usuario_Recibe", SqlDbType.VarChar, 100).Value = RecibeTxt.Text;
+                                cmd.Parameters.Add("@Fecha_Emision", SqlDbType.Date).Value = fecha;
+                                cmd.Parameters.Add("@Fecha_Entrega", SqlDbType.Date).Value = fecha;
+                                
+                                SqlDataReader dr = cmd.ExecuteReader();
+                            }
+                            else
+                            {
+                                Errorl.Text = "Tienes que agregar el sp de disp";
+                            }
+
+                            
                         }
+                    }
+                    else
+                    {
+                        Errorl.Text = "No has buscado el CPU o dispositivo.";
                     }
                 }
             }

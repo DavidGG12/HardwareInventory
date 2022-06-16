@@ -116,6 +116,7 @@
                         <br />
 
                         <asp:Button ID="Registrar" runat="server" Text="Registrar" OnClick="Registrar_Click" />
+                        <asp:Button ID="Actualizar" runat="server" Text="Actualizar" />
                     </div>
                 </div>
             </main>
