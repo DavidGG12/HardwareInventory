@@ -152,6 +152,7 @@
     <Compile Include="Verificar.aspx.designer.cs">
       <DependentUpon>Verificar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="VerificarTrans.cs" />
     <Compile Include="WebForm2.aspx.cs">
       <DependentUpon>WebForm2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

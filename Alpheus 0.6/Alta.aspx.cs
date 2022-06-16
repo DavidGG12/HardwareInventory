@@ -15,6 +15,7 @@ namespace Alpheus_0._6
         List<Busqueda.GridV> Agregar = new List<Busqueda.GridV>();
         List<Busqueda.GridVDisp> AgregarDisp = new List<Busqueda.GridVDisp>();
         public Boolean bandera = false;
+        VerificarTrans Verificar = new VerificarTrans();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -84,7 +85,7 @@ namespace Alpheus_0._6
                     RecibeTxt.Text = NoControlTxt.Text.ToUpper();
                     MotivoTxt.Text = MotivoTxt.Text.ToUpper();
 
-                    if(Agregar.Count > 1)
+                    if(Agregar.Count >= 1)
                     {
                         Errorl.Text = "¡Lo siento! Solo se puede transferir un equipo por persona.";
                     }
@@ -92,15 +93,23 @@ namespace Alpheus_0._6
                     {
                         if(AgregarDisp.Count == 0)
                         {
-                            cmd.Parameters.Add("@NoSerieCPU", SqlDbType.VarChar, 100).Value = CPUGrid.SelectedRow.Cells[0].Text;
-                            cmd.Parameters.Add("@NoControl", SqlDbType.VarChar, 500).Value = NoControlTxt.Text;
-                            cmd.Parameters.Add("@Usuario", SqlDbType.VarChar, 100).Value = UsuarioList.Text;
-                            cmd.Parameters.Add("@Subarea", SqlDbType.VarChar, 100).Value = AreaDestinoList.Text;
-                            cmd.Parameters.Add("@Usuario_Recibe", SqlDbType.VarChar, 100).Value = RecibeTxt.Text;
-                            cmd.Parameters.Add("@Fecha_Emision", SqlDbType.Date).Value = fecha;
-                            cmd.Parameters.Add("@Fecha_Entrega", SqlDbType.Date).Value = fecha;
-                            
-                            SqlDataReader dr = cmd.ExecuteReader();
+                            try
+                            {
+                                cmd.Parameters.Add("@NoSerieCPU", SqlDbType.VarChar, 100).Value = CPUGrid.SelectedRow.Cells[0].Text;
+                                cmd.Parameters.Add("@NoControl", SqlDbType.VarChar, 500).Value = NoControlTxt.Text;
+                                cmd.Parameters.Add("@Usuario", SqlDbType.VarChar, 100).Value = UsuarioList.Text;
+                                cmd.Parameters.Add("@Subarea", SqlDbType.VarChar, 100).Value = AreaDestinoList.Text;
+                                cmd.Parameters.Add("@Usuario_Recibe", SqlDbType.VarChar, 100).Value = RecibeTxt.Text;
+                                cmd.Parameters.Add("@Fecha_Emision", SqlDbType.Date).Value = fecha;
+                                cmd.Parameters.Add("@Fecha_Entrega", SqlDbType.Date).Value = fecha;
+
+                                SqlDataReader dr = cmd.ExecuteReader();
+                                Errorl.Text = Verificar.RollBack_Commit(NoControlTxt.Text, CPUGrid.SelectedRow.Cells[0].Text) + Agregar.Count;
+                            }
+                            catch (Exception er)
+                            {
+                                Errorl.Text = er.Message;
+                            }
                         }
                         else 
                         {
