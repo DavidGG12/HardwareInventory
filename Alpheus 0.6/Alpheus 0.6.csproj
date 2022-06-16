@@ -83,6 +83,7 @@
     <Content Include="css\Login.css" />
     <Content Include="css\normalize.css" />
     <Content Include="css\sweetalert2.min.css" />
+    <Content Include="Edicion.aspx" />
     <Content Include="font-6\css\all.css" />
     <Content Include="img\icon.ico" />
     <Content Include="img\icon.png" />
@@ -123,6 +124,13 @@
       <DependentUpon>computadoras.aspx</DependentUpon>
     </Compile>
     <Compile Include="Dispositivos.cs" />
+    <Compile Include="Edicion.aspx.cs">
+      <DependentUpon>Edicion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Edicion.aspx.designer.cs">
+      <DependentUpon>Edicion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
