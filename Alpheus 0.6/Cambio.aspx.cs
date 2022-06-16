@@ -17,7 +17,10 @@ namespace Alpheus_0._6
         static string NoControl, ID_Buscar;
         protected void Page_Load(object sender, EventArgs e)
         {
+            Sesion nombre = new Sesion();
+            String UsuarioLogeado = Session["UsuarioLogeado"].ToString();
 
+            SesionLbl.Text = nombre.Nombre(UsuarioLogeado).ToString();
         }
 
         protected void TipoMantenimientoRBtnList_SelectedIndexChanged(object sender, EventArgs e)

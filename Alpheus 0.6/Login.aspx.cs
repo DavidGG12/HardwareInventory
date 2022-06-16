@@ -47,7 +47,7 @@ namespace Alpheus_0._6
                     if (dr.Read())
                     {
                         Session["UsuarioLogeado"] = usuario;
-                        Response.Redirect("Verificar.aspx");
+                        Response.Redirect("computadoras.aspx");
                         
                     }
                     else

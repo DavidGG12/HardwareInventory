@@ -14,37 +14,65 @@ namespace Alpheus_0._6
 {
     public partial class computadoras : System.Web.UI.Page
     {
+        Sesion usuario = new Sesion();
         protected void Page_Load(object sender, EventArgs e)
         {
             string fecha_backup = DateTime.Now.ToString("dd_MM_yyyy"), query = "", direccion = @"C:\BACKUP\";
-            
+            Directory.CreateDirectory(direccion);
+            string UsuarioLogeado = Session["UsuarioLogeado"].ToString();
+
+            string conectar = ConfigurationManager.ConnectionStrings["MatiasConnection"].ConnectionString;
+            SqlConnection con = new SqlConnection(conectar);
+
+            con.Open();
+
             if (!Directory.Exists(direccion))
             {
-                Directory.CreateDirectory(direccion);
-                string conectar = ConfigurationManager.ConnectionStrings["MatiasConnection"].ConnectionString;
-                SqlConnection con = new SqlConnection(conectar);
-
-
                 query = "BACKUP DATABASE AlpheusPlus TO DISK ='" + direccion + fecha_backup + ".bak'";
 
-                con.Open();
                 SqlCommand cmd = new SqlCommand(query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
-                con.Close();
+                dr.Close();
+
+                string mensaje;
+
+                cmd = new SqlCommand("SELECT Nombre, Apellido_Paterno FROM Usuario WHERE Usuario = '" + UsuarioLogeado + "'", con);
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    mensaje = dr["Nombre"].ToString() + " " + dr["Apellido_Paterno"].ToString();
+                    SesionLbl.Text = mensaje;
+                    dr.Close();
+                }
 
             }
             else
             {
-                string conectar = ConfigurationManager.ConnectionStrings["MatiasConnection"].ConnectionString;
-                SqlConnection con = new SqlConnection(conectar);
-
-
                 query = "BACKUP DATABASE AlpheusPlus TO DISK ='" + direccion + fecha_backup + ".bak'";
-                con.Open();
                 SqlCommand cmd = new SqlCommand(query, con);
                 SqlDataReader dr = cmd.ExecuteReader();
-                con.Close();
+                dr.Close();
+
+                string mensaje;
+
+                cmd = new SqlCommand("SELECT Nombre, Apellido_Paterno FROM Usuario WHERE Usuario = '" + UsuarioLogeado + "'", con);
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    mensaje = dr["Nombre"].ToString() + " " + dr["Apellido_Paterno"].ToString();
+                    SesionLbl.Text = mensaje;
+                    dr.Close();
+                }
+
+                
             }
+
+            //SesionLbl.Text = Sesion.Nombre(UsuarioLogeado);
+            
+
+            con.Close();
         }
 
         protected void Registrar_Click(object sender, EventArgs e)

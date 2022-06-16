@@ -89,7 +89,6 @@
     <Content Include="Login.aspx" />
     <Content Include="Registrar_Area.aspx" />
     <Content Include="Registro.aspx" />
-    <Content Include="Verificar.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm2.aspx" />
   </ItemGroup>
@@ -146,13 +145,7 @@
     <Compile Include="Registro.aspx.designer.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Verificar.aspx.cs">
-      <DependentUpon>Verificar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Verificar.aspx.designer.cs">
-      <DependentUpon>Verificar.aspx</DependentUpon>
-    </Compile>
+    <Compile Include="Sesion.cs" />
     <Compile Include="VerificarTrans.cs" />
     <Compile Include="WebForm2.aspx.cs">
       <DependentUpon>WebForm2.aspx</DependentUpon>

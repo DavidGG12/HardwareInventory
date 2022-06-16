@@ -17,6 +17,10 @@ namespace Alpheus_0._6
         protected void Page_Load(object sender, EventArgs e)
         {
             //COLOCAR QUE SOLO EL ADMINISTRADOR PUEDE INTERACTUAR CON ESTA INTERFAZ
+            Sesion nombre = new Sesion();
+            String UsuarioLogeado = Session["UsuarioLogeado"].ToString();
+
+            SesionLbl.Text = nombre.Nombre(UsuarioLogeado).ToString();
         }
 
         protected void AreaSubAreaListTxt_SelectedIndexChanged(object sender, EventArgs e)
