@@ -3,7 +3,7 @@
 }
 
 .barra {
-    background: #00ADEF;
+    background: #67c754;
     padding-top: 15px;
     padding-bottom: 15px;
     margin: 0;
@@ -54,14 +54,15 @@
 
     .barra-lateral .menu a {
         display: block;
-        padding: 20px;
+        padding: 30px;
         font-family: Roboto, sans-serif;
         font-weight: 500;
         border-bottom: 1px solid rgba(255, 255, 255, .1);
     }
 
         .barra-lateral .menu a:hover {
-            background-color: #003C5D;
+            background-color: #8ABF74;
+            color: #fff;
             text-decoration: none;
         }
 
@@ -81,13 +82,8 @@
 /*MAIN*/
 
 .main {
-    padding-top: 40px;
+    padding: 10px 50px 20px;
 }
-
-    .main .columna {
-        padding-left: 40px;
-        padding-right: 40px;
-    }
 
 
 /*mediaquerys*/
@@ -167,4 +163,77 @@
         font-size: 16px;
         overflow: visible;
     }
+}
+/*formulario*/
+
+.panel-body {
+    background-color: #FAFAFA;
+    border-radius: 3px;
+    color: #999;
+    padding: 20px;
+}
+
+    .panel-body .texto {
+        font-family: 'Overpass', sans-serif;
+        font-size: 100%;
+        color: #132a13;
+    }
+
+    .panel-body .h1 {
+        font-family: 'Overpass', sans-serif;
+        color: #808080;
+        text-align: center;
+    }
+
+.boton {
+    font-family: 'Overpass', sans-serif;
+    font-size: 110%;
+    color: #fff;
+    width: 50%;
+    height: 40px;
+    border: none;
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    background-color: #67c754;
+    margin-top: 10px;
+}
+
+.boton-editar {
+    font-family: 'Overpass', sans-serif;
+    font-size: 110%;
+    color: #fff;
+    width: 50%;
+    height: 40px;
+    border: none;
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    background-color: #67c754;
+    margin-top: 10px;
+}
+
+.Area{
+    max-width: 100px;
+
+}
+
+.boton-eliminar {
+    font-family: 'Overpass', sans-serif;
+    font-size: 110%;
+    color: #fff;
+    width: 50%;
+    height: 40px;
+    border: none;
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    background-color: #67c754;
+    margin-top: 10px;
+}
+
+.boton:hover {
+    background-color: #ddd8c4;
+    color: #45818E;
+    cursor: pointer;
 }
