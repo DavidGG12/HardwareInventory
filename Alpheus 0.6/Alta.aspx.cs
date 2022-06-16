@@ -15,6 +15,7 @@ namespace Alpheus_0._6
         List<Busqueda.GridV> Agregar = new List<Busqueda.GridV>();
         List<Busqueda.GridVDisp> AgregarDisp = new List<Busqueda.GridVDisp>();
         public Boolean bandera = false;
+        static string puto;
         VerificarTrans Verificar = new VerificarTrans();
         Dispositivos Dispositivos = new Dispositivos();
 
@@ -126,6 +127,7 @@ namespace Alpheus_0._6
                         }
                         else 
                         {
+                            Boolean bandera_teclado = false, bandera_monitor = false, bandera_mouse = false;
                             teclado = "NO";
                             monitor = "NO";
                             mouse = "NO";
@@ -133,32 +135,35 @@ namespace Alpheus_0._6
                             //IMPLEMENTAR SP DE CPU Y DISP
                             for (int i = 0; i <= rowsDisp; i++)
                             {
-                                if(Dispositivos.Mouse(DisGrid.SelectedRow.Cells[1].Text, NoControlTxt.Text).ToString() == "SI")
+                                if(DisGrid.SelectedRow.Cells[1].Text == "MOUSE")
                                 {
                                     mouse = DisGrid.SelectedRow.Cells[0].Text;
+                                    bandera_mouse = true;
                                     break;
                                 }
                             }
 
                             for (int i = 0; i <= rowsDisp; i++)
                             {
-                                if (Dispositivos.Monitor(DisGrid.SelectedRow.Cells[1].Text, NoControlTxt.Text).ToString() == "SI")
+                                if (DisGrid.SelectedRow.Cells[1].Text == "MONITOR")
                                 {
                                     monitor = DisGrid.SelectedRow.Cells[0].Text;
+                                    bandera_monitor = true;
                                     break;
                                 }
                             }
 
                             for (int i = 0; i <= rowsDisp; i++)
                             {
-                                if (Dispositivos.Teclado(DisGrid.SelectedRow.Cells[1].Text, NoControlTxt.Text).ToString() == "SI")
+                                if (DisGrid.SelectedRow.Cells[1].Text == "TECLADO")
                                 {
                                     teclado = DisGrid.SelectedRow.Cells[0].Text;
+                                    bandera_teclado = true;
                                     break;
                                 }
                             }
 
-                            if(teclado == "SI" || monitor == "SI" || mouse == "SI")
+                            if(bandera_teclado == true || bandera_monitor == true || bandera_mouse == true)
                             {
                                 cmd.Parameters.Add("@Mouse", SqlDbType.VarChar, 100).Value = mouse;
                                 cmd.Parameters.Add("@Teclado", SqlDbType.VarChar, 100).Value = teclado;
@@ -175,7 +180,7 @@ namespace Alpheus_0._6
                             }
                             else
                             {
-                                Errorl.Text = "Tienes que agregar el sp de disp" + DisGrid.SelectedRow.Cells[1].Text;
+                                Errorl.Text = "Tienes que agregar el sp de disp";
                             }
 
                             
