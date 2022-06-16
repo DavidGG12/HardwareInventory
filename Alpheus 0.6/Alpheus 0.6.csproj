@@ -72,6 +72,7 @@
   <ItemGroup>
     <Content Include="Alta.aspx" />
     <Content Include="BusquedaMantenimiento.aspx" />
+    <Content Include="Cambio.aspx" />
     <Content Include="computadoras.aspx" />
     <Content Include="css\all.css" />
     <Content Include="css\bootstrap-material-design.min.css" />
@@ -86,6 +87,7 @@
     <Content Include="img\icon.ico" />
     <Content Include="img\icon.png" />
     <Content Include="Login.aspx" />
+    <Content Include="Registrar_Area.aspx" />
     <Content Include="Registro.aspx" />
     <Content Include="Verificar.aspx" />
     <Content Include="Web.config" />
@@ -107,6 +109,13 @@
       <DependentUpon>BusquedaMantenimiento.aspx</DependentUpon>
     </Compile>
     <Compile Include="Busqueda.cs" />
+    <Compile Include="Cambio.aspx.cs">
+      <DependentUpon>Cambio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cambio.aspx.designer.cs">
+      <DependentUpon>Cambio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="computadoras.aspx.cs">
       <DependentUpon>computadoras.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -114,6 +123,7 @@
     <Compile Include="computadoras.aspx.designer.cs">
       <DependentUpon>computadoras.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Dispositivos.cs" />
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -122,6 +132,13 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registrar_Area.aspx.cs">
+      <DependentUpon>Registrar_Area.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registrar_Area.aspx.designer.cs">
+      <DependentUpon>Registrar_Area.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Registro.aspx.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -136,6 +153,7 @@
     <Compile Include="Verificar.aspx.designer.cs">
       <DependentUpon>Verificar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="VerificarTrans.cs" />
     <Compile Include="WebForm2.aspx.cs">
       <DependentUpon>WebForm2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

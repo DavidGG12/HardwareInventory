@@ -11,7 +11,7 @@ namespace Alpheus_0._6
 {
 
 
-    public partial class computadoras
+    public partial class Cambio
     {
 
         /// <summary>
@@ -33,76 +33,31 @@ namespace Alpheus_0._6
         protected global::System.Web.UI.WebControls.Label Error;
 
         /// <summary>
-        /// Control DispCPURadio.
+        /// Control CPU_DISP_RBtnList.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList DispCPURadio;
+        protected global::System.Web.UI.WebControls.RadioButtonList CPU_DISP_RBtnList;
 
         /// <summary>
-        /// Control NoSerie.
+        /// Control Folio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NoSerie;
+        protected global::System.Web.UI.WebControls.Label Folio;
 
         /// <summary>
-        /// Control NoSerieTxt.
+        /// Control FolioTxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NoSerieTxt;
-
-        /// <summary>
-        /// Control Area.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Area;
-
-        /// <summary>
-        /// Control AreaList.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList AreaList;
-
-        /// <summary>
-        /// Control AreaSql.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource AreaSql;
-
-        /// <summary>
-        /// Control Tipo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Tipo;
-
-        /// <summary>
-        /// Control TipoList.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList TipoList;
+        protected global::System.Web.UI.WebControls.TextBox FolioTxt;
 
         /// <summary>
         /// Control Nombre.
@@ -114,175 +69,103 @@ namespace Alpheus_0._6
         protected global::System.Web.UI.WebControls.Label Nombre;
 
         /// <summary>
-        /// Control NombreTxt.
+        /// Control NombreTxtList.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NombreTxt;
+        protected global::System.Web.UI.WebControls.DropDownList NombreTxtList;
 
         /// <summary>
-        /// Control Marca.
+        /// Control NombreSql.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Marca;
+        protected global::System.Web.UI.WebControls.SqlDataSource NombreSql;
 
         /// <summary>
-        /// Control MarcaTxt.
+        /// Control BuscarBtn.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox MarcaTxt;
+        protected global::System.Web.UI.WebControls.Button BuscarBtn;
 
         /// <summary>
-        /// Control Modelo.
+        /// Control AreaLbl.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Modelo;
+        protected global::System.Web.UI.WebControls.Label AreaLbl;
 
         /// <summary>
-        /// Control ModeloTxt.
+        /// Control MarcaLbl.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ModeloTxt;
+        protected global::System.Web.UI.WebControls.Label MarcaLbl;
 
         /// <summary>
-        /// Control RAM.
+        /// Control NoSerieLbl.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label RAM;
+        protected global::System.Web.UI.WebControls.Label NoSerieLbl;
 
         /// <summary>
-        /// Control RAMTxt.
+        /// Control InventarioLbl.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox RAMTxt;
+        protected global::System.Web.UI.WebControls.Label InventarioLbl;
 
         /// <summary>
-        /// Control DiscoDuro.
+        /// Control ModeloLbl.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DiscoDuro;
+        protected global::System.Web.UI.WebControls.Label ModeloLbl;
 
         /// <summary>
-        /// Control DiscoTxt.
+        /// Control TipoMantenimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DiscoTxt;
+        protected global::System.Web.UI.WebControls.Label TipoMantenimiento;
 
         /// <summary>
-        /// Control SO.
+        /// Control TipoMantenimientoRBtnList.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label SO;
+        protected global::System.Web.UI.WebControls.RadioButtonList TipoMantenimientoRBtnList;
 
         /// <summary>
-        /// Control SOText.
+        /// Control OtroTxt.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox SOText;
-
-        /// <summary>
-        /// Control Office.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Office;
-
-        /// <summary>
-        /// Control OfficeTxt.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox OfficeTxt;
-
-        /// <summary>
-        /// Control Procesador.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Procesador;
-
-        /// <summary>
-        /// Control ProcesadorTxt.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox ProcesadorTxt;
-
-        /// <summary>
-        /// Control NoInventario.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label NoInventario;
-
-        /// <summary>
-        /// Control NoInventarioTxt.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NoInventarioTxt;
-
-        /// <summary>
-        /// Control Estatus.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Estatus;
-
-        /// <summary>
-        /// Control EstatusList.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList EstatusList;
+        protected global::System.Web.UI.WebControls.TextBox OtroTxt;
 
         /// <summary>
         /// Control Observacion.
@@ -303,21 +186,165 @@ namespace Alpheus_0._6
         protected global::System.Web.UI.WebControls.TextBox ObservacionTxt;
 
         /// <summary>
-        /// Control Registrar.
+        /// Control NoSerie1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Registrar;
+        protected global::System.Web.UI.WebControls.Label NoSerie1;
 
         /// <summary>
-        /// Control Actualizar.
+        /// Control NoSerieListCPU.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Actualizar;
+        protected global::System.Web.UI.WebControls.DropDownList NoSerieListCPU;
+
+        /// <summary>
+        /// Control NoSerieSql.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource NoSerieSql;
+
+        /// <summary>
+        /// Control NoSerie2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NoSerie2;
+
+        /// <summary>
+        /// Control NoSerieListDisp.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList NoSerieListDisp;
+
+        /// <summary>
+        /// Control Entrega.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Entrega;
+
+        /// <summary>
+        /// Control Retira.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Retira;
+
+        /// <summary>
+        /// Control TipoLblEntrega.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TipoLblEntrega;
+
+        /// <summary>
+        /// Control TipoLblRetiro.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TipoLblRetiro;
+
+        /// <summary>
+        /// Control MarcaLblEntrega.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MarcaLblEntrega;
+
+        /// <summary>
+        /// Control MarcaLblRetiro.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MarcaLblRetiro;
+
+        /// <summary>
+        /// Control ModeloLblEntrega.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ModeloLblEntrega;
+
+        /// <summary>
+        /// Control ModeloLblRetiro.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ModeloLblRetiro;
+
+        /// <summary>
+        /// Control NoSerieLblEntrega.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NoSerieLblEntrega;
+
+        /// <summary>
+        /// Control NoSerieLblRetiro.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NoSerieLblRetiro;
+
+        /// <summary>
+        /// Control NoInventarioLblEntrega.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NoInventarioLblEntrega;
+
+        /// <summary>
+        /// Control NoInventarioLblRetiro.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NoInventarioLblRetiro;
+
+        /// <summary>
+        /// Control RegistrarBtn.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button RegistrarBtn;
     }
 }

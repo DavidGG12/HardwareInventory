@@ -6,7 +6,7 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/estiloadm.css" />
     <title></title>
 </head>
@@ -50,9 +50,12 @@
                 <div class="row justify-content-center align-content-center text-center">
                     <!--Tabla va aquí-->
                     <div class="columna col-lg-6">
+                        <br />
+                        <asp:Label ID="Errorl" runat="server" Text="" ></asp:Label>
+                        <br />
                         &nbsp;<asp:SqlDataSource ID="Area" runat="server" ConnectionString="<%$ ConnectionStrings:MatiasConnection %>" SelectCommand="SELECT [Subarea] FROM [Subareas]"></asp:SqlDataSource>
                         <label>No. de Control Interno: </label>
-                        <asp:TextBox ID="ResguardatarioTxt" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="NoControlTxt" runat="server"></asp:TextBox>
                         <br />
                         <br />
                         <label>Área de destino: </label>
@@ -104,7 +107,7 @@
                                 </asp:GridView>
                             </div>
                             <div>
-                                <asp:GridView ID="DisGrid" runat="server" AutoGenerateColumns="False" OnRowCommand="QuitarBtn">
+                                <asp:GridView ID="DisGrid" runat="server" AutoGenerateColumns="False" OnRowCommand="QuitarBtnDisp">
                                     <Columns>
                                         <asp:TemplateField HeaderText="No Serie"></asp:TemplateField>
                                         <asp:TemplateField HeaderText="Tipo"></asp:TemplateField>
