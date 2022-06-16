@@ -6,8 +6,19 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!--titulo de la pestaña-->
+    <title>Administrador</title>
+    <!--estilos para iconos font awesome-->
+    <link href="font-6/css/all.css" rel="stylesheet" />
+     <!--Conexión a la hoja de estilos-->
     <link rel="stylesheet" href="css/estiloadm.css" />
+    <!--icono de la pestaña-->
+    <link rel="icon" type="image/ico" href="img/icon.ico" />
+    <!--Estilos de Boostrap-->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+     <!--Fuentes de texto en la pagina-->
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet"/> 
+    <link href="https://fonts.googleapis.com/css?family=Overpass&display=swap" rel="stylesheet"/>
     <title></title>
 </head>
 <body>
@@ -21,7 +32,7 @@
                 <ul class="navbar-nav mr-auto">
                     <li>
                         <!--Menu Sesión-->
-                        
+                        <asp:Label ID="Sesion" runat="server" Text="Usuario"></asp:Label>                  
                         <a href="#" class="px-3 text-light perfil dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-circle user"></i></a>
 
                         <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
@@ -39,10 +50,13 @@
         <div class="row">
             <div class="barra-lateral col-12 col-sm-auto">
                 <nav class="menu d-flex d-sm-block justify-content-center flex-wrap">
-                    <a href="#"><i class="fas fa-desktop"></i><span>CPU</span></a>
-                    <a href="#"><i class="fas fa-mouse"></i><span>Dispositivo</span></a>
-                    <a href="#"><i class="fas fa-users"></i><span>Registro Usuario</span></a>
-                    <a href="#"><i class="fas fa-map-marker-alt"></i><span>Áreas</span></a>
+                    <a href="computadoras.aspx"><i class="fas fa-desktop"></i>  Registro de CPU/Dispositivos</a>
+                    <a href="Alta.aspx"><i class="fas fa-mouse"></i>  Transferencia CPU/Dispositivos</a>
+                    <a href="Registrar_Area.aspx"><i class="fas fa-map-marker-alt"></i>  Registro de Áreas</a>
+                    <a href="Cambio.aspx"><i class="fa-solid fa-arrow-right-arrow-left"></i>  Cambio de CPU/Dispositivo</a>
+                    <a href="Registro.aspx"><i class="fas fa-users"></i>  Registro de Usuario</a>
+                    <a href="#"><i class="fa-solid fa-bars"></i>  Reporte de Mantenimiento</a>
+                    <a href="#"><i class="fa-solid fa-pen-to-square"></i> Edición CPU/Usuario</a>
                     
                 </nav>
             </div>
