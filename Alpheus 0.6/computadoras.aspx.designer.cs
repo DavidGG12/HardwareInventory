@@ -24,6 +24,15 @@ namespace Alpheus_0._6
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// Control Sesion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Sesion;
+
+        /// <summary>
         /// Control Error.
         /// </summary>
         /// <remarks>
@@ -312,12 +321,21 @@ namespace Alpheus_0._6
         protected global::System.Web.UI.WebControls.Button Registrar;
 
         /// <summary>
-        /// Control Actualizar.
+        /// Control Editar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Actualizar;
+        protected global::System.Web.UI.WebControls.Button Editar;
+
+        /// <summary>
+        /// Control Eliminar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Eliminar;
     }
 }

@@ -157,6 +157,8 @@ namespace Alpheus_0._6
                         NoInventario = NoInventarioTxt.Text;
                     }
 
+                    
+
                     cmd.Parameters.Add("@NoSerie", SqlDbType.VarChar, 100).Value = NoSerieTxt.Text;
                     cmd.Parameters.Add("@Area", SqlDbType.VarChar, 100).Value = AreaList.Text;
                     cmd.Parameters.Add("@Tipo", SqlDbType.VarChar, 100).Value = TipoList.Text;
