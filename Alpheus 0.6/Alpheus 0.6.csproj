@@ -84,13 +84,16 @@
     <Content Include="css\normalize.css" />
     <Content Include="css\sweetalert2.min.css" />
     <Content Include="Edicion.aspx" />
+    <Content Include="entregaRetiro.aspx" />
     <Content Include="font-6\css\all.css" />
+    <Content Include="imagen\photo_2022-06-16_00-30-09.jpg" />
     <Content Include="img\icon.ico" />
     <Content Include="img\icon.png" />
     <Content Include="Login.aspx" />
     <Content Include="Mantenimiento.aspx" />
     <Content Include="Registrar_Area.aspx" />
     <Content Include="Registro.aspx" />
+    <Content Include="soporte_solicitud.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm2.aspx" />
   </ItemGroup>
@@ -132,6 +135,13 @@
     <Compile Include="Edicion.aspx.designer.cs">
       <DependentUpon>Edicion.aspx</DependentUpon>
     </Compile>
+    <Compile Include="entregaRetiro.aspx.cs">
+      <DependentUpon>entregaRetiro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="entregaRetiro.aspx.designer.cs">
+      <DependentUpon>entregaRetiro.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -162,6 +172,13 @@
       <DependentUpon>Registro.aspx</DependentUpon>
     </Compile>
     <Compile Include="Sesion.cs" />
+    <Compile Include="soporte_solicitud.aspx.cs">
+      <DependentUpon>soporte_solicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="soporte_solicitud.aspx.designer.cs">
+      <DependentUpon>soporte_solicitud.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VerificarTrans.cs" />
     <Compile Include="WebForm2.aspx.cs">
       <DependentUpon>WebForm2.aspx</DependentUpon>
