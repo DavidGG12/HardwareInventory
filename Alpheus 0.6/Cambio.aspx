@@ -54,17 +54,25 @@
                     <a href="Registrar_Area.aspx"><i class="fas fa-map-marker-alt"></i>  Registro de Áreas</a>
                     <a href="Cambio.aspx"><i class="fa-solid fa-arrow-right-arrow-left"></i>  Cambio de CPU/Dispositivo</a>
                     <a href="Registro.aspx"><i class="fas fa-users"></i>  Registro de Usuario</a>
-                    <a href="#"><i class="fa-solid fa-bars"></i>  Reporte de Mantenimiento</a>
+                    <a href="Mantenimiento.aspx"><i class="fa-solid fa-bars"></i>  Reporte de Mantenimiento</a>
                     <a href="Edicion.aspx"><i class="fa-solid fa-pen-to-square"></i> Edición CPU/Usuario</a>
                     
                 </nav>
             </div>
             <main class="main col">
-                <div class="row justify-content-center align-content-center text-center">
+                <asp:Label ID="Error" runat="server" Text="" ></asp:Label>
+                        <br />
+                <div class="panel-body">
+                    <h4></h4>
+                    <div class="row">
+
+                
+              
+
+
                     <!--Tabla va aquí-->
                     <div class="columna col-lg-6">
-                        <asp:Label ID="Error" runat="server" Text="" ></asp:Label>
-                        <br />
+                      
                         <asp:RadioButtonList ID="CPU_DISP_RBtnList" runat="server" AutoPostBack="true" OnSelectedIndexChanged="CPU_DISP_RBtnList_SelectedIndexChanged" RepeatDirection="Horizontal">
                             <asp:ListItem Selected="True">Dispositivos</asp:ListItem>
                             <asp:ListItem>CPU</asp:ListItem>
@@ -130,7 +138,7 @@
                         <br />
                         <asp:Button ID="RegistrarBtn" runat="server" Text="Registrar" OnClick="RegistrarBtn_Click" />
                     </div>
-                </div>
+               
             </main>
         </div>
     </div>

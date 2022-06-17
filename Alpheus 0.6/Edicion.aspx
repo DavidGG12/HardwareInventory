@@ -54,7 +54,7 @@
                     <a href="Registrar_Area.aspx"><i class="fas fa-map-marker-alt"></i>  Registro de Áreas</a>
                     <a href="Cambio.aspx"><i class="fa-solid fa-arrow-right-arrow-left"></i>  Cambio de CPU/Dispositivo</a>
                     <a href="Registro.aspx"><i class="fas fa-users"></i>  Registro de Usuario</a>
-                    <a href="#"><i class="fa-solid fa-bars"></i>  Reporte de Mantenimiento</a>
+                    <a href="Mantenimiento.aspx"><i class="fa-solid fa-bars"></i>  Reporte de Mantenimiento</a>
                     <a href="Edicion.aspx"><i class="fa-solid fa-pen-to-square"></i> Edición CPU/Usuario</a>
                     
                 </nav>
@@ -65,26 +65,27 @@
                 <!--estilo de boostrap para poner formulario doble/agruparlo-->
                         <div class="panel-body">
                             <legend>Actualizar Datos: </legend>
+
                             <div class="row">
                                 <div class="col-md-4 col-md-offset-1">
                                     <div class="form-group">
                                         <!--Nombre-->
                                         <asp:Label ID="NombreUsuario" runat="server" CssClass="texto" Text="Nombre: " />
-                                            <asp:TextBox ID="NombreUsuarioTxt" runat="server" Text=""></asp:TextBox>
+                                            <asp:TextBox ID="NombreUsuarioTxt" runat="server" CssClass="input" Text=""></asp:TextBox>
                                     </div>
                                 </div>
                              <div class="col-md-4 col-md-offset-1">
                                  <div class="form-group">
                                      <!--Apellido Paterno-->
                                      <asp:Label ID="ApellidoP" runat="server" CssClass="texto"  Text="Apellido Paterno: " />
-                                        <asp:TextBox ID="ApellidoPTxt" runat="server" Text=""></asp:TextBox>
+                                        <asp:TextBox ID="ApellidoPTxt" runat="server" CssClass="input" Text=""></asp:TextBox>
                                  </div>
                              </div>
                              <div class="col-md-4 col-md-offset-1">
                                  <div class="form-group">
                                      <!--Apellido Materno-->
                                      <asp:Label ID="ApellidoM" runat="server" CssClass="texto"  Text="Apellido Materno: " />
-                                        <asp:TextBox ID="ApellidoMTxt" runat="server" Text=""></asp:TextBox>
+                                        <asp:TextBox ID="ApellidoMTxt" runat="server" CssClass="input" Text=""></asp:TextBox>
                                  </div>
                              </div>
                         </div>
@@ -94,7 +95,7 @@
                                  <div class="form-group">
                                      <!--Usario-->
                                      <asp:Label ID="Usuario" runat="server" CssClass="texto"  Text="Usuario: " />
-                                     <asp:Label ID="UsuarioLbl" runat="server" Text=""></asp:Label>
+                                     <asp:Label ID="UsuarioLbl" runat="server" CssClass="input" Text=""></asp:Label>
                                  </div>
                              </div>
 
@@ -102,7 +103,7 @@
                                 <div class="form-group">
                                     <!--Contraseña-->
                                     <asp:Label ID="Contraseña" runat="server"  CssClass="texto" Text="Contraseña: " />
-                                    <asp:TextBox ID="ContraseñaTxt" runat="server" TextMode="Password"></asp:TextBox>
+                                    <asp:TextBox ID="ContraseñaTxt" runat="server" CssClass="input" TextMode="Password"></asp:TextBox>
                                 </div>
                             </div>
 
@@ -110,17 +111,17 @@
                                 <div class="form-group">
                                     <!--Revalidar Contraseña-->
                                     <asp:Label ID="ContraseñaRev" runat="server" CssClass="texto"  Text="Revalida Contraseña: " />
-                                    <asp:TextBox ID="ContraseñaRevTxt" runat="server" TextMode="Password"></asp:TextBox>
+                                    <asp:TextBox ID="ContraseñaRevTxt" runat="server" CssClass="input" TextMode="Password"></asp:TextBox>
                                 </div>
                             </div>
                        </div>
 
-                             <div class="row">
+                             
                                <div class="col-md-4 col-md-offset-1">
                                <div class="form-group">
                                    <!--botón registrar-->
                                   <asp:Button ID="ActualizarUsuario" runat="server" Text="Actualizar" CssClass="boton" OnClick="ActualizarUsuario_Click"  />
-                               </div>
+                              
                               </div>
                             </div>     
                 
@@ -164,7 +165,7 @@
                                  <div class="form-group">
                                      <!--Nombre del dispositivo-->
                                      <asp:Label ID="Nombre" runat="server" CssClass="texto"  Text="Nombre del dispositivo: " />
-                                     <asp:TextBox ID="NombreTxt" runat="server" Enabled="False"></asp:TextBox>
+                                     <asp:TextBox ID="NombreTxt" runat="server" CssClass="input" Enabled="False"></asp:TextBox>
                                  </div>
                              </div>
 
@@ -172,7 +173,7 @@
                                 <div class="form-group">
                                     <!--Nombre de la marca-->
                                     <asp:Label ID="Marca" runat="server"  CssClass="texto" Text="Marca del dispositivo: " />
-                                    <asp:TextBox ID="MarcaTxt" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="MarcaTxt" CssClass="input" runat="server"></asp:TextBox>
                                 </div>
                             </div>
 
@@ -180,7 +181,7 @@
                                 <div class="form-group">
                                     <!--Modelo del dispositivo-->
                                     <asp:Label ID="Modelo" runat="server" CssClass="texto"  Text="Modelo del dispositivo: " />
-                                    <asp:TextBox ID="ModeloTxt" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="ModeloTxt" CssClass="input" runat="server"></asp:TextBox>
                                 </div>
                             </div>
                        </div>
@@ -190,7 +191,7 @@
                                <div class="form-group">
                                    <!--Modelo del dispositivo-->
                                    <asp:Label ID="RAM" runat="server" CssClass="texto" Text="Tamaño en RAM(gb): " />
-                                   <asp:TextBox ID="RAMTxt" runat="server" TextMode="Number" Enabled="False"></asp:TextBox>
+                                   <asp:TextBox ID="RAMTxt" runat="server" CssClass="input" TextMode="Number" Enabled="False"></asp:TextBox>
                                </div>
                            </div>
 
@@ -198,7 +199,7 @@
                                <div class="form-group">
                                    <!--Tamaño Disco Duro del dispositivo-->
                                    <asp:Label ID="DiscoDuro" runat="server" CssClass="texto" Text="Tamaño en disco duro(gb): " />
-                                   <asp:TextBox ID="DiscoTxt" runat="server" TextMode="Number" Enabled="False"></asp:TextBox>
+                                   <asp:TextBox ID="DiscoTxt" runat="server" CssClass="input" TextMode="Number" Enabled="False"></asp:TextBox>
                                </div>
                            </div>
 
@@ -206,7 +207,7 @@
                                <div class="form-group">
                                    <!--Sistema Oprativo del dispositivo-->
                                     <asp:Label ID="SO" runat="server" CssClass="texto" Text="Sistema Operativo del dispositivo: " />
-                                    <asp:TextBox ID="SOText" runat="server" Enabled="False"></asp:TextBox>
+                                    <asp:TextBox ID="SOText" runat="server" CssClass="input" Enabled="False"></asp:TextBox>
                            </div>
                         </div>
                      </div>
@@ -216,7 +217,7 @@
                                <div class="form-group">
                                    <!--Office del dispositivo-->
                                        <asp:Label ID="Office" runat="server" CssClass="texto" Text="Office integrado: " />
-                                       <asp:TextBox ID="OfficeTxt" runat="server" Enabled="False"></asp:TextBox>
+                                       <asp:TextBox ID="OfficeTxt" runat="server" CssClass="input" Enabled="False"></asp:TextBox>
                                    </div>
                               </div>
 
@@ -224,7 +225,7 @@
                                <div class="form-group">
                                    <!--Procesador del dispositivo-->
                                    <asp:Label ID="Procesador" runat="server" CssClass="texto"  Text="Procesador integrado: " />
-                                   <asp:TextBox ID="ProcesadorTxt" runat="server" Enabled="False"></asp:TextBox> 
+                                   <asp:TextBox ID="ProcesadorTxt" runat="server" CssClass="input" Enabled="False"></asp:TextBox> 
                                    </div>
                              </div>
 
@@ -232,7 +233,7 @@
                                <div class="form-group">
                                    <!--No. de Inventario del dispositivo-->
                                    <asp:Label ID="NoInventario" runat="server" CssClass="texto" Text="No. indicado de Inventario: " />
-                                   <asp:TextBox ID="NoInventarioTxt" runat="server"></asp:TextBox>
+                                   <asp:TextBox ID="NoInventarioTxt" CssClass="input" runat="server"></asp:TextBox>
                                    </div>
                              </div>
                          </div>
@@ -241,7 +242,7 @@
                                <div class="form-group">
                                    <!--Office del dispositivo-->
                                    <asp:Label ID="Observacion" runat="server" CssClass="texto" Text="Observaciones: " />
-                                   <asp:TextBox ID="ObservacionTxt" runat="server"></asp:TextBox>
+                                   <asp:TextBox ID="ObservacionTxt" CssClass="input" runat="server"></asp:TextBox>
                             </div>
                           </div>
                         </div>

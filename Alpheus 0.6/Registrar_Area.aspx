@@ -31,7 +31,7 @@
                 <ul class="navbar-nav mr-auto">
                     <li>
                         <!--Menu Sesión-->
-                        <asp:Label ID="SesionLbl" runat="server" Text="Usuario"></asp:Label>                  
+                        <asp:Label ID="SesionLbl" runat="server"  Text="Usuario"></asp:Label>                  
                         <a href="#" class="px-3 text-light perfil dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-circle user"></i></a>
 
                         <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
@@ -54,52 +54,63 @@
                     <a href="Registrar_Area.aspx"><i class="fas fa-map-marker-alt"></i>  Registro de Áreas</a>
                     <a href="Cambio.aspx"><i class="fa-solid fa-arrow-right-arrow-left"></i>  Cambio de CPU/Dispositivo</a>
                     <a href="Registro.aspx"><i class="fas fa-users"></i>  Registro de Usuario</a>
-                    <a href="#"><i class="fa-solid fa-bars"></i>  Reporte de Mantenimiento</a>
+                    <a href="Mantenimiento.aspx"><i class="fa-solid fa-bars"></i>  Reporte de Mantenimiento</a>
                     <a href="Edicion.aspx"><i class="fa-solid fa-pen-to-square"></i> Edición CPU/Usuario</a>
                     
                 </nav>
             </div>
             <main class="main col">
-                <div class="row justify-content-center align-content-center text-center">
-                    <!--Tabla va aquí-->
-                    <div class="columna col-lg-6">
-                        <asp:Label ID="Error" runat="server" Text=""></asp:Label>
-                        <br />
-                        <asp:RadioButtonList ID="AreaSubAreaListTxt" runat="server" AutoPostBack="true" OnSelectedIndexChanged="AreaSubAreaListTxt_SelectedIndexChanged" RepeatDirection="Horizontal">
-                            <asp:ListItem Selected="True">Área</asp:ListItem>
-                            <asp:ListItem>Subárea</asp:ListItem>
-                        </asp:RadioButtonList>
-                        <br />
-                        <legend>Registrar Área:</legend>
-                        <br />
-                        <asp:Label ID="Area" runat="server" Text="Área: "></asp:Label>
-                        <br />
-                        <asp:RadioButtonList ID="AdminLabRBtnList" runat="server" RepeatDirection="Horizontal">
-                            <asp:ListItem>Administrativos</asp:ListItem>
-                            <asp:ListItem>Laboratorio</asp:ListItem>
-                            <asp:ListItem>Otro</asp:ListItem>
-                        </asp:RadioButtonList>
-                        <asp:TextBox ID="AreaTxt" runat="server"></asp:TextBox>
-                        <br />
-                        <legend>Registrar Subárea: </legend>
-                        <br />
-                        <asp:Label ID="AreaSub" runat="server" Text="Área: "></asp:Label>
-                        <asp:DropDownList ID="AreaListTxt" runat="server" DataSourceID="AreaSql" DataTextField="Area" DataValueField="Area" Enabled="False"></asp:DropDownList>
-                        <asp:SqlDataSource ID="AreaSql" runat="server" ConnectionString="<%$ ConnectionStrings:MatiasConnection %>" SelectCommand="SELECT [Area] FROM [Areas]"></asp:SqlDataSource>
-                        <br />
-                        <asp:Label ID="SubArea" runat="server" Text="Subárea: "></asp:Label>
-                        <asp:TextBox ID="SubAreaTxt" runat="server" Enabled="False"></asp:TextBox>
-                        <br />
-                        <br />
-                        <asp:Button ID="Registrar" runat="server" Text="Registrar" OnClick="Registrar_Click" />
-                    </div>
+              <asp:Label ID="Error" runat="server" Text=""></asp:Label>
+                <div class="panel-body">
+                    <h4>Registrar Área:</h4>
+                            <div class="row">
+                                <div class="col-md-4 col-md-offset-1">
+                                    <div class="form-group">
+                                        <!--Tabla va aquí-->
+                                        <asp:RadioButtonList ID="AreaSubAreaListTxt" runat="server" CssClass="radio" AutoPostBack="true" OnSelectedIndexChanged="AreaSubAreaListTxt_SelectedIndexChanged" RepeatDirection="Horizontal">
+                                            <asp:ListItem Selected="True">Área</asp:ListItem>
+                                            <asp:ListItem>Subárea</asp:ListItem>
+                                        </asp:RadioButtonList>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 col-md-offset-1">
+                                    <div class="form-group">
+                                        <asp:Label ID="Area" runat="server" CssClass="" Text="Tipo Área: "></asp:Label>
+                                        <asp:RadioButtonList ID="AdminLabRBtnList" CssClass="" runat="server" RepeatDirection="Horizontal" OnSelectedIndexChanged="AdminLabRBtnList_SelectedIndexChanged">
+                                            <asp:ListItem>Administrativos</asp:ListItem>
+                                            <asp:ListItem>Laboratorio</asp:ListItem>
+                                            <asp:ListItem>Otro</asp:ListItem>
+                                        </asp:RadioButtonList>
+                                    </div>
+                                </div>
+                             </div>
+
+                        <asp:TextBox ID="AreaTxt" CssClass="texto" runat="server"></asp:TextBox>
+                        <h4>Registrar Subárea: </h4>
+                        
+                    <div class="row">
+                       <div class="col-md-4 col-md-offset-1">
+                          <div class="form-group">
+                              <asp:Label ID="AreaSub" runat="server" CssClass="texto" Text="Área: "></asp:Label>
+                              <asp:DropDownList ID="AreaListTxt" runat="server" CssClass="input" DataSourceID="AreaSql" DataTextField="Area" DataValueField="Area" Enabled="False"></asp:DropDownList>
+                              <asp:SqlDataSource ID="AreaSql" runat="server" ConnectionString="<%$ ConnectionStrings:MatiasConnection %>" SelectCommand="SELECT [Area] FROM [Areas]"></asp:SqlDataSource>
+                          </div>
+                      </div>
+                        
+                       <div class="col-md-4 col-md-offset-1">
+                          <div class="form-group">
+                                <asp:Label ID="SubArea" runat="server" CssClass="texto" Text="Subárea: "></asp:Label>
+                                <asp:TextBox ID="SubAreaTxt" runat="server" CssClass="input" Enabled="False"></asp:TextBox>
+                          </div>
+                      </div>
+                    </div>       
+                        <asp:Button ID="Registrar" runat="server" CssClass="boton" Text="Registrar" OnClick="Registrar_Click" />
                 </div>
             </main>
         </div>
     </div>
-
-
-
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

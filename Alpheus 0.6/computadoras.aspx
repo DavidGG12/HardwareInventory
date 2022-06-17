@@ -58,7 +58,7 @@
                     <a href="Registrar_Area.aspx"><i class="fas fa-map-marker-alt"></i>  Registro de Áreas</a>
                     <a href="Cambio.aspx"><i class="fa-solid fa-arrow-right-arrow-left"></i>  Cambio de CPU/Dispositivo</a>
                     <a href="Registro.aspx"><i class="fas fa-users"></i>  Registro de Usuario</a>
-                    <a href="#"><i class="fa-solid fa-bars"></i>  Reporte de Mantenimiento</a>
+                    <a href="Mantenimiento.aspx"><i class="fa-solid fa-bars"></i>  Reporte de Mantenimiento</a>
                     <a href="Edicion.aspx"><i class="fa-solid fa-pen-to-square"></i> Edición CPU/Usuario</a>
                     
                 </nav>
@@ -71,7 +71,7 @@
                         <!--estilo de boostrap para poner formulario doble/agruparlo-->
                         <div class="panel-body">
                             <h1 class="h1">Administrador</h1>
-                             <p>Elija el formulario a rellenar.</p>
+                             <p>Elija el dispositivo a registrar.</p>
                             <div class="row">
                                 <div class="col-md-4 col-md-offset-1">
                                 <div class="form-group">
@@ -90,7 +90,7 @@
                                     <div class="form-group">
                                         <!--No. serie-->
                                         <asp:Label ID="NoSerie" runat="server" CssClass="texto" Text="No. Serie: " />
-                                            <asp:TextBox ID="NoSerieTxt" runat="server"></asp:TextBox>
+                                            <asp:TextBox ID="NoSerieTxt" CssClass="input" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
 
@@ -98,7 +98,7 @@
                                     <div class="form-group">
                                         <!--Área en función-->
                                         <asp:Label ID="Area" runat="server" CssClass="texto"  Text="Area destinada: " />
-                                        <asp:DropDownList ID="AreaList" runat="server" CssClass="Area" DataTextField="Subarea" DataValueField="Subarea" DataSourceID="AreaSql"></asp:DropDownList>
+                                        <asp:DropDownList ID="AreaList" runat="server" CssClass="input"  DataTextField="Subarea" DataValueField="Subarea" DataSourceID="AreaSql"></asp:DropDownList>
                                         <asp:SqlDataSource ID="AreaSql" runat="server" ConnectionString="<%$ ConnectionStrings:MatiasConnection %>" SelectCommand="SELECT [Subarea] FROM [Subareas]"></asp:SqlDataSource>                       
                                     </div>
                                 </div>
@@ -108,7 +108,7 @@
                                  <div class="form-group">
                                      <!--Tipo de dispositivo-->
                                      <asp:Label ID="Tipo" runat="server" CssClass="texto"  Text="Tipo de dispositivo: " />
-                                        <asp:DropDownList ID="TipoList" runat="server">
+                                        <asp:DropDownList ID="TipoList" CssClass="input" runat="server">
                                         <asp:ListItem>LAPTOP</asp:ListItem>
                                         <asp:ListItem>PC</asp:ListItem>
                                             <asp:ListItem>MOUSE</asp:ListItem>
@@ -124,7 +124,7 @@
                                  <div class="form-group">
                                      <!--Nombre del dispositivo-->
                                      <asp:Label ID="Nombre" runat="server" CssClass="texto"  Text="Nombre del dispositivo: " />
-                                     <asp:TextBox ID="NombreTxt" runat="server" Enabled="False"></asp:TextBox>
+                                     <asp:TextBox ID="NombreTxt" runat="server" CssClass="input" Enabled="False"></asp:TextBox>
                                  </div>
                              </div>
 
@@ -132,7 +132,7 @@
                                 <div class="form-group">
                                     <!--Nombre de la marca-->
                                     <asp:Label ID="Marca" runat="server"  CssClass="texto" Text="Marca del dispositivo: " />
-                                    <asp:TextBox ID="MarcaTxt" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="MarcaTxt" CssClass="input" runat="server"></asp:TextBox>
                                 </div>
                             </div>
 
@@ -140,7 +140,7 @@
                                 <div class="form-group">
                                     <!--Modelo del dispositivo-->
                                     <asp:Label ID="Modelo" runat="server" CssClass="texto"  Text="Modelo del dispositivo: " />
-                                    <asp:TextBox ID="ModeloTxt" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="ModeloTxt" CssClass="input" runat="server"></asp:TextBox>
                                 </div>
                             </div>
                        </div>
@@ -150,7 +150,7 @@
                                <div class="form-group">
                                    <!--Modelo del dispositivo-->
                                    <asp:Label ID="RAM" runat="server" CssClass="texto" Text="Tamaño en RAM(gb): " />
-                                   <asp:TextBox ID="RAMTxt" runat="server" TextMode="Number" Enabled="False"></asp:TextBox>
+                                   <asp:TextBox ID="RAMTxt" runat="server" CssClass="input" TextMode="Number" Enabled="False"></asp:TextBox>
                                </div>
                            </div>
 
@@ -158,7 +158,7 @@
                                <div class="form-group">
                                    <!--Tamaño Disco Duro del dispositivo-->
                                    <asp:Label ID="DiscoDuro" runat="server" CssClass="texto" Text="Tamaño en disco duro(gb): " />
-                                   <asp:TextBox ID="DiscoTxt" runat="server" TextMode="Number" Enabled="False"></asp:TextBox>
+                                   <asp:TextBox ID="DiscoTxt" runat="server" CssClass="input" TextMode="Number" Enabled="False"></asp:TextBox>
                                </div>
                            </div>
 
@@ -166,7 +166,7 @@
                                <div class="form-group">
                                    <!--Sistema Oprativo del dispositivo-->
                                     <asp:Label ID="SO" runat="server" CssClass="texto" Text="Sistema Operativo del dispositivo: " />
-                                    <asp:TextBox ID="SOText" runat="server" Enabled="False"></asp:TextBox>
+                                    <asp:TextBox ID="SOText" runat="server"  CssClass="input" Enabled="False"></asp:TextBox>
                            </div>
                         </div>
                      </div>
@@ -176,7 +176,7 @@
                                <div class="form-group">
                                    <!--Office del dispositivo-->
                                        <asp:Label ID="Office" runat="server" CssClass="texto" Text="Office integrado: " />
-                                       <asp:TextBox ID="OfficeTxt" runat="server" Enabled="False"></asp:TextBox>
+                                       <asp:TextBox ID="OfficeTxt" runat="server" CssClass="input" Enabled="False"></asp:TextBox>
                                    </div>
                               </div>
 
@@ -184,7 +184,7 @@
                                <div class="form-group">
                                    <!--Procesador del dispositivo-->
                                    <asp:Label ID="Procesador" runat="server" CssClass="texto"  Text="Procesador integrado: " />
-                                   <asp:TextBox ID="ProcesadorTxt" runat="server" Enabled="False"></asp:TextBox> 
+                                   <asp:TextBox ID="ProcesadorTxt" runat="server" CssClass="input" Enabled="False"></asp:TextBox> 
                                    </div>
                              </div>
 
@@ -192,7 +192,7 @@
                                <div class="form-group">
                                    <!--No. de Inventario del dispositivo-->
                                    <asp:Label ID="NoInventario" runat="server" CssClass="texto" Text="No. indicado de Inventario: " />
-                                   <asp:TextBox ID="NoInventarioTxt" runat="server"></asp:TextBox>
+                                   <asp:TextBox ID="NoInventarioTxt" CssClass="input" runat="server"></asp:TextBox>
                                    </div>
                              </div>
                          </div>
@@ -202,7 +202,7 @@
                                <div class="form-group">
                                    <!--Estatus del dispositivo-->
                                    <asp:Label ID="Estatus" runat="server" CssClass="texto" Text="Estatus del dispositivo: " />
-                                    <asp:DropDownList ID="EstatusList" runat="server">
+                                    <asp:DropDownList ID="EstatusList" CssClass="input" runat="server">
                                         <asp:ListItem>BAJA</asp:ListItem>
                                         <asp:ListItem>EN REVISION</asp:ListItem>
                                         <asp:ListItem>REVISADO</asp:ListItem>
@@ -214,7 +214,7 @@
                                <div class="form-group">
                                    <!--Office del dispositivo-->
                                    <asp:Label ID="Observacion" runat="server" CssClass="texto" Text="Observaciones: " />
-                                   <asp:TextBox ID="ObservacionTxt" runat="server"></asp:TextBox>
+                                   <asp:TextBox ID="ObservacionTxt" CssClass="input" runat="server"></asp:TextBox>
                             </div>
                           </div>
                         </div>
@@ -227,18 +227,9 @@
                                </div>
                               </div>
                              
-                               <div class="col-md-4 col-md-offset-1">
-                               <div class="form-group">
-                                 <!--botón editar--> 
-                                <asp:Button ID="Editar" runat="server" Text="Editar"  CssClass="boton-editar"/>
-                              </div>
-                            </div>
+                               
 
-                                 <div class="col-md-4 col-md-offset-1">
-                               <div class="form-group">
-                                 <!--botón editar--> 
-                                <asp:Button ID="Eliminar" runat="server" Text="Eliminar"  CssClass="boton-eliminar"/>
-                              </div>
+                                
                             </div>
                            </div>
             </main>

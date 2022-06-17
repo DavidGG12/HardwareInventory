@@ -54,7 +54,7 @@
                         <a href="Registrar_Area.aspx"><i class="fas fa-map-marker-alt"></i>  Registro de Áreas</a>
                         <a href="Cambio.aspx"><i class="fa-solid fa-arrow-right-arrow-left"></i>  Cambio de CPU/Dispositivo</a>
                         <a href="Registro.aspx"><i class="fas fa-users"></i>  Registro de Usuario</a>
-                        <a href="#"><i class="fa-solid fa-bars"></i>  Reporte de Mantenimiento</a>
+                        <a href="Mantenimiento.aspx"><i class="fa-solid fa-bars"></i>  Reporte de Mantenimiento</a>
                         <a href="Edicion.aspx"><i class="fa-solid fa-pen-to-square"></i> Edición CPU/Usuario</a>
                     
                     </nav>

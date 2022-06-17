@@ -54,7 +54,7 @@
 
     .barra-lateral .menu a {
         display: block;
-        padding: 30px;
+        padding: 20px;
         font-family: Roboto, sans-serif;
         font-weight: 500;
         border-bottom: 1px solid rgba(255, 255, 255, .1);
@@ -177,6 +177,8 @@
         font-family: 'Overpass', sans-serif;
         font-size: 100%;
         color: #132a13;
+        position: static;
+        margin: 5px;
     }
 
     .panel-body .h1 {
@@ -184,12 +186,19 @@
         color: #808080;
         text-align: center;
     }
+.input{
+    margin-bottom: 10px;
+    display: block;
+    box-sizing:border-box;
+    width: 150px;
+    align-items: center;
+}
 
 .boton {
     font-family: 'Overpass', sans-serif;
     font-size: 110%;
     color: #fff;
-    width: 50%;
+    width: 70%;
     height: 40px;
     border: none;
     border-radius: 3px 3px 3px 3px;
@@ -199,11 +208,19 @@
     margin-top: 10px;
 }
 
-.boton-editar {
+.buscar {
+    margin-bottom: 10px;
+    display: inline;
+    box-sizing: border-box;
+    width: 150px;
+    align-items: center;
+}
+
+.boton-buscar {
     font-family: 'Overpass', sans-serif;
     font-size: 110%;
     color: #fff;
-    width: 50%;
+    width: 10%;
     height: 40px;
     border: none;
     border-radius: 3px 3px 3px 3px;
@@ -236,4 +253,8 @@
     background-color: #ddd8c4;
     color: #45818E;
     cursor: pointer;
+}
+
+.radio{
+    margin-left: 25%;
 }

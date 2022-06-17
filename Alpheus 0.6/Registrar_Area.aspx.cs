@@ -37,7 +37,7 @@ namespace Alpheus_0._6
                 {
                     AreaSubAreaListTxt.Enabled = true;
                     AdminLabRBtnList.Enabled = true;
-                    AreaTxt.Enabled = true;
+                    
                     AreaListTxt.Enabled = true;
                     SubAreaTxt.Enabled = true;
                     Registrar.Enabled = true;
@@ -46,12 +46,14 @@ namespace Alpheus_0._6
                 {
                     AreaSubAreaListTxt.Enabled = false;
                     AdminLabRBtnList.Enabled = false;
-                    AreaTxt.Enabled = false;
+                    //AreaTxt.Enabled = false;
                     AreaListTxt.Enabled = false;
                     SubAreaTxt.Enabled = false;
                     Registrar.Enabled = false;
                 }
             }
+
+            AreaTxt.Enabled = false;
         }
 
         protected void AreaSubAreaListTxt_SelectedIndexChanged(object sender, EventArgs e)
@@ -140,6 +142,18 @@ namespace Alpheus_0._6
             catch (Exception er)
             {
                 Error.Text = er.Message;
+            }
+        }
+
+        protected void AdminLabRBtnList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(AdminLabRBtnList.SelectedItem.Text == "Otro")
+            {
+                AreaTxt.Enabled = true;
+            }
+            else
+            {
+                AreaTxt.Enabled = false;
             }
         }
     }
