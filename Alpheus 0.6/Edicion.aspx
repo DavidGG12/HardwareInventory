@@ -55,48 +55,209 @@
                     <a href="Cambio.aspx"><i class="fa-solid fa-arrow-right-arrow-left"></i>  Cambio de CPU/Dispositivo</a>
                     <a href="Registro.aspx"><i class="fas fa-users"></i>  Registro de Usuario</a>
                     <a href="#"><i class="fa-solid fa-bars"></i>  Reporte de Mantenimiento</a>
-                    <a href="#"><i class="fa-solid fa-pen-to-square"></i> Edición CPU/Usuario</a>
+                    <a href="Edicion.aspx"><i class="fa-solid fa-pen-to-square"></i> Edición CPU/Usuario</a>
                     
                 </nav>
             </div>
-            <main class="main col">
-                <div class="row justify-content-center align-content-center text-center">
-                    <!--Tabla va aquí-->
-                    <div class="columna col-lg-6">
-                        <br />
-                        <asp:Label ID="Errorl" runat="server" Text="" ></asp:Label>
-                        <!--Formulario de edición de CPU o Disp-->
-                        <div>
-                            <legend>Actualizar CPU/Dispositivos:</legend>
-                            <br />
-                            <!--
-                            <br />
-                            <asp:Label ID="NoSerie" runat="server" Text="No. de Serie: "></asp:Label>
-                            <asp:TextBox ID="NoSerieTxt" runat="server"></asp:TextBox>
-                            <asp:Button ID="BuscarBtn" runat="server" Text="Buscar" />
-                            <br />
-                            <asp:Label ID="Tipo" runat="server" Text="Tipo: "></asp:Label>
-                            <asp:TextBox ID="TipoTxt" runat="server" Text=""></asp:TextBox>
-                            <asp:Label ID="Nombre" runat="server" Text="Nombre: "></asp:Label>
-                            <asp:TextBox ID="NombreTxt" runat="server" Text=""></asp:TextBox>
-                            <asp:Label ID="Marca" runat="server" Text="Marca: "></asp:Label>
-                            <asp:TextBox ID="MarcaTxt" runat="server" Text=""></asp:TextBox>
-                            <br />
-                            <asp:Label ID="Modelo" runat="server" Text="Modelo: "></asp:Label>
-                            <asp:TextBox ID="ModeloTxt" runat="server" Text=""></asp:TextBox>
-                            <asp:Label ID="RAM" runat="server" Text="RAM(gb): "></asp:Label>
-                            <asp:TextBox ID="RAMTxt" runat="server" Text="" TextMode="Number" ></asp:TextBox>
-                            <asp:Label ID="Disco" runat="server" Text="Disco Duro(gb): "></asp:Label>
-                            <asp:TextBox ID="DiscoTxt" runat="server" Text="" TextMode="Number" ></asp:TextBox>
-                            <br />
-                            -->
+            <main class="main col"> 
+               <!--Error-->
+               <asp:Label ID="Error" runat="server" Text="" />
+                <!--estilo de boostrap para poner formulario doble/agruparlo-->
+                        <div class="panel-body">
+                            <legend>Actualizar Datos: </legend>
+                            <div class="row">
+                                <div class="col-md-4 col-md-offset-1">
+                                    <div class="form-group">
+                                        <!--Nombre-->
+                                        <asp:Label ID="NombreUsuario" runat="server" CssClass="texto" Text="Nombre: " />
+                                            <asp:TextBox ID="NombreUsuarioTxt" runat="server" Text=""></asp:TextBox>
+                                    </div>
+                                </div>
+                             <div class="col-md-4 col-md-offset-1">
+                                 <div class="form-group">
+                                     <!--Apellido Paterno-->
+                                     <asp:Label ID="ApellidoP" runat="server" CssClass="texto"  Text="Apellido Paterno: " />
+                                        <asp:TextBox ID="ApellidoPTxt" runat="server" Text=""></asp:TextBox>
+                                 </div>
+                             </div>
+                             <div class="col-md-4 col-md-offset-1">
+                                 <div class="form-group">
+                                     <!--Apellido Materno-->
+                                     <asp:Label ID="ApellidoM" runat="server" CssClass="texto"  Text="Apellido Materno: " />
+                                        <asp:TextBox ID="ApellidoMTxt" runat="server" Text=""></asp:TextBox>
+                                 </div>
+                             </div>
                         </div>
-                    </div>
-                </div>
+
+                        <div class="row">
+                             <div class="col-md-4 col-md-offset-1">
+                                 <div class="form-group">
+                                     <!--Usario-->
+                                     <asp:Label ID="Usuario" runat="server" CssClass="texto"  Text="Usuario: " />
+                                     <asp:Label ID="UsuarioLbl" runat="server" Text=""></asp:Label>
+                                 </div>
+                             </div>
+
+                            <div class="col-md-4 col-md-offset-1">
+                                <div class="form-group">
+                                    <!--Contraseña-->
+                                    <asp:Label ID="Contraseña" runat="server"  CssClass="texto" Text="Contraseña: " />
+                                    <asp:TextBox ID="ContraseñaTxt" runat="server" TextMode="Password"></asp:TextBox>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-md-offset-1">
+                                <div class="form-group">
+                                    <!--Revalidar Contraseña-->
+                                    <asp:Label ID="ContraseñaRev" runat="server" CssClass="texto"  Text="Revalida Contraseña: " />
+                                    <asp:TextBox ID="ContraseñaRevTxt" runat="server" TextMode="Password"></asp:TextBox>
+                                </div>
+                            </div>
+                       </div>
+
+                             <div class="row">
+                               <div class="col-md-4 col-md-offset-1">
+                               <div class="form-group">
+                                   <!--botón registrar-->
+                                  <asp:Button ID="ActualizarUsuario" runat="server" Text="Actualizar" CssClass="boton" OnClick="ActualizarUsuario_Click"  />
+                               </div>
+                              </div>
+                            </div>     
+                
+
+                    <br />
+                    <br />
+                    <br />
+                        <!--estilo de boostrap para poner formulario doble/agruparlo-->
+                        <div class="panel-body">
+                            <legend>Actualizar CPU/Disp</legend>
+                            <div class="row">
+                                <div class="col-md-4 col-md-offset-1">
+                                <div class="form-group">
+                                   <!--Radio button para seleccionar el registro a llenar-->
+                                    <asp:RadioButtonList ID="DispCPURadio" runat="server" AutoPostBack="true" RepeatDirection="Horizontal" OnSelectedIndexChanged="DispCPURadio_SelectedIndexChanged">
+                                    <asp:ListItem Value="1" Text="Dispositivos" Selected="True">Dispositivos</asp:ListItem>
+                                    <asp:ListItem Value="2" Text="CPU">CPU</asp:ListItem>
+                                    </asp:RadioButtonList>
+                                </div>
+                              </div>
+                            </div>
+
+                            <br />
+                            <asp:Label ID="Error_CPU" runat="server" Text=""></asp:Label>
+                            <br />
+                            <div class="row">
+                                <div class="col-md-4 col-md-offset-1">
+                                    <div class="form-group">
+                                        <!--No. serie-->
+                                        <asp:Label ID="NoSerie" runat="server" CssClass="texto" Text="No. Serie: " />
+                                            <asp:TextBox ID="NoSerieTxt" runat="server"></asp:TextBox>
+                                            <asp:Button ID="Buscar" runat="server"  Text="Buscar" CssClass="boton" OnClick="Buscar_Click"/>
+                                    </div>
+                                </div>
+                            <br />
+                            <br />
+                        </div>
+
+                        <div class="row">
+                             <div class="col-md-4 col-md-offset-1">
+                                 <div class="form-group">
+                                     <!--Nombre del dispositivo-->
+                                     <asp:Label ID="Nombre" runat="server" CssClass="texto"  Text="Nombre del dispositivo: " />
+                                     <asp:TextBox ID="NombreTxt" runat="server" Enabled="False"></asp:TextBox>
+                                 </div>
+                             </div>
+
+                            <div class="col-md-4 col-md-offset-1">
+                                <div class="form-group">
+                                    <!--Nombre de la marca-->
+                                    <asp:Label ID="Marca" runat="server"  CssClass="texto" Text="Marca del dispositivo: " />
+                                    <asp:TextBox ID="MarcaTxt" runat="server"></asp:TextBox>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-md-offset-1">
+                                <div class="form-group">
+                                    <!--Modelo del dispositivo-->
+                                    <asp:Label ID="Modelo" runat="server" CssClass="texto"  Text="Modelo del dispositivo: " />
+                                    <asp:TextBox ID="ModeloTxt" runat="server"></asp:TextBox>
+                                </div>
+                            </div>
+                       </div>
+
+                       <div class="row">
+                           <div class="col-md-4 col-md-offset-1">
+                               <div class="form-group">
+                                   <!--Modelo del dispositivo-->
+                                   <asp:Label ID="RAM" runat="server" CssClass="texto" Text="Tamaño en RAM(gb): " />
+                                   <asp:TextBox ID="RAMTxt" runat="server" TextMode="Number" Enabled="False"></asp:TextBox>
+                               </div>
+                           </div>
+
+                           <div class="col-md-4 col-md-offset-1">
+                               <div class="form-group">
+                                   <!--Tamaño Disco Duro del dispositivo-->
+                                   <asp:Label ID="DiscoDuro" runat="server" CssClass="texto" Text="Tamaño en disco duro(gb): " />
+                                   <asp:TextBox ID="DiscoTxt" runat="server" TextMode="Number" Enabled="False"></asp:TextBox>
+                               </div>
+                           </div>
+
+                           <div class="col-md-4 col-md-offset-1">
+                               <div class="form-group">
+                                   <!--Sistema Oprativo del dispositivo-->
+                                    <asp:Label ID="SO" runat="server" CssClass="texto" Text="Sistema Operativo del dispositivo: " />
+                                    <asp:TextBox ID="SOText" runat="server" Enabled="False"></asp:TextBox>
+                           </div>
+                        </div>
+                     </div>
+                     
+                     <div class="row">
+                          <div class="col-md-4 col-md-offset-1">
+                               <div class="form-group">
+                                   <!--Office del dispositivo-->
+                                       <asp:Label ID="Office" runat="server" CssClass="texto" Text="Office integrado: " />
+                                       <asp:TextBox ID="OfficeTxt" runat="server" Enabled="False"></asp:TextBox>
+                                   </div>
+                              </div>
+
+                         <div class="col-md-4 col-md-offset-1">
+                               <div class="form-group">
+                                   <!--Procesador del dispositivo-->
+                                   <asp:Label ID="Procesador" runat="server" CssClass="texto"  Text="Procesador integrado: " />
+                                   <asp:TextBox ID="ProcesadorTxt" runat="server" Enabled="False"></asp:TextBox> 
+                                   </div>
+                             </div>
+
+                         <div class="col-md-4 col-md-offset-1">
+                               <div class="form-group">
+                                   <!--No. de Inventario del dispositivo-->
+                                   <asp:Label ID="NoInventario" runat="server" CssClass="texto" Text="No. indicado de Inventario: " />
+                                   <asp:TextBox ID="NoInventarioTxt" runat="server"></asp:TextBox>
+                                   </div>
+                             </div>
+                         </div>
+
+                            <div class="col-md-4 col-md-offset-1">
+                               <div class="form-group">
+                                   <!--Office del dispositivo-->
+                                   <asp:Label ID="Observacion" runat="server" CssClass="texto" Text="Observaciones: " />
+                                   <asp:TextBox ID="ObservacionTxt" runat="server"></asp:TextBox>
+                            </div>
+                          </div>
+                        </div>
+
+                             <div class="row">
+                               <div class="col-md-4 col-md-offset-1">
+                               <div class="form-group">
+                                   <!--botón registrar-->
+                                  <asp:Button ID="Actualizar" runat="server" Text="Actualizar" CssClass="boton" OnClick="Actualizar_Click"  />
+                               </div>
+                              </div>
+                            </div>
+
             </main>
         </div>
     </div>
-
 
 
 
