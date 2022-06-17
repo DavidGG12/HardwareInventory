@@ -66,10 +66,76 @@
                     
            <main class="main col"> 
                <!--Error-->
-               <asp:Label ID="Error" runat="server" Text="" />
-              
-                        <!--estilo de boostrap para poner formulario doble/agruparlo-->
-                        
+                <asp:Label ID="Error" runat="server" Text="" />
+                <h4>Formulario de Mantenimiento</h4>
+
+                <asp:RadioButtonList ID="CPU_DISP_RBtnList" runat="server" CssClass="texto" AutoPostBack="true" RepeatDirection="Horizontal">
+                    <asp:ListItem Selected="True">Dispositivos</asp:ListItem>
+                    <asp:ListItem>CPU</asp:ListItem>
+                </asp:RadioButtonList>
+
+                <asp:Label ID ="Folio" runat="server" CssClass="texto" Text="Folio: "></asp:Label>
+                <asp:TextBox ID="FolioTxt" CssClass="input" runat="server" ></asp:TextBox>   
+               
+                <asp:Label ID="Nombre" runat="server" CssClass="texto" Text="Nombre del Solicitante: "></asp:Label>
+                <asp:DropDownList ID="NombreTxtList" runat="server" CssClass="input" DataSourceID="NombreSql" DataTextField="Usuario_Recibidor" DataValueField="Usuario_Recibidor"></asp:DropDownList>
+                <asp:SqlDataSource ID="NombreSql" runat="server" ConnectionString="<%$ ConnectionStrings:MatiasConnection %>" SelectCommand="SELECT [Usuario_Recibidor] FROM [Transferencia]"></asp:SqlDataSource>
+                <asp:Button ID="BuscarBtn" runat="server" Text="Buscar" CssClass="boton" OnClick="BuscarBtn_Click" />
+
+               <div class="row">
+                    <div class="col-md-4 col-md-offset">
+                         <div class="form-group">
+                            <asp:Label ID="AreaLbl" CssClass="texto" runat="server" Text="Area:"></asp:Label>
+                         </div>           
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 col-md-offset">
+                        <div class="form-group">
+                            <asp:Label ID="MarcaLbl" runat="server" CssClass="texto" Text="Marca:"></asp:Label>                            
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-md-offset">
+                        <div class="form-group">
+                            <asp:Label ID="NoSerieLbl" runat="server" CssClass="texto" Text="No. de Serie: "></asp:Label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 col-md-offset">
+                        <div class="form-group">
+                            <asp:Label ID="InventarioLbl" runat="server" CssClass="texto" Text="No. de Inventario: "></asp:Label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-md-offset">
+                        <div class="form-group">
+                            <asp:Label ID="ModeloLbl" runat="server" CssClass="texto" Text="Modelo: "></asp:Label>
+                        </div>
+                    </div>
+                </div>   
+               
+               <asp:Label ID="Servicio" runat="server" Text="Servicio Solicitado: "></asp:Label>
+               <asp:TextBox ID="ServicioTxt" runat="server"></asp:TextBox>
+
+               <asp:Label ID="TipoMantenimiento" runat="server" Text="Tipo de Mantenimiento: "></asp:Label>
+               <asp:RadioButtonList ID="TipoMantenimientoRBtnList" runat="server" AutoPostBack="True" RepeatDirection="Horizontal">
+                   <asp:ListItem>Preventivo</asp:ListItem>
+                   <asp:ListItem>Correctivo</asp:ListItem>
+                   <asp:ListItem>Otro:</asp:ListItem>
+                </asp:RadioButtonList>
+               <asp:TextBox ID="OtroTxt" runat="server" Enabled="false"></asp:TextBox>
+
+
+                <asp:Label ID="DescripcionFalla" runat="server" Text="Descripción técnica de la falla: "></asp:Label>
+               <asp:TextBox ID="DescripcionFallaTxt" runat="server"></asp:TextBox>
+
+               <asp:Label ID="DescripcionSoporte" runat="server" Text="Descripción del soporte técnico brindado: "></asp:Label>
+               <asp:TextBox ID="DescripcionSoporteTxt" runat="server"></asp:TextBox>
+            <asp:Button ID="RegistrarBtn" runat="server" Text="Registrar" OnClick="RegistrarBtn_Click" />
             </main>
         </div>
     </div>

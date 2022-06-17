@@ -86,7 +86,7 @@ namespace Alpheus_0._6
             {
                 if(DispCPURadio.SelectedItem.Text == "CPU")
                 {
-                    if(TipoList.Text == "CPU" || TipoList.Text == "LAPTOP")
+                    if(TipoList.Text == "PC" || TipoList.Text == "LAPTOP")
                     {
                         //VOLVER TODOS LOS REGISTROS EN UPPER CASE
                         SqlCommand cmd = new SqlCommand("REGISTRAR_CPU", con)

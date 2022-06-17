@@ -63,82 +63,173 @@
                 <asp:Label ID="Error" runat="server" Text="" ></asp:Label>
                         <br />
                 <div class="panel-body">
-                    <h4></h4>
-                    <div class="row">
+                    <h4>Cambio de Equipo</h4>
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset">
+                                <div class="form-group">
+                                    <asp:RadioButtonList ID="CPU_DISP_RBtnList" runat="server" CssClass="texto" AutoPostBack="true" OnSelectedIndexChanged="CPU_DISP_RBtnList_SelectedIndexChanged" RepeatDirection="Horizontal">
+                                        <asp:ListItem Selected="True">Dispositivos</asp:ListItem>
+                                        <asp:ListItem>CPU</asp:ListItem>
+                                    </asp:RadioButtonList>
+                                </div>
+                            </div>
+                        </div>
 
-                
-              
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset">
+                                <div class="form-group">
+                                    <asp:Label ID ="Folio" runat="server" CssClass="texto" Text="Folio: "></asp:Label>
+                                    <asp:TextBox ID="FolioTxt" CssClass="input" runat="server" ></asp:TextBox>
+                                </div>
+                             </div>
+                        </div>
 
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset">
+                                <div class="form-group">
+                                    <asp:Label ID="Nombre" runat="server" CssClass="texto" Text="Nombre del Solicitante: "></asp:Label>
+                                    <asp:DropDownList ID="NombreTxtList" runat="server" CssClass="input" DataSourceID="NombreSql" DataTextField="Usuario_Recibidor" DataValueField="Usuario_Recibidor"></asp:DropDownList>
+                                    <asp:SqlDataSource ID="NombreSql" runat="server" ConnectionString="<%$ ConnectionStrings:MatiasConnection %>" SelectCommand="SELECT [Usuario_Recibidor] FROM [Transferencia]"></asp:SqlDataSource>
+                                    <asp:Button ID="BuscarBtn" runat="server" Text="Buscar" CssClass="boton" OnClick="BuscarBtn_Click" />
+                                </div>
+                            </div>
+                         </div>
+                     
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset">
+                                <div class="form-group">
+                                     <asp:Label ID="AreaLbl" CssClass="texto" runat="server" Text="Area:"></asp:Label>
+                                </div>
+                            </div>
+                        </div>
 
-                    <!--Tabla va aquí-->
-                    <div class="columna col-lg-6">
-                      
-                        <asp:RadioButtonList ID="CPU_DISP_RBtnList" runat="server" AutoPostBack="true" OnSelectedIndexChanged="CPU_DISP_RBtnList_SelectedIndexChanged" RepeatDirection="Horizontal">
-                            <asp:ListItem Selected="True">Dispositivos</asp:ListItem>
-                            <asp:ListItem>CPU</asp:ListItem>
-                        </asp:RadioButtonList>
-                        <br />
-                        <asp:Label ID ="Folio" runat="server" Text="Folio: "></asp:Label>
-                        <asp:TextBox ID="FolioTxt" runat="server" ></asp:TextBox>
-                        <br />
-                        <asp:Label ID="Nombre" runat="server" Text="Nombre del Solicitante: "></asp:Label>
-                        <asp:DropDownList ID="NombreTxtList" runat="server" DataSourceID="NombreSql" DataTextField="Usuario_Recibidor" DataValueField="Usuario_Recibidor"></asp:DropDownList>
-                        <asp:SqlDataSource ID="NombreSql" runat="server" ConnectionString="<%$ ConnectionStrings:MatiasConnection %>" SelectCommand="SELECT [Usuario_Recibidor] FROM [Transferencia]"></asp:SqlDataSource>
-                        <asp:Button ID="BuscarBtn" runat="server" Text="Buscar" OnClick="BuscarBtn_Click" />
-                        <br />
-                        <br />
-                        <asp:Label ID="AreaLbl" runat="server" Text="Area:"></asp:Label>
-                        <br />
-                        <asp:Label ID="MarcaLbl" runat="server" Text="Marca:"></asp:Label>
-                        <asp:Label ID="NoSerieLbl" runat="server" Text="No. de Serie: "></asp:Label>
-                        <br />
-                        <asp:Label ID="InventarioLbl" runat="server" Text="No. de Inventario: "></asp:Label>
-                        <asp:Label ID="ModeloLbl" runat="server" Text="Modelo: "></asp:Label>
-                        <br />
-                        <br />
-                        <asp:Label ID="TipoMantenimiento" runat="server" Text="Tipo de Mantenimiento: "></asp:Label>
-                        <br />
-                        <asp:RadioButtonList ID="TipoMantenimientoRBtnList" runat="server" AutoPostBack="true" OnSelectedIndexChanged="TipoMantenimientoRBtnList_SelectedIndexChanged" RepeatDirection="Horizontal">
-                            <asp:ListItem>Preventivo</asp:ListItem>
-                            <asp:ListItem>Correctivo</asp:ListItem>
-                            <asp:ListItem>Otro</asp:ListItem>
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset">
+                                <div class="form-group">
+                                    <asp:Label ID="MarcaLbl" runat="server" CssClass="texto" Text="Marca:"></asp:Label>                            
+                                </div>
+                            </div>
 
-                        </asp:RadioButtonList>
-                        <asp:TextBox ID="OtroTxt" runat="server" Enabled="false"></asp:TextBox>
-                        <br />
-                        <asp:Label ID="Observacion" runat="server" Text="Observación: "></asp:Label>
-                        <asp:TextBox ID="ObservacionTxt" runat="server"></asp:TextBox>
-                        <br />
-                        <br />
-                        <asp:Label ID="NoSerie1" runat="server" Text="No. de Serie: "></asp:Label>
-                        <asp:DropDownList ID="NoSerieListCPU" runat="server" Enabled="false" DataSourceID="NoSerieSql" DataTextField="NoSerie" DataValueField="NoSerie" AutoPostBack="true" OnSelectedIndexChanged="NoSerieListCPU_SelectedIndexChanged"></asp:DropDownList>
-                        <asp:SqlDataSource ID="NoSerieSql" runat="server" ConnectionString="<%$ ConnectionStrings:MatiasConnection %>" SelectCommand="SELECT [NoSerie] FROM [CPU]"></asp:SqlDataSource>
-                        <asp:Label ID="NoSerie2" runat="server" Text="No. de Serie: "></asp:Label>
-                        <asp:DropDownList ID="NoSerieListDisp" runat="server"></asp:DropDownList>
-                        <br />
-                        <br />
-                        <asp:Label ID="Entrega" runat="server" Text="Entrega"></asp:Label>
-                        <asp:Label ID="Retira" runat="server" Text="Retira"></asp:Label>
-                        <br />
-                        <asp:Label ID="TipoLblEntrega" runat="server" Text="Tipo: "></asp:Label>
-                        <asp:Label ID="TipoLblRetiro" runat="server"  Text="Tipo:"></asp:Label>
-                        <br />
-                        <asp:Label ID="MarcaLblEntrega" runat="server" Text="Marca: "></asp:Label>
-                        <asp:Label ID="MarcaLblRetiro" runat="server" Text="Marca: "></asp:Label>
-                        <br />
-                        <asp:Label ID="ModeloLblEntrega" runat="server" Text="Modelo: "></asp:Label>
-                        <asp:Label ID="ModeloLblRetiro" runat="server" Text="Modelo: "></asp:Label>
-                        <br />
-                        <asp:Label ID="NoSerieLblEntrega" runat="server" Text="No. de Serie: "></asp:Label>
-                        <asp:Label ID="NoSerieLblRetiro" runat="server" Text="No. de Serie: "></asp:Label>
-                        <br />
-                        <asp:Label ID="NoInventarioLblEntrega" runat="server" Text="No. de Inventario: "></asp:Label>
-                        <asp:Label ID="NoInventarioLblRetiro" runat="server" Text="No. de Inventario: "></asp:Label>
-                        <br />
-                        <br />
-                        <asp:Button ID="RegistrarBtn" runat="server" Text="Registrar" OnClick="RegistrarBtn_Click" />
+                            <div class="col-md-4 col-md-offset">
+                                <div class="form-group">
+                                    <asp:Label ID="NoSerieLbl" runat="server" CssClass="texto" Text="No. de Serie: "></asp:Label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset">
+                                <div class="form-group">
+                                    <asp:Label ID="InventarioLbl" runat="server" CssClass="texto" Text="No. de Inventario: "></asp:Label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-md-offset">
+                                <div class="form-group">
+                                     <asp:Label ID="ModeloLbl" runat="server" CssClass="texto" Text="Modelo: "></asp:Label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset">
+                                <div class="form-group">
+                                    <asp:Label ID="Observacion" runat="server" CssClass="texto" Text="Razón del Cambio: "></asp:Label>
+                                    <asp:TextBox ID="ObservacionTxt" CssClass="input" runat="server"></asp:TextBox>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset">
+                                <div class="form-group">
+                                    <asp:Label ID="NoSerie1" runat="server" CssClass="texto" Text="No. de Serie: "></asp:Label>
+                                    <asp:DropDownList ID="NoSerieListCPU" CssClass="input" runat="server" Enabled="false" DataSourceID="NoSerieSql" DataTextField="NoSerie" DataValueField="NoSerie" AutoPostBack="true" OnSelectedIndexChanged="NoSerieListCPU_SelectedIndexChanged"></asp:DropDownList>
+                                    <asp:SqlDataSource ID="NoSerieSql" runat="server" ConnectionString="<%$ ConnectionStrings:MatiasConnection %>" SelectCommand="SELECT [NoSerie] FROM [CPU]"></asp:SqlDataSource>                               
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-md-offset">
+                                <div class="form-group">
+                                    <asp:Label ID="NoSerie2" runat="server" CssClass="texto" Text="No. de Serie: "></asp:Label>
+                                    <asp:DropDownList ID="NoSerieListDisp" runat="server" CssClass="input" DataSourceID="Disp" DataTextField="NoSerie" DataValueField="NoSerie"></asp:DropDownList>
+                                    <asp:SqlDataSource ID="Disp" runat="server" ConnectionString="<%$ ConnectionStrings:MatiasConnection %>" SelectCommand="SELECT [NoSerie] FROM [Dispositivos]"></asp:SqlDataSource>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset">
+                                <div class="form-group">
+                                    <!--<asp:Label ID="Entrega" runat="server" CssClass="texto" Text="Entrega"></asp:Label>-->
+                                    <h4>Entrega</h4>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-md-offset">
+                                <div class="form-group">
+                                    <h4>Retira</h4>
+                                    <!--<asp:Label ID="Retira" runat="server" CssClass="texto" Text="Retira"></asp:Label>-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset">
+                                <div class="form-group">
+                                    <asp:Label ID="TipoLblEntrega" runat="server" CssClass="texto" Text="Tipo: "></asp:Label>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-md-offset">
+                                <div class="form-group">
+                                    <asp:Label ID="TipoLblRetiro" runat="server" CssClass="texto" Text="Tipo:"></asp:Label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset">
+                                <div class="form-group">
+                                    <asp:Label ID="MarcaLblEntrega" runat="server" CssClass="texto" Text="Marca: "></asp:Label>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-md-offset">
+                                <div class="form-group">
+                                    <asp:Label ID="MarcaLblRetiro" runat="server" CssClass="texto" Text="Marca: "></asp:Label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset">
+                                <div class="form-group">
+                                    <asp:Label ID="ModeloLblEntrega" runat="server" CssClass="texto" Text="Modelo: "></asp:Label>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-md-offset">
+                                <div class="form-group">
+                                    <asp:Label ID="ModeloLblRetiro" runat="server" CssClass="texto" Text="Modelo: "></asp:Label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset">
+                                <div class="form-group">
+                                    <asp:Label ID="NoSerieLblEntrega" runat="server" CssClass="texto" Text="No. de Serie: "></asp:Label>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-md-offset">
+                                <div class="form-group">
+                                    <asp:Label ID="NoSerieLblRetiro" runat="server" CssClass="texto" Text="No. de Serie: "></asp:Label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset">
+                                <div class="form-group">
+                                    <asp:Label ID="NoInventarioLblEntrega" runat="server" CssClass="texto" Text="No. de Inventario: "></asp:Label>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-md-offset">
+                                <div class="form-group">
+                                    <asp:Label ID="NoInventarioLblRetiro" runat="server" CssClass="texto" Text="No. de Inventario: "></asp:Label>
+                                </div>
+                            </div>
+                        </div>
+                        <asp:Button ID="RegistrarBtn" runat="server" CssClass="boton" Text="Registrar" OnClick="RegistrarBtn_Click" />
                     </div>
-               
             </main>
         </div>
     </div>

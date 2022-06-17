@@ -89,7 +89,7 @@ namespace Alpheus_0._6
                 }
                 else
                 {
-                    RecibeTxt.Text = NoControlTxt.Text.ToUpper();
+                    RecibeTxt.Text = RecibeTxt.Text.ToUpper();
                     MotivoTxt.Text = MotivoTxt.Text.ToUpper();
 
                     if(rows > 1)

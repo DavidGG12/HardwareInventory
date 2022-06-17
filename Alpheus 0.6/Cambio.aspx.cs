@@ -23,18 +23,6 @@ namespace Alpheus_0._6
             SesionLbl.Text = nombre.Nombre(UsuarioLogeado).ToString();
         }
 
-        protected void TipoMantenimientoRBtnList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(TipoMantenimientoRBtnList.SelectedItem.Text == "Otro")
-            {
-                OtroTxt.Enabled = true;
-            }
-            else
-            {
-                OtroTxt.Enabled = false;
-            }
-        }
-
         protected void CPU_DISP_RBtnList_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(CPU_DISP_RBtnList.SelectedItem.Text == "CPU")
@@ -168,6 +156,81 @@ namespace Alpheus_0._6
                     }
 
                     cmd = new SqlCommand("SELECT Tipo, Marca, NoSerie, NoInventario, Modelo FROM CPU WHERE idTransferencia = '" + NoControl + "'", con);
+                    dr = cmd.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        Error.Text = "";
+                        TipoLblRetiro.Text = "Tipo: " + dr["Tipo"].ToString();
+                        MarcaLbl.Text = "Marca: " + dr["Marca"].ToString();
+                        MarcaLblRetiro.Text = "Marca: " + dr["Marca"].ToString();
+                        NoSerieLbl.Text = "No. De Serie: " + dr["NoSerie"].ToString();
+                        NoSerieLblRetiro.Text = "No. De Serie: " + dr["NoSerie"].ToString();
+                        InventarioLbl.Text = "No. De Inventario: " + dr["NoInventario"].ToString();
+                        NoInventarioLblRetiro.Text = "No. De Inventario: " + dr["NoInventario"].ToString();
+                        ModeloLbl.Text = "Modelo: " + dr["Modelo"].ToString();
+                        ModeloLblRetiro.Text = "Modelo: " + dr["Modelo"].ToString();
+                        dr.Close();
+                    }
+                    else
+                    {
+                        Error.Text = "No hay una computadora ligada.";
+                        AreaLbl.Text = "Area: ";
+                        TipoLblRetiro.Text = "Tipo: ";
+                        MarcaLbl.Text = "Marca: ";
+                        MarcaLblRetiro.Text = "Marca: ";
+                        NoSerieLbl.Text = "No. De Serie: ";
+                        NoSerieLblRetiro.Text = "No. De Serie: ";
+                        InventarioLbl.Text = "No. De Inventario: ";
+                        NoInventarioLblRetiro.Text = "No. De Inventario: ";
+                        ModeloLbl.Text = "Modelo: ";
+                        ModeloLblRetiro.Text = "Modelo: ";
+                    }
+                    con.Close();
+                }
+                catch (Exception er)
+                {
+                    Error.Text = er.Message;
+                }
+            }
+            else
+            {
+                try
+                {
+                    con.Open();
+                    Error.Text = "";
+                    string portador = NombreTxtList.Text;
+                    SqlCommand cmd = new SqlCommand("SELECT idArea_Destino, NoControlInterno FROM Transferencia WHERE Usuario_Recibidor = '" + portador + "'", con);
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        Error.Text = "";
+                        ID_Buscar = dr["idArea_Destino"].ToString();
+                        NoControl = dr["NoControlInterno"].ToString();
+                        Area = int.Parse(ID_Buscar);
+                        dr.Close();
+                    }
+                    else
+                    {
+                        Error.Text = "No jale";
+                    }
+
+
+                    //SELECCIONAR EL ÁREA
+                    cmd = new SqlCommand("SELECT Subarea FROM Subareas WHERE ID ='" + Area + "'", con);
+                    dr = cmd.ExecuteReader();
+
+                    if (dr.Read())
+                    {
+                        Error.Text = "";
+                        AreaLbl.Text = "Area: " + dr["Subarea"].ToString();
+                        dr.Close();
+                    }
+                    else
+                    {
+
+                    }
+
+                    cmd = new SqlCommand("SELECT Tipo, Marca, NoSerie, NoInventario, Modelo FROM Dispositivos WHERE idTransferencia = '" + NoControl + "'", con);
                     dr = cmd.ExecuteReader();
                     if (dr.Read())
                     {

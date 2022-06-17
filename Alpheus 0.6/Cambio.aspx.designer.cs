@@ -150,33 +150,6 @@ namespace Alpheus_0._6
         protected global::System.Web.UI.WebControls.Label ModeloLbl;
 
         /// <summary>
-        /// Control TipoMantenimiento.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TipoMantenimiento;
-
-        /// <summary>
-        /// Control TipoMantenimientoRBtnList.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList TipoMantenimientoRBtnList;
-
-        /// <summary>
-        /// Control OtroTxt.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox OtroTxt;
-
-        /// <summary>
         /// Control Observacion.
         /// </summary>
         /// <remarks>
@@ -238,6 +211,15 @@ namespace Alpheus_0._6
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList NoSerieListDisp;
+
+        /// <summary>
+        /// Control Disp.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource Disp;
 
         /// <summary>
         /// Control Entrega.
