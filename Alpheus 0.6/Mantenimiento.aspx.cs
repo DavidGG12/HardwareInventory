@@ -14,7 +14,12 @@ namespace Alpheus_0._6
         static string conectar = System.Configuration.ConfigurationManager.ConnectionStrings["MatiasConnection"].ConnectionString;
         System.Data.SqlClient.SqlConnection con = new SqlConnection(conectar);
         static int Area;
-        static string NoControl, ID_Buscar;
+        static string NoControl, ID_Buscar, noserie;
+        static string fecha_realizada = DateTime.Now.ToString("dd/MM/yyyy");
+        static DateTime fecha_usada = Convert.ToDateTime(fecha_realizada);
+        static DateTime fecha_programadapre = fecha_usada.AddMonths(6);
+        static string fecha_programada = Convert.ToString(fecha_programadapre);
+
         protected void Page_Load(object sender, EventArgs e)
         {
             Sesion nombre = new Sesion();
@@ -25,7 +30,134 @@ namespace Alpheus_0._6
 
         protected void RegistrarBtn_Click(object sender, EventArgs e)
         {
+            if(CPU_DISP_RBtnList.SelectedItem.Text == "CPU")
+            {
+                try
+                {
+                    con.Open();
 
+                    Sesion nombre = new Sesion();
+                    String UsuarioLogeado = Session["UsuarioLogeado"].ToString();
+
+                    SqlCommand cmd = new SqlCommand("SP_Mantenimiento", con)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+
+                    if(String.IsNullOrEmpty(FolioTxt.Text) || String.IsNullOrEmpty(ServicioTxt.Text) || String.IsNullOrEmpty(DescripcionFallaTxt.Text) || String.IsNullOrEmpty(DescripcionSoporteTxt.Text) || String.IsNullOrEmpty(TipoMantenimientoRBtnList.SelectedItem.Text))
+                    {
+                        Error.Text = "Algún campo está vacío.";
+                    }
+                    else
+                    {
+                        string tipo = TipoMantenimientoRBtnList.SelectedItem.Text.ToUpper();
+
+                        if(TipoMantenimientoRBtnList.SelectedItem.Text == "Otro:")
+                        {
+                            OtroTxt.Enabled = true;
+
+                            if(String.IsNullOrEmpty(OtroTxt.Text))
+                            {
+                                Error.Text = "Algún campo está vacío.";
+                            }
+                            else
+                            {
+                                cmd.Parameters.Add("@Folio", SqlDbType.VarChar, 500).Value = FolioTxt.Text;
+                                cmd.Parameters.Add("@NoSerie", SqlDbType.VarChar, 100).Value = noserie;
+                                cmd.Parameters.Add("@Tipo", SqlDbType.VarChar, 100).Value = OtroTxt.Text.ToUpper();
+                                cmd.Parameters.Add("@Fecha_Programada", SqlDbType.Date).Value = fecha_programada;
+                                cmd.Parameters.Add("@Fecha_Realizada", SqlDbType.Date).Value = fecha_realizada;
+                                cmd.Parameters.Add("@Encargado", SqlDbType.VarChar, 100).Value = UsuarioLogeado;
+
+                                SqlDataReader dr = cmd.ExecuteReader();
+                                Error.Text = "Generado";
+                            }
+                        }
+                        else
+                        {
+                            cmd.Parameters.Add("@Folio", SqlDbType.VarChar, 500).Value = FolioTxt.Text;
+                            cmd.Parameters.Add("@NoSerie", SqlDbType.VarChar, 100).Value = noserie;
+                            cmd.Parameters.Add("@Tipo", SqlDbType.VarChar, 100).Value = tipo;
+                            cmd.Parameters.Add("@Fecha_Programada", SqlDbType.Date).Value = fecha_programada;
+                            cmd.Parameters.Add("@Fecha_Realizada", SqlDbType.Date).Value = fecha_realizada;
+                            cmd.Parameters.Add("@Encargado", SqlDbType.VarChar, 100).Value = UsuarioLogeado;
+
+                            SqlDataReader dr = cmd.ExecuteReader();
+                            Error.Text = "Generado";
+                        }
+                    }
+
+                    con.Close();
+                }
+                catch(Exception er)
+                {
+                    Error.Text = er.Message;
+                }
+            }
+            else
+            {
+                try
+                {
+                    con.Open();
+
+                    Sesion nombre = new Sesion();
+                    String UsuarioLogeado = Session["UsuarioLogeado"].ToString();
+
+                    SqlCommand cmd = new SqlCommand("SP_MantenimientoDisp", con)
+                    {
+                        CommandType = CommandType.StoredProcedure
+                    };
+
+                    if (String.IsNullOrEmpty(FolioTxt.Text) || String.IsNullOrEmpty(ServicioTxt.Text) || String.IsNullOrEmpty(DescripcionFallaTxt.Text) || String.IsNullOrEmpty(DescripcionSoporteTxt.Text) || String.IsNullOrEmpty(TipoMantenimientoRBtnList.SelectedItem.Text))
+                    {
+                        Error.Text = "Algún campo está vacío.";
+                    }
+                    else
+                    {
+                        string tipo = TipoMantenimientoRBtnList.SelectedItem.Text.ToUpper();
+
+                        if (TipoMantenimientoRBtnList.SelectedItem.Text == "Otro:")
+                        {
+                            OtroTxt.Enabled = true;
+
+                            if (String.IsNullOrEmpty(OtroTxt.Text))
+                            {
+                                Error.Text = "Algún campo está vacío.";
+                            }
+                            else
+                            {
+                                cmd.Parameters.Add("@Folio", SqlDbType.VarChar, 500).Value = FolioTxt.Text;
+                                cmd.Parameters.Add("@NoSerie", SqlDbType.VarChar, 100).Value = noserie;
+                                cmd.Parameters.Add("@Tipo", SqlDbType.VarChar, 100).Value = OtroTxt.Text.ToUpper();
+                                cmd.Parameters.Add("@Fecha_Programada", SqlDbType.Date).Value = fecha_programada;
+                                cmd.Parameters.Add("@Fecha_Realizada", SqlDbType.Date).Value = fecha_realizada;
+                                cmd.Parameters.Add("@Encargado", SqlDbType.VarChar, 100).Value = UsuarioLogeado;
+
+                                SqlDataReader dr = cmd.ExecuteReader();
+                                Error.Text = "Generado";
+                            }
+                        }
+                        else
+                        {
+                            cmd.Parameters.Add("@Folio", SqlDbType.VarChar, 500).Value = FolioTxt.Text;
+                            cmd.Parameters.Add("@NoSerie", SqlDbType.VarChar, 100).Value = noserie;
+                            cmd.Parameters.Add("@Tipo", SqlDbType.VarChar, 100).Value = tipo;
+                            cmd.Parameters.Add("@Fecha_Programada", SqlDbType.Date).Value = fecha_programada;
+                            cmd.Parameters.Add("@Fecha_Realizada", SqlDbType.Date).Value = fecha_realizada;
+                            cmd.Parameters.Add("@Encargado", SqlDbType.VarChar, 100).Value = UsuarioLogeado;
+
+                            SqlDataReader dr = cmd.ExecuteReader();
+                            Error.Text = "Generado";
+                        }
+                    }
+
+                    con.Close();
+                }
+                catch (Exception er)
+                {
+                    Error.Text = er.Message;
+                }
+            }
         }
 
         protected void BuscarBtn_Click(object sender, EventArgs e)
@@ -75,6 +207,7 @@ namespace Alpheus_0._6
                         if (dr.Read())
                         {
                             Error.Text = "";
+                            noserie = dr["NoSerie"].ToString();
                             MarcaLbl.Text = "Marca: " + dr["Marca"].ToString();
                             NoSerieLbl.Text = "No. De Serie: " + dr["NoSerie"].ToString();
                             InventarioLbl.Text = "No. De Inventario: " + dr["NoInventario"].ToString();
