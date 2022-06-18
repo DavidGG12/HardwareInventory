@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--titulo de la pestaña-->
-    <title>Administrador</title>
+    <title>TESH - Hardware</title>
     <!--estilos para iconos font awesome-->
     <link href="font-6/css/all.css" rel="stylesheet" />
      <!--Conexión a la hoja de estilos-->
@@ -19,7 +19,6 @@
      <!--Fuentes de texto en la pagina-->
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet"/> 
     <link href="https://fonts.googleapis.com/css?family=Overpass&display=swap" rel="stylesheet"/>
-    <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -32,11 +31,11 @@
                     <ul class="navbar-nav mr-auto">
                         <li>
                             <!--Menu Sesión-->
-                            <asp:Label ID="Sesion" runat="server" Text="Usuario"></asp:Label>
+                            <asp:Label ID="SesionLbl" runat="server" Text="Usuario"></asp:Label>
                             <a href="#" class="px-3 text-light perfil dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-circle user"></i></a>
 
                             <div class="dropdown-menu" aria-labelledby="navbar-dropdown">
-                                <a class="dropdown-item menuperfil cerrar" href="#"><i class="fas fa-sign-out-alt m-1"></i>Salir
+                                <a class="dropdown-item menuperfil cerrar" href="Login.aspx"><i class="fas fa-sign-out-alt m-1"></i>Salir
                                 </a>
                             </div>
                         </li>
@@ -55,8 +54,8 @@
                         <a href="Registrar_Area.aspx"><i class="fas fa-map-marker-alt"></i>  Registro de Áreas</a>
                         <a href="Cambio.aspx"><i class="fa-solid fa-arrow-right-arrow-left"></i>  Cambio de CPU/Dispositivo</a>
                         <a href="Registro.aspx"><i class="fas fa-users"></i>  Registro de Usuario</a>
-                        <a href="#"><i class="fa-solid fa-bars"></i>  Reporte de Mantenimiento</a>
-                        <a href="#"><i class="fa-solid fa-pen-to-square"></i> Edición CPU/Usuario</a>
+                        <a href="Mantenimiento.aspx"><i class="fa-solid fa-bars"></i>  Reporte de Mantenimiento</a>
+                        <a href="Edicion.aspx"><i class="fa-solid fa-pen-to-square"></i> Edición CPU/Usuario</a>
                     
                     </nav>
                 </div>

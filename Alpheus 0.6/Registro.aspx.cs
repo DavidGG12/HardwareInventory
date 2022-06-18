@@ -14,8 +14,10 @@ namespace Alpheus_0._6
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*
+            Sesion nombre = new Sesion();
             String UsuarioLogeado = Session["UsuarioLogeado"].ToString();
+            
+            SesionLbl.Text = nombre.Nombre(UsuarioLogeado).ToString();
 
             string conectar = ConfigurationManager.ConnectionStrings["MatiasConnection"].ConnectionString;
             SqlConnection con = new SqlConnection(conectar);
@@ -51,7 +53,7 @@ namespace Alpheus_0._6
                     Contraseña_Revalidar.Enabled = false;
                     Registrar.Enabled = false;
                 }
-            }*/
+            }
         }
 
         protected void Registrar_Click(object sender, EventArgs e)

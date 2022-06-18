@@ -7,11 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace Alpheus_0._6
+namespace Alpheus_0._6.pdf
 {
 
 
-    public partial class Registro
+    public partial class WebForm1
     {
 
         /// <summary>
@@ -24,120 +24,138 @@ namespace Alpheus_0._6
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control SesionLbl.
+        /// Control fecha.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label SesionLbl;
+        protected global::System.Web.UI.WebControls.Label fecha;
 
         /// <summary>
-        /// Control Error.
+        /// Control Folio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Error;
+        protected global::System.Web.UI.WebControls.Label Folio;
 
         /// <summary>
-        /// Control TipoList.
+        /// Control nombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList TipoList;
+        protected global::System.Web.UI.WebControls.Label nombre;
 
         /// <summary>
-        /// Control Tipo.
+        /// Control area.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource Tipo;
+        protected global::System.Web.UI.WebControls.Label area;
 
         /// <summary>
-        /// Control Nombre.
+        /// Control tipo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Nombre;
+        protected global::System.Web.UI.WebControls.Label tipo;
 
         /// <summary>
-        /// Control Apellido_Paterno.
+        /// Control marca.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Apellido_Paterno;
+        protected global::System.Web.UI.WebControls.Label marca;
 
         /// <summary>
-        /// Control Apellido_Materno.
+        /// Control noserie.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Apellido_Materno;
+        protected global::System.Web.UI.WebControls.Label noserie;
 
         /// <summary>
-        /// Control Usuario.
+        /// Control noinventario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Usuario;
+        protected global::System.Web.UI.WebControls.Label noinventario;
 
         /// <summary>
-        /// Control Error_Contraseña.
+        /// Control modelo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Error_Contraseña;
+        protected global::System.Web.UI.WebControls.Label modelo;
 
         /// <summary>
-        /// Control Contraseña.
+        /// Control observacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Contraseña;
+        protected global::System.Web.UI.WebControls.Label observacion;
 
         /// <summary>
-        /// Control Error_Contraseña_nCoincide.
+        /// Control preventivo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Error_Contraseña_nCoincide;
+        protected global::System.Web.UI.WebControls.Label preventivo;
 
         /// <summary>
-        /// Control Contraseña_Revalidar.
+        /// Control correctivo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Contraseña_Revalidar;
+        protected global::System.Web.UI.WebControls.Label correctivo;
 
         /// <summary>
-        /// Control Registrar.
+        /// Control otro.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Registrar;
+        protected global::System.Web.UI.WebControls.Label otro;
+
+        /// <summary>
+        /// Control tecnica.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label tecnica;
+
+        /// <summary>
+        /// Control soporte.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label soporte;
     }
 }

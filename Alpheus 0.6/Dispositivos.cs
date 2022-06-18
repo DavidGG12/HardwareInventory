@@ -12,51 +12,56 @@ namespace Alpheus_0._6
 {
     public class Dispositivos
     {
-        static string mensaje_mouse, mensaje_teclado, mensaje_monitor;
         public string Mouse(string NoSerie, string NoControl)
         {
-            string comprobar, verificar_pre;
-
-            string conectar = ConfigurationManager.ConnectionStrings["MatiasConnection"].ConnectionString;
-            SqlConnection con = new SqlConnection(conectar);
-
-            con.Open();
-            SqlCommand cmd = new SqlCommand("SELECT idTransferencia, Tipo FROM Dispositivos WHERE NoSerie = '" + NoSerie + "'", con);
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
+            string comprobar, verificar_pre, mensaje_mouse;
+            try
             {
-                comprobar = dr["idTransferencia"].ToString();
-                verificar_pre = dr["Tipo"].ToString();
+                string conectar = ConfigurationManager.ConnectionStrings["MatiasConnection"].ConnectionString;
+                SqlConnection con = new SqlConnection(conectar);
 
-                if (verificar_pre == "MOUSE")
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT idTransferencia, Tipo FROM Dispositivos WHERE NoSerie = '" + NoSerie + "'", con);
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
                 {
-                    if (comprobar == NoControl)
+                    comprobar = dr["idTransferencia"].ToString();
+                    verificar_pre = dr["Tipo"].ToString();
+
+                    if (verificar_pre == "MOUSE")
                     {
-                        mensaje_mouse = "SI";
+                        if (comprobar == NoControl)
+                        {
+                            return mensaje_mouse = "SI";
+                        }
+                        else
+                        {
+                            return mensaje_mouse = "NO";
+                        }
                     }
                     else
                     {
-                        mensaje_mouse = "NO";
-                    } 
+                        if (comprobar == NoControl)
+                        {
+                            return mensaje_mouse = "SI";
+                        }
+                        else
+                        {
+                            return mensaje_mouse = "NO";
+                        }
+                    }
                 }
-                else
-                {
-                    if (comprobar == NoControl)
-                    {
-                        mensaje_mouse = "SI";
-                    }
-                    else
-                    {
-                        mensaje_mouse = "NO";
-                    }
-                }  
             }
-            return mensaje_mouse;
+            catch(Exception er)
+            {
+                return mensaje_mouse = er.Message;
+            }
+            return mensaje_mouse="";
         }
 
         public string Monitor(string NoSerie, string NoControl)
         {
-            string comprobar, verificar_pre;
+            string comprobar, verificar_pre, mensaje_monitor;
 
             string conectar = ConfigurationManager.ConnectionStrings["MatiasConnection"].ConnectionString;
             SqlConnection con = new SqlConnection(conectar);
@@ -73,31 +78,31 @@ namespace Alpheus_0._6
                 {
                     if (comprobar == NoControl)
                     {
-                        mensaje_monitor = "SI";
+                        return mensaje_monitor = "SI";
                     }
                     else
                     {
-                        mensaje_monitor = "NO";
+                        return mensaje_monitor = "NO";
                     }
                 }
                 else
                 {
                     if (comprobar == NoControl)
                     {
-                        mensaje_monitor = "SI";
+                        return mensaje_monitor = "SI";
                     }
                     else
                     {
-                        mensaje_monitor = "NO";
+                        return mensaje_monitor = "NO";
                     }
                 }
             }
-            return mensaje_monitor;
+            return mensaje_monitor = "";
         }
 
         public string Teclado(string NoSerie, string NoControl)
         {
-            string comprobar, verificar_pre;
+            string comprobar, verificar_pre, mensaje_teclado;
 
             string conectar = ConfigurationManager.ConnectionStrings["MatiasConnection"].ConnectionString;
             SqlConnection con = new SqlConnection(conectar);
@@ -114,26 +119,26 @@ namespace Alpheus_0._6
                 {
                     if (comprobar == NoControl)
                     {
-                        mensaje_teclado = "SI";
+                        return mensaje_teclado = "SI";
                     }
                     else
                     {
-                        mensaje_teclado = "NO";
+                        return mensaje_teclado = "NO";
                     }
                 }
                 else
                 {
                     if (comprobar == NoControl)
                     {
-                        mensaje_teclado = "SI";
+                        return mensaje_teclado = "SI";
                     }
                     else
                     {
-                        mensaje_teclado = "NO";
+                        return mensaje_teclado = "NO";
                     }
                 }
             }
-            return mensaje_teclado;
+            return mensaje_teclado="";
         }
     }
 }
