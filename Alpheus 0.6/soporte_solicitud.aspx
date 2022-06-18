@@ -95,6 +95,8 @@ div.WordSection1
 
 <body lang=ES-MX style='tab-interval:35.4pt;word-wrap:break-word'>
 
+    <form id="form1" runat="server">
+
 <div class=WordSection1>
 
 <div align=center>
@@ -133,7 +135,9 @@ div.WordSection1
     style='font-size:10.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
     color:black;mso-fareast-language:ES-MX'>Fecha Solicitud:<span
-    style='mso-spacerun:yes'>  </span><o:p></o:p></span></p>
+    style='mso-spacerun:yes'>  
+        <asp:Label ID="fecha" runat="server" Text=""></asp:Label>
+        </span><o:p></o:p></span></p>
     </td>
     <td width=263 nowrap colspan=3 valign=top style='width:196.95pt;border:
     none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:solid windowtext .5pt;
@@ -150,7 +154,8 @@ div.WordSection1
     <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;
     line-height:normal'><span style='font-size:10.0pt;mso-ascii-font-family:
     Calibri;mso-fareast-font-family:"Times New Roman";mso-hansi-font-family:
-    Calibri;mso-bidi-font-family:Calibri;color:black;mso-fareast-language:ES-MX'>Folio:<o:p></o:p></span></p>
+    Calibri;mso-bidi-font-family:Calibri;color:black;mso-fareast-language:ES-MX'>Folio:<asp:Label ID="Folio" runat="server" Text=""></asp:Label>
+        <o:p></o:p></span></p>
     </td>
     <td style='mso-cell-special:placeholder;border:none;padding:0cm 0cm 0cm 0cm'
     width=12><p class='MsoNormal'>&nbsp;</td>
@@ -181,7 +186,9 @@ div.WordSection1
     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
     style='font-size:10.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>Nombre del solicitante: <o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>Nombre del solicitante: 
+        <asp:Label ID="nombre" runat="server" Text=""></asp:Label>
+        <o:p></o:p></span></p>
     </td>
     <td style='mso-cell-special:placeholder;border:none;padding:0cm 0cm 0cm 0cm'
     width=12><p class='MsoNormal'>&nbsp;</td>
@@ -212,7 +219,12 @@ div.WordSection1
     style='font-size:10.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
     color:black;mso-fareast-language:ES-MX'>Área/Departamento:<span
-    style='mso-spacerun:yes'>  </span><o:p></o:p></span></p>
+    style='mso-spacerun:yes'>  </span><o:p><span
+    style='font-size:10.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
+    "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+    color:black;mso-fareast-language:ES-MX'> 
+        <asp:Label ID="area" runat="server" Text=""></asp:Label>
+        </span></o:p></span></p>
     </td>
     <td style='mso-cell-special:placeholder;border:none;padding:0cm 0cm 0cm 0cm'
     width=12><p class='MsoNormal'>&nbsp;</td>
@@ -227,7 +239,12 @@ div.WordSection1
     style='font-size:10.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
     color:black;mso-fareast-language:ES-MX'>Tipo y descripción del equipo
-    informático:<span style='mso-spacerun:yes'>  </span><o:p></o:p></span></p>
+    informático:<span style='mso-spacerun:yes'>  </span><o:p><span
+    style='font-size:10.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
+    "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+    color:black;mso-fareast-language:ES-MX'> 
+        <asp:Label ID="tipo" runat="server" Text=""></asp:Label>
+        </span></o:p></span></p>
     </td>
     <td style='mso-cell-special:placeholder;border:none;padding:0cm 0cm 0cm 0cm'
     width=12><p class='MsoNormal'>&nbsp;</td>
@@ -242,7 +259,12 @@ div.WordSection1
     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
     style='font-size:10.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>Marca: <o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>Marca: <o:p><span
+    style='font-size:10.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
+    "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+    color:black;mso-fareast-language:ES-MX'> 
+        <asp:Label ID="marca" runat="server" Text=""></asp:Label>
+        </span></o:p></span></p>
     </td>
     <td width=403 nowrap colspan=5 style='width:302.3pt;border-top:none;
     border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid black 1.0pt;
@@ -255,7 +277,12 @@ div.WordSection1
     mso-bidi-font-family:Calibri;color:black;mso-fareast-language:ES-MX'>N°Serie</span></span><span
     style='font-size:10.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>: <o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>: <o:p><span
+    style='font-size:10.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
+    "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+    color:black;mso-fareast-language:ES-MX'> 
+        <asp:Label ID="noserie" runat="server" Text=""></asp:Label>
+        </span></o:p></span></p>
     </td>
     <td style='mso-cell-special:placeholder;border:none;padding:0cm 0cm 0cm 0cm'
     width=12><p class='MsoNormal'>&nbsp;</td>
@@ -273,7 +300,12 @@ div.WordSection1
     mso-bidi-font-family:Calibri;color:black;mso-fareast-language:ES-MX'>N°</span></span><span
     style='font-size:10.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'> Inventario: <o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'> Inventario: <o:p><span
+    style='font-size:10.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
+    "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+    color:black;mso-fareast-language:ES-MX'> 
+        <asp:Label ID="noinventario" runat="server" Text=""></asp:Label>
+        </span></o:p></span></p>
     </td>
     <td width=403 nowrap colspan=5 valign=bottom style='width:302.3pt;
     border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
@@ -284,7 +316,12 @@ div.WordSection1
     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
     style='font-size:10.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>Modelo: <o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>Modelo: <o:p><span
+    style='font-size:10.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
+    "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+    color:black;mso-fareast-language:ES-MX'> 
+        <asp:Label ID="modelo" runat="server" Text=""></asp:Label>
+        </span></o:p></span></p>
     </td>
     <td style='mso-cell-special:placeholder;border:none;padding:0cm 0cm 0cm 0cm'
     width=12><p class='MsoNormal'>&nbsp;</td>
@@ -300,7 +337,12 @@ div.WordSection1
     style='font-size:10.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
     color:black;mso-fareast-language:ES-MX'>Servicio solicitado por el
-    usuario:<span style='mso-spacerun:yes'>  </span><o:p></o:p></span></p>
+    usuario:<span style='mso-spacerun:yes'>  </span><o:p><span
+    style='font-size:10.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
+    "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+    color:black;mso-fareast-language:ES-MX'> 
+        <asp:Label ID="observacion" runat="server" Text=""></asp:Label>
+        </span></o:p></span></p>
     </td>
     <td style='mso-cell-special:placeholder;border:none;padding:0cm 0cm 0cm 0cm'
     width=12><p class='MsoNormal'>&nbsp;</td>
@@ -373,7 +415,11 @@ div.WordSection1
     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
     style='font-size:10.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>&nbsp;<o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>&nbsp;<o:p><span
+    style='font-size:10.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
+    "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+    color:black;mso-fareast-language:ES-MX'><asp:Label ID="preventivo" runat="server" Text=""></asp:Label>
+        </span></o:p></span></p>
     </td>
     <td width=194 nowrap valign=bottom style='width:145.4pt;padding:0cm 3.5pt 0cm 3.5pt;
     height:1.0pt'>
@@ -388,7 +434,11 @@ div.WordSection1
     <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;
     line-height:normal'><span style='font-size:10.0pt;mso-ascii-font-family:
     Calibri;mso-fareast-font-family:"Times New Roman";mso-hansi-font-family:
-    Calibri;mso-bidi-font-family:Calibri;color:black;mso-fareast-language:ES-MX'>&nbsp;<o:p></o:p></span></p>
+    Calibri;mso-bidi-font-family:Calibri;color:black;mso-fareast-language:ES-MX'>&nbsp;<o:p><span
+    style='font-size:10.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
+    "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+    color:black;mso-fareast-language:ES-MX'><asp:Label ID="correctivo" runat="server" Text=""></asp:Label>
+        </span></o:p></span></p>
     </td>
     <td width=106 nowrap valign=bottom style='width:79.4pt;padding:0cm 3.5pt 0cm 3.5pt;
     height:1.0pt'>
@@ -403,7 +453,11 @@ div.WordSection1
     <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;
     line-height:normal'><span style='font-size:10.0pt;mso-ascii-font-family:
     Calibri;mso-fareast-font-family:"Times New Roman";mso-hansi-font-family:
-    Calibri;mso-bidi-font-family:Calibri;color:black;mso-fareast-language:ES-MX'>&nbsp;<o:p></o:p></span></p>
+    Calibri;mso-bidi-font-family:Calibri;color:black;mso-fareast-language:ES-MX'>&nbsp;<o:p><span
+    style='font-size:10.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
+    "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+    color:black;mso-fareast-language:ES-MX'><asp:Label ID="otro" runat="server" Text=""></asp:Label>
+        </span></o:p></span></p>
     </td>
     <td width=35 nowrap valign=bottom style='width:26.05pt;border:none;
     border-right:solid windowtext 1.0pt;padding:0cm 3.5pt 0cm 3.5pt;height:
@@ -439,7 +493,11 @@ div.WordSection1
     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
     style='font-size:10.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>&nbsp;<o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>&nbsp;<o:p><span
+    style='font-size:10.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
+    "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+    color:black;mso-fareast-language:ES-MX'><asp:Label ID="tecnica" runat="server" Text=""></asp:Label>
+        </span></o:p></span></p>
     </td>
     <td style='mso-cell-special:placeholder;border:none;padding:0cm 0cm 0cm 0cm'
     width=12><p class='MsoNormal'>&nbsp;</td>
@@ -538,7 +596,11 @@ div.WordSection1
     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
     style='font-size:10.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>&nbsp;<o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>&nbsp;<o:p><span
+    style='font-size:10.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
+    "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+    color:black;mso-fareast-language:ES-MX'><asp:Label ID="soporte" runat="server" Text=""></asp:Label>
+        </span></o:p></span></p>
     </td>
     <td style='mso-cell-special:placeholder;border:none;padding:0cm 0cm 0cm 0cm'
     width=12><p class='MsoNormal'>&nbsp;</td>
@@ -972,6 +1034,8 @@ div.WordSection1
 <p class=MsoNormal><o:p>&nbsp;</o:p></p>
 
 </div>
+
+    </form>
 
 </body>
 
