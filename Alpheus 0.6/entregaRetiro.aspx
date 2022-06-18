@@ -95,6 +95,8 @@ div.WordSection1
 
 <body lang=ES-MX style='tab-interval:35.4pt;word-wrap:break-word'>
 
+    <form id="form1" runat="server">
+
 <div class=WordSection1>
 
 <div align=center>
@@ -142,7 +144,8 @@ div.WordSection1
     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
     style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>Fecha Solicitud:<o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>Fecha Solicitud:<asp:Label ID="fecha_realizada" runat="server" Text=""></asp:Label>
+        <o:p></o:p></span></p>
     </td>
     <td width=269 nowrap colspan=4 valign=bottom style='width:201.9pt;
     border:none;border-bottom:solid windowtext 1.0pt;mso-border-bottom-alt:
@@ -160,7 +163,7 @@ div.WordSection1
     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
     style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>Folio:<o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>Folio:<o:p><asp:Label ID="folio" runat="server" Text=""></asp:Label></o:p></span></p>
     </td>
     <td style='mso-cell-special:placeholder;border:none;padding:0cm 0cm 0cm 0cm'
     width=10><p class='MsoNormal'>&nbsp;</td>
@@ -192,7 +195,8 @@ div.WordSection1
     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
     style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>Nombre del solicitante:<o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>Nombre del solicitante:
+        <o:p><asp:Label ID="nombre" runat="server" Text=""></asp:Label></o:p></span></p>
     </td>
     <td style='mso-cell-special:placeholder;border:none;padding:0cm 0cm 0cm 0cm'
     width=10><p class='MsoNormal'>&nbsp;</td>
@@ -230,7 +234,7 @@ div.WordSection1
     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
     style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>Área/Departamento:<o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>Área/Departamento:<o:p><asp:Label ID="area" runat="server" Text=""></asp:Label></o:p></span></p>
     </td>
     <td style='mso-cell-special:placeholder;border:none;padding:0cm 0cm 0cm 0cm'
     width=10><p class='MsoNormal'>&nbsp;</td>
@@ -248,7 +252,7 @@ div.WordSection1
     style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
     color:black;mso-fareast-language:ES-MX'>Tipo y descripción del equipo
-    informático:<o:p></o:p></span></p>
+    informático:<o:p><asp:Label ID="tipo" runat="server" Text=""></asp:Label></o:p></span></p>
     </td>
     <td style='mso-cell-special:placeholder;border:none;padding:0cm 0cm 0cm 0cm'
     width=10><p class='MsoNormal'>&nbsp;</td>
@@ -266,7 +270,7 @@ div.WordSection1
     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
     style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>Marca:<o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>Marca:<o:p><asp:Label ID="marca" runat="server" Text=""></asp:Label></o:p></span></p>
     </td>
     <td width=559 nowrap colspan=5 style='width:419.3pt;border-top:none;
     border-left:none;border-bottom:solid windowtext 1.0pt;border-right:solid black 1.0pt;
@@ -279,7 +283,7 @@ div.WordSection1
     mso-bidi-font-family:Calibri;color:black;mso-fareast-language:ES-MX'>N°Serie</span></span><span
     style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>:<o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>:<o:p><asp:Label ID="noserie" runat="server" Text=""></asp:Label></o:p></span></p>
     </td>
     <td style='mso-cell-special:placeholder;border:none;padding:0cm 0cm 0cm 0cm'
     width=10><p class='MsoNormal'>&nbsp;</td>
@@ -300,7 +304,7 @@ div.WordSection1
     mso-bidi-font-family:Calibri;color:black;mso-fareast-language:ES-MX'>N°</span></span><span
     style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'> Inventario:<o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'> Inventario:<o:p><asp:Label ID="noinventario" runat="server" Text=""></asp:Label></o:p></span></p>
     </td>
     <td width=559 nowrap colspan=5 valign=bottom style='width:419.3pt;
     border-top:none;border-left:none;border-bottom:solid windowtext 1.0pt;
@@ -311,7 +315,7 @@ div.WordSection1
     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
     style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>Modelo:<o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>Modelo:<o:p><asp:Label ID="modelo" runat="server" Text=""></asp:Label></o:p></span></p>
     </td>
     <td style='mso-cell-special:placeholder;border:none;padding:0cm 0cm 0cm 0cm'
     width=10><p class='MsoNormal'>&nbsp;</td>
@@ -329,7 +333,8 @@ div.WordSection1
     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
     style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>Servicio solicitado por el usuario:<o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>Servicio solicitado por el usuario:<asp:Label ID="Observacion" runat="server" Text=""></asp:Label>
+        <o:p></o:p></span></p>
     </td>
     <td style='mso-cell-special:placeholder;border:none;padding:0cm 0cm 0cm 0cm'
     width=10><p class='MsoNormal'>&nbsp;</td>
@@ -591,7 +596,7 @@ div.WordSection1
     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
     style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>Marca:<o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>Marca:<o:p><asp:Label ID="marca_entregaCPU" runat="server" Text=""></asp:Label></o:p></span></p>
     </td>
     <td width=112 nowrap valign=bottom style='width:84.35pt;border:none;
     border-right:solid windowtext 1.0pt;mso-border-left-alt:solid windowtext .5pt;
@@ -605,7 +610,10 @@ div.WordSection1
     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
     style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>Marca:<o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>Marca:<o:p><span
+    style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
+    "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+    color:black;mso-fareast-language:ES-MX'><asp:Label ID="marca_entregaDisp" runat="server" Text=""></asp:Label></span></o:p></span></p>
     </td>
     <td style='mso-cell-special:placeholder;border:none;padding:0cm 0cm 0cm 0cm'
     width=10><p class='MsoNormal'>&nbsp;</td>
@@ -621,7 +629,11 @@ div.WordSection1
     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
     style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>Modelo:<o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>Modelo:<o:p></o:p></span><span
+    style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
+    "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+    color:black;mso-fareast-language:ES-MX'><asp:Label ID="modelo_entregaCPU" runat="server" Text=""></asp:Label>
+        </span></p>
     </td>
     <td width=112 nowrap valign=bottom style='width:84.35pt;border:none;
     border-right:solid windowtext 1.0pt;mso-border-left-alt:solid windowtext .5pt;
@@ -635,7 +647,8 @@ div.WordSection1
     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
     style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>Modelo:<o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>Modelo:<o:p><asp:Label ID="modelo_entregaDisp" runat="server" Text=""></asp:Label>
+        </o:p></span></p>
     </td>
     <td style='mso-cell-special:placeholder;border:none;padding:0cm 0cm 0cm 0cm'
     width=10><p class='MsoNormal'>&nbsp;</td>
@@ -651,7 +664,7 @@ div.WordSection1
     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
     style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>Número de serie:<o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>Número de serie:<o:p><asp:Label ID="noserie_entregaCPU" runat="server" Text=""></asp:Label></o:p></span></p>
     </td>
     <td width=112 nowrap valign=bottom style='width:84.35pt;border:none;
     border-right:solid windowtext 1.0pt;mso-border-left-alt:solid windowtext .5pt;
@@ -665,7 +678,10 @@ div.WordSection1
     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
     style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>Número de serie:<o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>Número de serie:<o:p><span
+    style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
+    "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+    color:black;mso-fareast-language:ES-MX'></span></o:p><asp:Label ID="noserie_entregaDisp" runat="server" Text=""></asp:Label></span></p>
     </td>
     <td style='mso-cell-special:placeholder;border:none;padding:0cm 0cm 0cm 0cm'
     width=10><p class='MsoNormal'>&nbsp;</td>
@@ -681,7 +697,10 @@ div.WordSection1
     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
     style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>Número de inventario:<o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>Número de inventario:<o:p><span
+    style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
+    "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+    color:black;mso-fareast-language:ES-MX'><asp:Label ID="noinvetario_entregaCPU" runat="server" Text=""></asp:Label></span></o:p></span></p>
     </td>
     <td width=112 nowrap valign=bottom style='width:84.35pt;border:none;
     border-right:solid windowtext 1.0pt;mso-border-left-alt:solid windowtext .5pt;
@@ -695,7 +714,10 @@ div.WordSection1
     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
     style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>Número de inventario:<o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>Número de inventario:<o:p><span
+    style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
+    "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+    color:black;mso-fareast-language:ES-MX'><asp:Label ID="noinvetario_entregaDisp" runat="server" Text=""></asp:Label></span></o:p></span></p>
     </td>
     <td style='mso-cell-special:placeholder;border:none;padding:0cm 0cm 0cm 0cm'
     width=10><p class='MsoNormal'>&nbsp;</td>
@@ -775,7 +797,7 @@ div.WordSection1
     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
     style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>Marca:<o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>Marca:<o:p><asp:Label ID="marca_retiraCPU" runat="server" Text=""></asp:Label></o:p></span></p>
     </td>
     <td width=112 nowrap valign=bottom style='width:84.35pt;border:none;
     border-right:solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;
@@ -788,7 +810,10 @@ div.WordSection1
     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
     style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>Marca:<o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>Marca:<o:p><span
+    style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
+    "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+    color:black;mso-fareast-language:ES-MX'><asp:Label ID="marca_retiraDisp" runat="server" Text=""></asp:Label></span></o:p></span></p>
     </td>
     <td style='mso-cell-special:placeholder;border:none;padding:0cm 0cm 0cm 0cm'
     width=10><p class='MsoNormal'>&nbsp;</td>
@@ -804,7 +829,8 @@ div.WordSection1
     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
     style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>Modelo:<o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>Modelo:<o:p><asp:Label ID="modelo_retiraCPU" runat="server" Text=""></asp:Label>
+        </o:p></span></p>
     </td>
     <td width=112 nowrap valign=bottom style='width:84.35pt;border:none;
     border-right:solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;
@@ -817,7 +843,11 @@ div.WordSection1
     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
     style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>Modelo:<o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>Modelo:<o:p><span
+    style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
+    "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+    color:black;mso-fareast-language:ES-MX'><asp:Label ID="modelo_retiraDisp" runat="server" Text=""></asp:Label>
+        </span></o:p></span></p>
     </td>
     <td style='mso-cell-special:placeholder;border:none;padding:0cm 0cm 0cm 0cm'
     width=10><p class='MsoNormal'>&nbsp;</td>
@@ -833,7 +863,10 @@ div.WordSection1
     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
     style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>Número de serie:<o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>Número de serie:<o:p><span
+    style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
+    "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+    color:black;mso-fareast-language:ES-MX'><asp:Label ID="noserie_retiraCPU" runat="server" Text=""></asp:Label></span></o:p></span></p>
     </td>
     <td width=112 nowrap valign=bottom style='width:84.35pt;border:none;
     border-right:solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;
@@ -846,7 +879,10 @@ div.WordSection1
     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
     style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>Número de serie:<o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>Número de serie:<o:p><span
+    style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
+    "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+    color:black;mso-fareast-language:ES-MX'><asp:Label ID="noserie_retiraDisp" runat="server" Text=""></asp:Label></span></o:p></span></p>
     </td>
     <td style='mso-cell-special:placeholder;border:none;padding:0cm 0cm 0cm 0cm'
     width=10><p class='MsoNormal'>&nbsp;</td>
@@ -862,7 +898,10 @@ div.WordSection1
     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
     style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>Número de inventario:<o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>Número de inventario:<o:p><span
+    style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
+    "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+    color:black;mso-fareast-language:ES-MX'><asp:Label ID="noinvetario_retiraCPU" runat="server" Text=""></asp:Label></span></o:p></span></p>
     </td>
     <td width=112 nowrap valign=bottom style='width:84.35pt;border:none;
     border-right:solid windowtext 1.0pt;mso-border-right-alt:solid windowtext .5pt;
@@ -875,7 +914,10 @@ div.WordSection1
     <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><span
     style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
     "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
-    color:black;mso-fareast-language:ES-MX'>Número de inventario:<o:p></o:p></span></p>
+    color:black;mso-fareast-language:ES-MX'>Número de inventario:<o:p><span
+    style='font-size:12.0pt;mso-ascii-font-family:Calibri;mso-fareast-font-family:
+    "Times New Roman";mso-hansi-font-family:Calibri;mso-bidi-font-family:Calibri;
+    color:black;mso-fareast-language:ES-MX'><asp:Label ID="noinvetario_retiraDisp" runat="server" Text=""></asp:Label></span></o:p></span></p>
     </td>
     <td style='mso-cell-special:placeholder;border:none;padding:0cm 0cm 0cm 0cm'
     width=10><p class='MsoNormal'>&nbsp;</td>
@@ -1232,4 +1274,7 @@ div.WordSection1
 </body>
 
 </html>
+
+</form>
+
 

@@ -149,7 +149,7 @@
                             <div class="col-md-4 col-md-offset">
                                 <div class="form-group">
                                     <asp:Label ID="NoSerie2" runat="server" CssClass="texto" Text="No. de Serie: "></asp:Label>
-                                    <asp:DropDownList ID="NoSerieListDisp" runat="server" CssClass="input" DataSourceID="Disp" DataTextField="NoSerie" DataValueField="NoSerie"></asp:DropDownList>
+                                    <asp:DropDownList ID="NoSerieListDisp" runat="server" CssClass="input" DataSourceID="Disp" DataTextField="NoSerie" DataValueField="NoSerie" OnSelectedIndexChanged="NoSerieListDisp_SelectedIndexChanged"></asp:DropDownList>
                                     <asp:SqlDataSource ID="Disp" runat="server" ConnectionString="<%$ ConnectionStrings:MatiasConnection %>" SelectCommand="SELECT [NoSerie] FROM [Dispositivos]"></asp:SqlDataSource>
                                 </div>
                             </div>
