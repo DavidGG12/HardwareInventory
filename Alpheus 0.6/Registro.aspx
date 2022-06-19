@@ -25,7 +25,7 @@
         <div class="container-fluid">
             <div class="row justify-content-center align-content-center">
                 <div class="col-8 barra">
-                    <h4 class="text-light">Logo</h4>
+                    <h4>TESH</h4>
                 </div>
                 <div class="col-4 text-right barra">
                     <ul class="navbar-nav mr-auto">
@@ -60,45 +60,69 @@
                     </nav>
                 </div>
                 <main class="main col">
-                    <div class="row justify-content-center align-content-center text-center">
-                        <!--Tabla va aquí-->
-                        <div class="columna col-lg-6">
-                            <asp:Label ID="Error" runat="server" Text="" />
-                            <legend>Agregar Usuario:</legend>
-                            <br />
-                            <label>Tipo: </label>
-                            <br />
-                            <asp:DropDownList ID="TipoList" runat="server" DataSourceID="Tipo" DataTextField="Tipo" DataValueField="Tipo"></asp:DropDownList>
+                    <div class="panel-body">
+                        <h4>Agregar Usuario:</h4>
                             <asp:SqlDataSource ID="Tipo" runat="server" ConnectionString="<%$ ConnectionStrings:MatiasConnection %>" SelectCommand="SELECT [Tipo] FROM [Tipo_Usuario]"></asp:SqlDataSource>
-                            <br />
-                            <label>Nombre: </label>
-                            </br>
-                            <asp:TextBox ID="Nombre" runat="server" Text="" />
-                            </br>
-                            <label>Apellido Paterno: </label>
-                            </br>
-                            <asp:TextBox ID="Apellido_Paterno" runat="server" Text="" />
-                            </br>
-                            <label>Apellido Materno: </label>
-                            </br>
-                            <asp:TextBox ID="Apellido_Materno" runat="server" Text="" />
-                            </br>
-                            <label>Usuario: </label>
-                            </br>
-                            <asp:TextBox ID="Usuario" runat="server" Text="" />
-                            </br>
-                            <label>Contraseña: </label><asp:Label runat="server" ID="Error_Contraseña" Text=""/>
-                            </br>
-                            <asp:TextBox ID="Contraseña" runat="server" Text="" TextMode="Password" />
-                            </br>
-                            <label></label>
-                            </br>
-                            <label>Revalidar Contraseña: </label><asp:Label runat="server" ID="Error_Contraseña_nCoincide" Text=""/>
-                            </br>
-                            <asp:TextBox ID="Contraseña_Revalidar" runat="server" Text="" TextMode="Password" />
-                            <br />
-                            <asp:Button ID="Registrar" runat="server" Text="Registrar" OnClick="Registrar_Click" />
-                        </div>
+                            <asp:Label ID="Error" runat="server" Text="" />
+                            <asp:Label runat="server" ID="Error_Contraseña" Text=""/>
+                            <asp:Label runat="server" ID="Error_Contraseña_nCoincide" Text=""/>
+                            <div class="row">
+                                <div class="col-md-4 col-md-offset-1">
+                                    <div class="form-group">
+                                        <label class="texto">Tipo: </label>
+                                        <asp:DropDownList ID="TipoList" runat="server" CssClass="input" DataSourceID="Tipo" DataTextField="Tipo" DataValueField="Tipo"></asp:DropDownList>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 col-md-offset-1">
+                                    <div class="form-group">
+                                        <label class="texto">Nombre: </label>
+                                        <asp:TextBox ID="Nombre" CssClass="input" runat="server" Text="" />
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-md-offset-1">
+                                    <div class="form-group">
+                                        <label class="texto">Apellido Paterno: </label>
+                                        <asp:TextBox ID="Apellido_Paterno" runat="server" CssClass="input" Text="" />
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-md-offset-1">
+                                    <div class="form-group">
+                                        <label class="texto">Apellido Materno: </label>
+                                        <asp:TextBox ID="Apellido_Materno" CssClass="input" runat="server" Text="" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 col-md-offset-1">
+                                    <div class="form-group">
+                                        <label class="texto">Usuario: </label>
+                                        <asp:TextBox ID="Usuario" CssClass="input" runat="server" Text="" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 col-md-offset-1">
+                                    <div class="form-group">
+                                        <label class="texto">Contraseña: </label>
+                                        <asp:TextBox ID="Contraseña" runat="server" CssClass="input" Text="" TextMode="Password" />
+                                    </div>
+                                </div>
+                                <div class="col-md-4 col-md-offset-1">
+                                    <div class="form-group">
+                                        <label class="text">Revalidar Contraseña: </label>
+                                        <asp:TextBox ID="Contraseña_Revalidar" runat="server" CssClass="input" Text="" TextMode="Password" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 col-md-offset-1">
+                                    <div class="form-group">
+                                        <asp:Button ID="Registrar" runat="server" CssClass="boton" Text="Registrar" OnClick="Registrar_Click" />
+                                    </div>
+                                </div>
+                            </div>  
                     </div>
                 </main>
             </div>

@@ -27,7 +27,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center align-content-center">
             <div class="col-8 barra">
-                <h4>LOGO</h4>
+                <h4>TESH</h4>
             </div>
 
             <div class="col-4 text-right barra">
@@ -117,25 +117,55 @@
                         </div>
                     </div>
                 </div>   
-               
-               <asp:Label ID="Servicio" runat="server" Text="Servicio Solicitado: "></asp:Label>
-               <asp:TextBox ID="ServicioTxt" runat="server"></asp:TextBox>
+               <div class="row">
 
-               <asp:Label ID="TipoMantenimiento" runat="server" Text="Tipo de Mantenimiento: "></asp:Label>
-               <asp:RadioButtonList ID="TipoMantenimientoRBtnList" runat="server" AutoPostBack="True" RepeatDirection="Horizontal">
-                   <asp:ListItem>Preventivo</asp:ListItem>
-                   <asp:ListItem>Correctivo</asp:ListItem>
-                   <asp:ListItem>Otro:</asp:ListItem>
-                </asp:RadioButtonList>
-               <asp:TextBox ID="OtroTxt" runat="server" Enabled="false"></asp:TextBox>
-
-
-                <asp:Label ID="DescripcionFalla" runat="server" Text="Descripción técnica de la falla: "></asp:Label>
-               <asp:TextBox ID="DescripcionFallaTxt" runat="server"></asp:TextBox>
-
-               <asp:Label ID="DescripcionSoporte" runat="server" Text="Descripción del soporte técnico brindado: "></asp:Label>
-               <asp:TextBox ID="DescripcionSoporteTxt" runat="server"></asp:TextBox>
-            <asp:Button ID="RegistrarBtn" runat="server" Text="Registrar" OnClick="RegistrarBtn_Click" />
+               </div>
+               <div class="row">
+                   <div class="col-md-4 col-md-offset">
+                        <div class="form-group">
+                            <asp:Label ID="Servicio" runat="server" CssClass="texto" Text="Servicio Solicitado: "></asp:Label>
+                            <asp:TextBox ID="ServicioTxt" CssClass="input" runat="server"></asp:TextBox>
+                        </div>
+                   </div>
+               </div>
+               <div class="row">
+                   <div class="col-md-4 col-md-offset">
+                        <div class="form-group">
+                            <asp:Label ID="TipoMantenimiento" runat="server" CssClass="texto" Text="Tipo de Mantenimiento: "></asp:Label>
+                               <asp:RadioButtonList ID="TipoMantenimientoRBtnList" runat="server" AutoPostBack="True" RepeatDirection="Horizontal" OnSelectedIndexChanged="TipoMantenimientoRBtnList_SelectedIndexChanged">
+                                   <asp:ListItem>Preventivo</asp:ListItem>
+                                   <asp:ListItem>Correctivo</asp:ListItem>
+                                   <asp:ListItem>Otro:</asp:ListItem>
+                                </asp:RadioButtonList>
+                        </div>
+                   </div>
+                   <div class="col-md-4 col-md-offset">
+                        <div class="form-group">
+                            <asp:TextBox ID="OtroTxt" runat="server" Enabled="false"></asp:TextBox>
+                        </div>
+                   </div>
+               </div>
+               <div class="row">
+                   <div class="col-md-4 col-md-offset">
+                        <div class="form-group">
+                           <asp:Label ID="DescripcionFalla" runat="server" CssClass="texto" Text="Descripción técnica de la falla: "></asp:Label>
+                           <asp:TextBox ID="DescripcionFallaTxt" runat="server" CssClass="input"></asp:TextBox>
+                        </div>
+                   </div>
+                   <div class="col-md-4 col-md-offset">
+                        <div class="form-group">
+                            <asp:Label ID="DescripcionSoporte" runat="server" CssClass="texto" Text="Descripción del soporte técnico brindado: "></asp:Label>
+                            <asp:TextBox ID="DescripcionSoporteTxt" runat="server" CssClass="input"></asp:TextBox>
+                        </div>
+                   </div>
+               </div>
+               <div class="row">
+                   <div class="col-md-4 col-md-offset">
+                        <div class="form-group">
+                            <asp:Button ID="RegistrarBtn" runat="server" CssClass="boton" Text="Registrar" OnClick="RegistrarBtn_Click" />
+                        </div>
+                   </div>
+               </div>
             </main>
         </div>
     </div>
