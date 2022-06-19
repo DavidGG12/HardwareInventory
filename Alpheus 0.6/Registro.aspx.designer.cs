@@ -33,6 +33,15 @@ namespace Alpheus_0._6
         protected global::System.Web.UI.WebControls.Label SesionLbl;
 
         /// <summary>
+        /// Control Tipo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource Tipo;
+
+        /// <summary>
         /// Control Error.
         /// </summary>
         /// <remarks>
@@ -42,6 +51,24 @@ namespace Alpheus_0._6
         protected global::System.Web.UI.WebControls.Label Error;
 
         /// <summary>
+        /// Control Error_Contraseña.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Error_Contraseña;
+
+        /// <summary>
+        /// Control Error_Contraseña_nCoincide.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Error_Contraseña_nCoincide;
+
+        /// <summary>
         /// Control TipoList.
         /// </summary>
         /// <remarks>
@@ -49,15 +76,6 @@ namespace Alpheus_0._6
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList TipoList;
-
-        /// <summary>
-        /// Control Tipo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource Tipo;
 
         /// <summary>
         /// Control Nombre.
@@ -96,15 +114,6 @@ namespace Alpheus_0._6
         protected global::System.Web.UI.WebControls.TextBox Usuario;
 
         /// <summary>
-        /// Control Error_Contraseña.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Error_Contraseña;
-
-        /// <summary>
         /// Control Contraseña.
         /// </summary>
         /// <remarks>
@@ -112,15 +121,6 @@ namespace Alpheus_0._6
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Contraseña;
-
-        /// <summary>
-        /// Control Error_Contraseña_nCoincide.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Error_Contraseña_nCoincide;
 
         /// <summary>
         /// Control Contraseña_Revalidar.

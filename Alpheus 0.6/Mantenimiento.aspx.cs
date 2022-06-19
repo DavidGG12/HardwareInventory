@@ -15,7 +15,8 @@ namespace Alpheus_0._6
         System.Data.SqlClient.SqlConnection con = new SqlConnection(conectar);
         static int Area;
         static string NoControl, ID_Buscar, noserie;
-        static string folio, nombre_servicio, area, marca, noinventario, modelo, servicio, tipo_d, tipo_servicio, tecnica, soporte; 
+        static string folio, nombre_servicio, area, marca, noinventario, modelo, servicio, tipo_d, tipo_servicio, tecnica, soporte;
+
         static string fecha_realizada = DateTime.Now.ToString("dd/MM/yyyy");
         static DateTime fecha_usada = Convert.ToDateTime(fecha_realizada);
         static DateTime fecha_programadapre = fecha_usada.AddMonths(6);
@@ -371,6 +372,18 @@ namespace Alpheus_0._6
                 {
                     Error.Text = er.Message;
                 }
+            }
+        }
+
+        protected void TipoMantenimientoRBtnList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(TipoMantenimientoRBtnList.SelectedItem.Text == "Otro:")
+            {
+                OtroTxt.Enabled = true;
+            }
+            else
+            {
+                OtroTxt.Enabled = false;
             }
         }
     }

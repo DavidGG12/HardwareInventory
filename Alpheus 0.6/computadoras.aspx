@@ -27,7 +27,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center align-content-center">
             <div class="col-8 barra">
-                <h4>LOGO</h4>
+                <h4>TESH</h4>
             </div>
 
             <div class="col-4 text-right barra">
